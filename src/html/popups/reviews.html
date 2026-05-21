@@ -1,0 +1,86 @@
+<div id="reviews" class="reviews popup" data-lenis-prevent>
+  <div class="popup__wrap">
+    <div class="popup__area" data-popup-head>
+      <div class="popup__close">
+        <i class="icon-close"></i>
+      </div>
+    </div>
+    <div class="popup__inner">
+
+      <div class="layout" data-popup-scroll>
+        <div class="container">
+          <div class="layout__inner">
+
+            <div class="layout__head">
+              <div class="swiper layout__head-slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="layout__head-slide">
+                      <!-- <video autoplay muted playsinline loop disablepictureinpicture>
+                        <source src="./video/reviews-banner.mp4">
+                      </video> -->
+                      <img src="./../../images/temp/dish-img.png" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="layout__head-slide">
+                      <img src="./../../images/temp/dish-img-2.png" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="layout__head-slide">
+                      <img src="./../../images/temp/dish-img.png" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="layout__head-slide">
+                      <img src="./../../images/temp/dish-img-2.png" alt="">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="layout__head-slide">
+                      <img src="./../../images/temp/dish-img.png" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+              <button class="layout__btn btn" data-popup-target="reviewsWrite">
+                Оставить отзыв
+              </button>
+              <div class="layout__head-title">
+                <h2>
+                  Отзывы
+                </h2>
+              </div>
+              <div class="layout__content">
+                <div class="layout__content-wrap">
+                  <div class="layout__rating">
+                    <div class="layout__rating-text">
+                      4.8
+                    </div>
+                    <i class="icon-star-fill"></i>
+                  </div>
+                  <div class="layout__counts">
+                    Отзывы: <span>200</span>
+                  </div>
+                </div>
+                <div class="layout__content-name">
+                  Домашний омлет с моцареллой и чоризо
+                </div>
+              </div>
+            </div>
+
+            <div class="layout__body">
+              <div class="reviews__items">
+                @@loop('./../elements/reviews-item.html', './data/reviews-items.json')
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

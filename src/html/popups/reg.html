@@ -1,0 +1,108 @@
+<div id="reg" class="reg popup" data-lenis-prevent>
+  <div class="popup__wrap">
+        <div class="popup__area" data-popup-head>
+      <div class="popup__close">
+        <i class="icon-close"></i>
+      </div>
+    </div>
+    <div class="popup__inner">
+
+      <div class="layout" data-popup-scroll>
+        <div class="container">
+          <div class="layout__inner">
+
+            <div class="layout__head">
+              <div class="layout__head-title">
+                <h2>
+                  Регистрация
+                </h2>
+              </div>
+            </div>
+
+            <div class="layout__body">
+
+              <form action="#" class="form layout__form">
+                <div class="form-body">
+                  <div class="form-group">
+                    <label class="form-label">
+                      <input class="form-input" type="text" name="reg_name" placeholder="Имя">
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">
+                      <input class="form-input" type="text" name="reg_surname" placeholder="Фамилия">
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">
+                      <input class="form-input" type="tel" name="reg_tel" placeholder="Телефон">
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <div class="dropdown dropdown--js">
+                      <div class="dropdown__selected dropdown__selected--js">
+                        <input class="dropdown__input dropdown__selected-input--js" type="hidden" value="">
+                        <label class="dropdown__label dropdown__selected-label--js">Откуда о нас узнали</label>
+                        <i class="icon-chevron-right"></i>
+                      </div>
+                      <div class="dropdown__container">
+                        <div class="dropdown__content">
+                          <div class="dropdown__option">
+                            <input id="reg_place_1" class="dropdown__radio" name="reg_place_name" type="radio" value="Место 1">
+                            <label for="reg_place_1" class="dropdown__label">Место 1</label>
+                          </div>
+                          <div class="dropdown__option">
+                            <input id="reg_place_2" class="dropdown__radio" name="reg_place_name" type="radio" value="Место 2">
+                            <label for="reg_place_2" class="dropdown__label">Место 2</label>
+                          </div>
+                          <div class="dropdown__option">
+                            <input id="reg_place_3" class="dropdown__radio" name="reg_place_name" type="radio" value="Место 3">
+                            <label for="reg_place_3" class="dropdown__label">Место 3</label>
+                          </div>
+                        </div>
+                      </div>
+                      <input class="dropdown__value" type="hidden">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-foot">
+                  <button class="btn btn--accent" type="button" data-popup-target="regCode">
+                    Получить код
+                  </button>
+                  <div class="form-group form-text">
+                    <input id="form-checkbox-1" class="form-checkbox" type="checkbox" required="">
+                    <label for="form-checkbox-1">
+                      <div class="form-checkbox--item"></div>
+                      <p>
+                        Я согласен на <a href="javascript:void(0)" data-popup-target="policy">обработку персональных данных</a>
+                      </p>
+                    </label>
+                  </div>
+                  <div class="form-group form-text">
+                    <input id="form-checkbox-2" class="form-checkbox" type="checkbox">
+                    <label for="form-checkbox-2">
+                      <div class="form-checkbox--item"></div>
+                      <p>
+                        Я согласен на <a href="javascript:void(0)">рекламные уведомления</a>
+                      </p>
+                    </label>
+                  </div>
+                  <div class="form-text">
+                    <p>
+                      Нажимая на кнопку, Вы соглашаетесь с обработкой персональных данный в рамках <a
+                        href="javascript:void(0)" data-popup-target="policy">Политики персональных данных </a>
+                    </p>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

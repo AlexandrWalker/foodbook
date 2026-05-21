@@ -1,0 +1,69 @@
+@use './../mixins' as *;
+
+.branch {
+
+  .layout {
+
+    &__inner {
+      gap: 3rem;
+    }
+
+    &__block {
+
+      &-title {
+        color: var(--branch-layout-block-title-color);
+      }
+
+      &-text {
+
+        span {
+          color: var(--branch-layout-block-text-span-color);
+        }
+      }
+    }
+  }
+}
+
+#branchSelect {
+
+  .layout {
+
+    &__inner {
+      padding-bottom: 8rem;
+    }
+
+    &__content {
+
+      .layout__block-title {
+        font-weight: 700;
+        color: var(--layout-content-block-title-color);
+      }
+
+      .layout__block-text {
+
+        * {
+          font-weight: 700;
+          color: var(--layout-content-block-text-color);
+        }
+      }
+    }
+
+    &__block {
+
+      &-text {
+
+        * {
+          font-weight: 500;
+          font-size: 1.4rem;
+        }
+      }
+
+      &-btns {
+
+        .btn:not(.btn--remove) {
+          --btn-color: var(--branchselect-layout-block-btn-color);
+        }
+      }
+    }
+  }
+}

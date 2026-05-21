@@ -1,0 +1,192 @@
+<div id="profile" class="profile popup" data-lenis-prevent>
+  <div class="popup__wrap">
+    <div class="popup__area" data-popup-head>
+      <div class="popup__close">
+        <i class="icon-close"></i>
+      </div>
+    </div>
+    <div class="popup__inner">
+
+      <div class="layout" data-popup-scroll>
+        <div class="container">
+          <div class="layout__inner">
+
+            <div class="layout__head">
+              <div class="layout__head-title">
+                <h2>
+                  Профиль
+                </h2>
+              </div>
+              <div class="layout__head-content">
+                <h2>
+                  Привет, Иван!
+                </h2>
+                <a class="layout__head-tel h6" href="tel:+71234567890">
+                  +7 (123) 456-78-90
+                </a>
+                <button class="layout__head-change h6" data-popup-target="profileDetails">
+                  Изменить номер
+                </button>
+              </div>
+            </div>
+
+            <div class="layout__body">
+
+              <div class="layout__card">
+                <div class="layout__notice">
+                  <div class="layout__notice-text">
+                    Зарегистрируйтесь и получайте бонусы и скидки <button data-popup-target="reg">Регистрация</button>
+                  </div>
+                </div>
+                <div class="layout__card-block">
+                  <div class="layout__card-img">
+                    <img src="./../../images/temp/logout-card-cover.png" data-log="logout" alt="">
+                  </div>
+                  <div class="layout__card-col">
+                    <div class="layout__card-logo">
+                      <img src="./../../images/logo/logo-white.svg" alt="">
+                    </div>
+                    <div class="layout__card-icon" data-popup-target="profileCard">
+                      <img src="./../images/temp/card-qr.png" alt="">
+                    </div>
+                  </div>
+                  <div class="layout__card-content">
+                    <div class="layout__card-wrap">
+                      <div class="layout__card-status">
+                        <p>
+                          бронза
+                        </p>
+                      </div>
+                      <div class="layout__card-value">
+                        <span>1000</span> Б
+                      </div>
+                      <div class="layout__card-text">
+                        01.05.2027 сгорит 900 Б
+                      </div>
+                    </div>
+                    <div class="layout__card-procent">
+                      2%
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="layout__cashback">
+                <div class="layout__cashback-head">
+                  <div class="layout__cashback-title">
+                    Повысьте кэшбэк до 3%
+                  </div>
+                  <div class="layout__cashback-text">
+                    Закажите еще на 10 000 ₽
+                  </div>
+                </div>
+                <div class="layout__cashback-progressbar">
+                  <progress value="25" max="100"></progress>
+                </div>
+                <button class="layout__cashback-guess" data-popup-target="loyalty">
+                  <i class="icon-question-mark"></i>
+                </button>
+              </div>
+
+              <div class="menu__items">
+                <div class="menu__item" data-popup-target="profileDetails">
+                  <div class="menu__item-icon">
+                    <i class="icon-menu-user"></i>
+                  </div>
+                  <div class="menu__item-title">
+                    Мои данные
+                  </div>
+                </div>
+                <div class="menu__item" data-popup-target="offers">
+                  <div class="menu__item-icon">
+                    <i class="icon-menu-personal-offers"></i>
+                    <div class="btn--count">
+                      20
+                    </div>
+                  </div>
+                  <div class="menu__item-title">
+                    Персональные предложения
+                  </div>
+                </div>
+                <div class="menu__item" data-popup-target="pointsHistory">
+                  <div class="menu__item-icon">
+                    <i class="icon-history"></i>
+                  </div>
+                  <div class="menu__item-title">
+                    История списаний
+                  </div>
+                </div>
+                <div class="menu__item" data-popup-target="favorite">
+                  <div class="menu__item-icon">
+                    <i class="icon-menu-like"></i>
+                    <div class="btn--count">
+                      5
+                    </div>
+                  </div>
+                  <div class="menu__item-title">
+                    Нравится
+                  </div>
+                </div>
+                <div class="menu__item" data-popup-target="branchSelect">
+                  <div class="menu__item-icon">
+                    <i class="icon-menu-geo"></i>
+                  </div>
+                  <div class="menu__item-title">
+                    Мои адреса
+                  </div>
+                </div>
+                <div class="menu__item" data-popup-target="cards">
+                  <div class="menu__item-icon">
+                    <i class="icon-menu-card"></i>
+                  </div>
+                  <div class="menu__item-title">
+                    Мои карты
+                  </div>
+                </div>
+                <div class="menu__item" data-popup-target="myReviews">
+                  <div class="menu__item-icon">
+                    <i class="icon-reviews"></i>
+                  </div>
+                  <div class="menu__item-title">
+                    Мои отзывы (5)
+                  </div>
+                </div>
+                <div class="menu__item" data-popup-target="clientService">
+                  <div class="menu__item-icon">
+                    <i class="icon-client-services"></i>
+                  </div>
+                  <div class="menu__item-title">
+                    Клиентский сервис
+                  </div>
+                </div>
+                <div class="menu__item" data-popup-target="notifications">
+                  <div class="menu__item-icon">
+                    <i class="icon-notification"></i>
+                  </div>
+                  <div class="menu__item-title">
+                    Уведомления
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="layout__foot">
+              <div class="layout__foot-inner">
+                <button class="btn btn--accent layout__btn--login" data-log="login">
+                  Войти
+                </button>
+                <button class="btn btn--accent layout__btn--logout" data-log="logout">
+                  Выйти
+                </button>
+                <button class="btn layout__btn--reg" data-popup-target="reg">
+                  Регистрация
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

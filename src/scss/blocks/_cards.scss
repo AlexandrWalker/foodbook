@@ -1,0 +1,47 @@
+@use './../mixins' as *;
+
+.cards {
+
+  .form {
+
+    &-foot {
+      gap: 0.8rem;
+
+      .btn {
+        font-weight: 700;
+      }
+    }
+  }
+
+  &--delete {
+
+    .btn {
+      font-weight: 700;
+    }
+
+    .layout__foot-inner {
+      padding: 0;
+    }
+
+    [data-popup-scroll] {
+      padding-bottom: 8.8rem;
+    }
+  }
+}
+
+#cardsAdd {
+
+  .form {
+
+    &-body {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &-group {
+
+      &:nth-child(1) {
+        grid-column: 1/3;
+      }
+    }
+  }
+}

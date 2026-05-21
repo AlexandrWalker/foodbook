@@ -1,0 +1,8 @@
+@use './../mixins' as *;
+
+.reservation {
+
+  .layout__block-item {
+    border: 0;
+  }
+}

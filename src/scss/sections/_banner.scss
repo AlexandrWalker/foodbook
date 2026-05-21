@@ -1,0 +1,73 @@
+@use './../mixins' as *;
+
+.banner {
+  --progress: 0;
+
+  scroll-snap-align: start;
+  isolation: isolate;
+
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -0.3rem;
+    border-radius: calc(1.6rem + 0.3rem);
+    border: 0.2rem solid var(--afisha-item-border-color);
+    pointer-events: none;
+
+    --start: 45deg;
+    --spread: calc(var(--progress) * 180deg);
+
+    -webkit-mask-image: conic-gradient(from var(--start),
+        white 0deg,
+        white var(--spread),
+        transparent var(--spread),
+        transparent calc(360deg - var(--spread)),
+        white calc(360deg - var(--spread)),
+        white 360deg);
+    mask-image: conic-gradient(from var(--start),
+        white 0deg,
+        white var(--spread),
+        transparent var(--spread),
+        transparent calc(360deg - var(--spread)),
+        white calc(360deg - var(--spread)),
+        white 360deg);
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    height: 17.8rem;
+    border-radius: 1.6rem;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    i {
+      background-color: var(--afisha-i-bg-color);
+      border-radius: 50%;
+
+      font-size: 3rem;
+      color: var(--afisha-i-color);
+
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+    }
+
+    &:hover i {
+
+      @include domd {
+        background-color: var(--afisha-hover-i-bg-color);
+
+        color: var(--afisha-hover-i-color);
+      }
+    }
+  }
+}

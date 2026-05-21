@@ -1,0 +1,54 @@
+[
+  {
+    "img": "./../../images/temp/card-burger.png",
+    "tags": "<div class=\"card__tags-item card__tags-top\"><i class=\"icon-top\"></i>Топ</div><div class=\"card__tags-item card__tags-hot\"><i class=\"icon-hot\"></i>Остро</div>",
+    "rating": "4.8",
+    "name": "Домашний омлет с моцареллой и чоризо",
+    "weight": "380/30 г",
+    "calories": "120.6 Ккал",
+    "protein": "Б-10 г",
+    "fat": "Ж-10.5 г",
+    "carbohydrates": "У-65 г",
+    "desc": "Свободен",
+    "price": "500 ₽"
+  },
+  {
+    "img": "./../../images/temp/card-burger.png",
+    "tags": "<div class=\"card__tags-item card__tags-hot\"><i class=\"icon-hot\"></i>Остро</div>",
+    "rating": "4.8",
+    "name": "Домашний омлет с моцареллой и чоризо",
+    "weight": "380/30 г",
+    "calories": "120 Ккал",
+    "protein": "Б-10 г",
+    "fat": "Ж-10 г",
+    "carbohydrates": "У-65 г",
+    "desc": "Свободен",
+    "price": "500 ₽"
+  },
+  {
+    "img": "./../../images/temp/card-burger.png",
+    "tags": "<div class=\"card__tags-item card__tags-top\"><i class=\"icon-top\"></i>Топ</div>",
+    "rating": "4.8",
+    "name": "Домашний омлет с моцареллой и чоризо",
+    "weight": "380/30 г",
+    "calories": "120 Ккал",
+    "protein": "Б-10 г",
+    "fat": "Ж-10 г",
+    "carbohydrates": "У-65 г",
+    "desc": "Свободен",
+    "price": "500 ₽"
+  },
+  {
+    "img": "./../../images/temp/card-burger.png",
+    "tags": "<div class=\"card__tags-item card__tags-top\"><i class=\"icon-top\"></i>Топ</div><div class=\"card__tags-item card__tags-hot\"><i class=\"icon-hot\"></i>Остро</div>",
+    "rating": "4.8",
+    "name": "Домашний омлет с моцареллой и чоризо",
+    "weight": "380/30 г",
+    "calories": "120 Ккал",
+    "protein": "Б-10 г",
+    "fat": "Ж-10 г",
+    "carbohydrates": "У-65 г",
+    "desc": "Свободен",
+    "price": "500 ₽"
+  }
+]

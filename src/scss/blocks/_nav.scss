@@ -1,0 +1,75 @@
+@use './../mixins' as *;
+
+.nav {
+
+  &__slider {
+    overflow: visible;
+  }
+
+  &__slide {
+    width: fit-content;
+    flex-shrink: 0;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+
+    color: var(--nav-item-color);
+
+    @include domd {
+      width: calc((100% / 6) - (10rem / 6));
+    }
+
+    &:hover {
+
+      .nav__item-img {
+
+        @include domd {
+          background: var(--nav-item-active-bg-color);
+
+          color: var(--nav-item-active-icon-color);
+        }
+      }
+    }
+
+    &-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 8.7rem;
+      height: 8.7rem;
+      border-radius: 3rem;
+      background-color: var(--nav-item-bg-color);
+      transition: all 0.5s ease;
+      flex-shrink: 0;
+
+      font-size: 5rem;
+      color: var(--nav-item-icon-color);
+
+      .is-active & {
+        background-color: var(--nav-item-active-bg-color);
+
+        color: var(--nav-item-active-icon-color);
+      }
+
+      img {
+        width: auto;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    &-text {
+      font-weight: 400;
+      font-size: 1.3rem;
+      line-height: 100%;
+      text-align: center;
+    }
+  }
+}

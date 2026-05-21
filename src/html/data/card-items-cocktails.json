@@ -1,0 +1,38 @@
+[
+  {
+    "dish": "aclo-cocktail",
+    "tags": "",
+    "img": "./../../images/temp/cocktails-1.png",
+    "rating": "4.8",
+    "name": "Название фабричного напитка",
+    "weight": "220 мл  / 18 °",
+    "price": "500 ₽"
+  },
+  {
+    "dish": "aclo-cocktail",
+    "tags": "<div class=\"card__tags-item card__tags-top\"><i class=\"icon-top\"></i>Топ</div>",
+    "img": "./../../images/temp/cocktails-2.png",
+    "rating": "4.8",
+    "name": "Название фабричного напитка",
+    "weight": "220 мл  / 18 °",
+    "price": "500 ₽"
+  },
+  {
+    "dish": "fabric-cocktail",
+    "tags": "<div class=\"card__tags-item card__tags-top\"><i class=\"icon-top\"></i>Топ</div>",
+    "img": "./../../images/temp/cocktails-3.png",
+    "rating": "4.8",
+    "name": "Название фабричного напитка",
+    "weight": "220 мл  / 18 °",
+    "price": "500 ₽"
+  },
+  {
+    "dish": "fabric-cocktail",
+    "tags": "",
+    "img": "./../../images/temp/cocktails-4.png",
+    "rating": "4.8",
+    "name": "Название фабричного напитка",
+    "weight": "220 мл  / 18 °",
+    "price": "500 ₽"
+  }
+]

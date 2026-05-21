@@ -1,0 +1,260 @@
+@use './../mixins' as *;
+
+.stories {
+
+  &-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: calc(100vh - var(--wrapper-padding));
+    height: calc(100dvh - var(--wrapper-padding));
+    overflow: hidden;
+    background: #000;
+    user-select: none;
+  }
+
+  &-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  &-item {
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-progress {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.2rem;
+    right: 1.2rem;
+    display: flex;
+    gap: 0.8rem;
+    z-index: 10;
+
+    &-item {
+      flex: 1;
+      height: 0.6rem;
+      background: var(--stories-progress-item-bg-color);
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+
+    &-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--stories-progress-fill-bg-color);
+      border-radius: 0.5rem;
+      transition: none;
+      animation: none !important;
+
+      .stories-progress-item.is-done & {
+        width: 100%;
+      }
+    }
+  }
+
+  &-overlay {
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    align-items: flex-end;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    position: fixed;
+    inset: 0;
+    // background: rgba(0, 0, 0, 0.95);
+    background: var(--stories-overlay-bg-color);
+    z-index: 999;
+
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &-actions {
+    position: absolute;
+    top: 2.8rem;
+    right: 1.4rem;
+    z-index: 70;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  &-share {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 50%;
+    color: var(--stories-share-color);
+    font-size: 3.6rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: var(--stories-share-hover-color);
+    }
+  }
+
+  &-close {
+    position: static;
+    top: unset;
+    right: unset;
+    z-index: unset;
+    background: none;
+    border: none;
+    color: var(--stories-close-color);
+    font-size: 3.6rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: var(--stories-close-hover-color);
+    }
+  }
+
+  &-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    inset: 0;
+
+    &.is-visible {
+      opacity: 1;
+    }
+
+    &.is-loading {
+      opacity: 0;
+    }
+
+    &-wrap {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+  }
+
+  &-date {
+    background: var(--stories-date-bg-color);
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+
+    color: var(--stories-date-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+
+    position: absolute;
+    bottom: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &-nav {
+    width: 35%;
+
+    cursor: pointer;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 65;
+
+    &--prev {
+      left: 0;
+    }
+
+    &--next {
+      right: 0;
+    }
+  }
+
+  &-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: fit-content;
+    height: 5rem;
+    padding: 0 3.5rem;
+    border-radius: 9rem;
+    background-color: var(--stories-btn-bg-color);
+    // box-shadow: 0rem 0.6rem 0rem var(--sun);
+    transition: all 0.3s ease;
+
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 110%;
+    text-align: center;
+
+    position: relative;
+
+    animation: moveBottom 1.2s linear infinite;
+
+    &-wrap {
+      position: absolute;
+      top: 80%;
+      left: 2rem;
+      z-index: 1;
+    }
+
+    i {
+      font-size: 3rem;
+    }
+  }
+}
+
+@keyframes moveBottom {
+  0% {
+    transform: scaleX(1) scaleY(1);
+    // opacity: 1;
+  }
+
+  50% {
+    transform: scaleX(1.02) scaleY(1.04);
+    // opacity: 1;
+  }
+
+  100% {
+    transform: scaleX(1) scaleY(1);
+    // opacity: 0;
+  }
+}
+
+.trigger-line {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0.1rem;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+  z-index: 999;
+}

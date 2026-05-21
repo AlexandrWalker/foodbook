@@ -1,0 +1,152 @@
+@use './../mixins' as *;
+
+.header {
+  width: 100vw;
+  width: 100dvw;
+  height: var(--header-height);
+  background-color: var(--header-bg-color);
+  transition: top 0.5s ease;
+  will-change: top;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+
+  .popup-open & {
+    background-color: transparent;
+  }
+
+  .header-out:not(.popup-open) & {
+    top: calc(var(--header-height) * -1);
+  }
+
+  .container {
+
+    @include domd {
+      padding: 0 3rem;
+    }
+  }
+
+  &__wrap {
+    overflow: hidden;
+    background-color: var(--header-bg-color);
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    @include domd {
+      margin: 0 auto;
+      max-width: var(--container-width);
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    height: 100%;
+
+    @include domd {
+      justify-content: center;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 0 1rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  &__search {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    padding: 0.3rem;
+
+    font-size: 2.4rem;
+    color: var(--header-search-i-color);
+  }
+
+  &__points {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+    width: fit-content;
+    height: 3rem;
+    padding: 0.5rem 1.4rem;
+    border-radius: 10rem;
+    background: var(--header-points-bg-color);
+
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 100%;
+    color: var(--header-points-color);
+
+    .login & {
+      display: flex;
+    }
+
+    &-icon {
+      font-size: 1.6rem;
+      color: var(--header-points-i-color);
+    }
+  }
+
+  &__language {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+    width: fit-content;
+    height: 3rem;
+    padding: 0.5rem 0.95rem;
+    border-radius: 10rem;
+    background: var(--header-lang-bg-color);
+
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 100%;
+    color: var(--header-lang-color);
+
+    &-img {
+      width: auto;
+      height: 1.2rem;
+
+      img {
+        width: auto;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}

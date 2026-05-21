@@ -1,0 +1,77 @@
+@use './../mixins' as *;
+
+.scrollup {
+  pointer-events: all;
+  transition: opacity 0.4s ease, visibility 0.4s ease !important;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  position: absolute;
+  left: 1rem;
+  bottom: 11.1rem;
+
+  @include domd {
+    display: none;
+  }
+
+  &-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+
+  .popup-open & {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: var(--white);
+
+    position: relative;
+
+    i {
+      font-size: 2.8rem;
+      color: var(--accent);
+    }
+
+    &>.scrollup__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+      inset: 0;
+      transition: transform 0.6s cubic-bezier(.4, .2, .2, 1);
+
+      position: absolute;
+    }
+
+    &--visible {
+      transform: rotateY(0deg);
+      z-index: 2;
+
+      html.popup-open & {
+        transform: rotateY(180deg);
+      }
+    }
+
+    &--hidden {
+      transform: rotateY(180deg);
+
+      html.popup-open & {
+        transform: rotateY(0deg);
+      }
+    }
+  }
+}

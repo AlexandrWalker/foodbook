@@ -1,0 +1,30 @@
+@use './../mixins' as *;
+
+.search {
+
+  .form-input {
+    border-radius: 1.2rem;
+    border-color: var(--accent);
+
+    &.filled {
+
+      &+.form-label {
+        opacity: 0;
+      }
+    }
+
+    &+.form-label {
+      justify-content: center;
+      width: fit-content;
+      height: 5rem;
+
+      position: absolute;
+      top: 0;
+      left: 2rem;
+
+      &+.form-input-btn {
+        color: var(--accent);
+      }
+    }
+  }
+}

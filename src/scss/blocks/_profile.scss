@@ -1,0 +1,136 @@
+@use './../mixins' as *;
+
+#profile {
+
+  .layout {
+
+    &__inner {
+      padding-bottom: 8rem;
+    }
+
+    &__head {
+
+      &-title {
+
+        * {
+          font-weight: 900;
+          color: var(--profile-layout-head-title-color);
+
+          .login & {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+#profileCard {
+
+  .layout {
+
+    &__body {
+      padding-top: 1rem;
+    }
+
+    &__block {
+
+      &-text {
+        color: var(--profilecard-layout-body-text-color);
+      }
+
+      &-link {
+        color: var(--profilecard-layout-body-link-color);
+        text-decoration-style: dotted;
+        text-decoration-color: var(--profilecard-layout-body-link-color);
+        text-decoration-line: underline;
+        text-decoration-skip-ink: none;
+      }
+    }
+  }
+}
+
+.profile {
+
+  .layout {
+    padding-bottom: 15rem;
+
+    &__head {
+
+      &-content {
+        display: none;
+
+        .login & {
+          display: flex;
+        }
+      }
+    }
+
+    &__btns {
+      grid-template-columns: 1fr;
+    }
+
+    &__notice {
+
+      .login & {
+        display: none;
+      }
+    }
+
+    &__foot {
+
+      .logout & {
+        height: calc(17rem + 6rem);
+      }
+
+      &-inner {
+        flex-direction: column;
+        // padding: 1.5rem 1.5rem 11rem 1.5rem;
+        // padding: 1.5rem 1.5rem calc(11rem + env(safe-area-inset-bottom)) 1.5rem;
+      }
+    }
+  }
+
+  .menu {
+
+    &__item {
+      pointer-events: none;
+
+      .login & {
+        pointer-events: all;
+      }
+
+      &-icon {
+
+        i::before {
+          opacity: 0.5;
+
+          .login & {
+            opacity: 1;
+          }
+        }
+
+        .btn--count {
+          display: none;
+
+          .login & {
+            display: block;
+          }
+        }
+      }
+
+      &-title {
+        opacity: 0.5;
+        color: var(--profile-menu-item-title-color);
+
+        .login & {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .btn {
+    font-weight: 700;
+  }
+}

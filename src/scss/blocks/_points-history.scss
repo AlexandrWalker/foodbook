@@ -1,0 +1,23 @@
+@use './../mixins' as *;
+
+.points-history {
+
+  .layout {
+
+    &__inner {
+      gap: 3rem;
+    }
+
+    &__head {
+
+      &-title {
+        font-family: var(--font-family);
+        text-transform: none;
+
+        * {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use './../mixins' as *;
+
+.foodbook {
+  display: flex;
+  justify-content: center;
+
+  &__img {
+    width: 16rem;
+    height: auto;
+    object-fit: contain;
+  }
+}

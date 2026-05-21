@@ -1,0 +1,28 @@
+@use './../mixins' as *;
+
+.sostav {
+
+  .layout {
+
+    &__content {
+
+      &-name {
+        font-size: 2rem;
+      }
+    }
+
+    &__block {
+
+      &-list {
+
+        li {
+          padding-left: 0;
+
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

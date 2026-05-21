@@ -1,0 +1,309 @@
+@use './../mixins' as *;
+
+:root {
+  // fonts
+  --font-family: Poppins, Arial, sans-serif;
+  --second-family: SFPro, Arial, sans-serif;
+  --third-family: TTTrailersTrial, Arial, sans-serif;
+  --fourth-family: PlayfairDisplay, Arial, sans-serif;
+  --fifth-family: Inter, Arial, sans-serif;
+  --sixth-family: Lobster, Arial, sans-serif;
+
+  // size
+  --container-padding: 1.5rem;
+  --container-width: 37.2rem;
+  --header-height: 7.6rem;
+  --wrapper-padding: 9.1rem;
+  --panel-btn-height: 6.6rem;
+  --panel-height: 8rem;
+  --safe-area-top: env(safe-area-inset-top, 0px);
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+
+  // base
+  --base-bg: #F4F4F4;
+  --base-color: #000211;
+  --base-list-dot-color: #888A87;
+
+  // global
+  --tags-color: #FFFFFF;
+  --tags-top: #00D0C5;
+  --tags-hot: #D93128;
+  --tags-vega: #2DC520;
+  --tags-chef: #E95322;
+  --tags-business: #37AEE2;
+  --rating-bg-color: #F64545;
+  --rating-color: #F9FAF8;
+
+  // colors
+  --popup-bg: #1A1A1A;
+  --accent: #F64545;
+  --white: #FFFFFF;
+  --white-50: rgba(255, 255, 255, 0.5);
+  --black: #0A2533;
+  --black-50: rgba(10, 37, 51, 0.5);
+  --black-2: #313330;
+  --red: #D93128;
+
+  // menu
+  --menu-item-icon-bg-color: #FFFFFF;
+  --menu-item-icon-color: #F64545;
+  --menu-item-title-bg-color: #FFFFFF;
+  --menu-item-title-color: #000211;
+
+  // swiper
+  --swiper-pagination-bg-color: transparent;
+  --swiper-pagination-color: rgba(255, 255, 255, 0.5);
+  --swiper-pagination-active-color: #FFFFFF;
+
+  // branch
+  --branch-layout-block-title-color: #F64545;
+  --branch-layout-block-text-span-color: #8B8C8B80;
+
+  // branchselect
+  --branchselect-layout-block-btn-color: #EEF0ED;
+
+  // card
+  --card-bg-color: #FFFFFF;
+  --card-border-color: #FFFFFF;
+  --card-weight-color: #888A87;
+  --card-item-color: #888A87;
+  --card-item-i-color: #A9ADA5;
+  --card-item-i-bg-color: rgba(255, 255, 255, 0.1);
+  --card-desc-color: #EEF0ED;
+  --card-price-color: #EEF0ED;
+  --card-price-bg-color: rgba(236, 241, 232, 0.1);
+  --card-price-bg-color-hover: #F64545;
+  --card-like-color: #A9ADA5;
+  --card-like-bg-color: #ECF1E81A;
+  --card-like-color-hover: #ECF1E8;
+  --card-like-bg-color-hover: #F64545;
+
+  // contacts
+  --contacts-layout-block-title-color: #F64545;
+  --contacts-layout-block-text-color: #8B8C8B;
+  --contacts-layout-block-link-color: #8B8C8B;
+  --contacts-layout-block-mode-color: #8B8C8B80;
+
+  // dish
+  --dish-layout-banner-link-i-bg-color: #FDF6EC;
+  --dish-layout-banner-link-i-color: #F64545;
+
+  // filter
+  --filter-check-bg-color: #353332;
+  --filter-check-before-color: #F64545;
+  --filter-item-text-color: #888A87;
+  --filter-item-text-checked-color: #EEF0ED;
+
+  // header
+  --header-bg-color: #000211;
+  --header-search-i-color: #888A87;
+  --header-points-bg-color: #0000001A;
+  --header-points-color: #FFFFFF;
+  --header-points-i-color: #F64545;
+  --header-lang-bg-color: #0000001A;
+  --header-lang-color: #FFFFFF;
+
+  // loyalty
+  --loyalty-layout-block-text-span-color: #8B8C8B80;
+
+  // nav
+  --nav-item-bg-color: #ffffff;
+  --nav-item-color: #000211;
+  --nav-item-icon-color: #F64545;
+  --nav-item-active-bg-color: #F64545;
+  --nav-item-active-icon-color: #FFFFFF;
+
+  // offers
+  --offers-layout-block-text-color: #888A87;
+
+  // panel
+  --panel-inner-bg-color: #FFFFFF;
+
+  // plate
+  --plate-content-border-color: #313330;
+  --plate-content-btn-bg-color: #F64545;
+  --plate-content-btn-color: #EEF0ED;
+
+  // popup
+  --popup-bg-color: #FFFFFFE5;
+  --popup-area-color: #FFFFFF80;
+  --popup-area-close-color: #ffffffbe;
+
+  // profile
+  --profile-layout-head-title-color: #888A87;
+  --profile-menu-item-title-color: #000211;
+  --profilecard-layout-body-text-color: #888A87;
+  --profilecard-layout-body-link-color: #F64545;
+
+  // rassadka
+  --rassadka-layout-block-title-color: #F64545;
+  --rassadka-layout-block-text-span-color: #8B8C8B80;
+
+  // reviews
+  --reviews-item-rating-icon-color: #E95322;
+  --reviews-item-name-color: #F64545;
+  --reviews-item-date-color: #888A87;
+  --reviews-item-text-color: #888A87;
+
+  // welcome
+  --welcome-bg-color: #EEF0ED;
+  --welcome-text-color: #000000;
+
+  // dropdown
+  --dropdown-selected-active-border-color: #F64545;
+  --dropdown-selected-active-bg-color: transparent;
+  --dropdown-selected-border-color: #2F2F2E;
+  --dropdown-selected-bg-color: transparent;
+  --dropdown-selected-i-bg-color: #323232;
+  --dropdown-selected-i-color: #EEF0ED;
+  --dropdown-selected-active-i-color: #F64545;
+  --dropdown-label-color: #F64545;
+  --dropdown-label-active-color: #F64545;
+  --dropdown-content-border-color: #292929;
+  --dropdown-content-bg-color: #292929;
+  --dropdown-content-label-color: #EEF0ED;
+
+  // form
+  --form-input-border-color: #2F2F2E;
+  --form-input-color: #F64545;
+  --form-input-ph-color: #F64545;
+  --form-input-active-border-color: #F64545;
+  --form-label-color: #888A87;
+  --form-label-span-color: #F64545;
+  --form-file-bg-color: #353332;
+  --form-rating-color: #E95322;
+  --form-code-border-color: #2F2F2E;
+  --form-code-bg-color: transparent;
+  --form-code-color: #F64545;
+  --form-code-ph-color: #EEF0ED;
+  --form-text-color: #EEF0ED80;
+  --form-checkbox-border-color: #888A87;
+  --form-checkbox-before-bg-color: transparent;
+  --form-checkbox-after-bg-color: transparent;
+  --form-checkbox-checked-after-bg-color: #F64545;
+  --form-radio-icon-bg-color: #292929;
+  --form-radio-icon-color: #F64545;
+  --form-radio-title-bg-color: #292929;
+  --form-radio-remove-color: #888A87;
+  --form-radio-input-border-color: #888A87;
+  --form-radio-input-before-bg-color: transparent;
+  --form-radio-input-checked-before-bg-color: #F64545;
+  --form-results-color: #888A87;
+  --form-input-btn-color: #888A87;
+  --form-input-active-btn-color: #F64545;
+  --form-tabs-label-bg-color: #3838384D;
+  --form-tabs-label-color: #F64545;
+  --form-tabs-label-checked-bg-color: #F64545;
+  --form-tabs-label-checked-color: #FFFFFF;
+
+  // layout
+  --layout-title-color: #F64545;
+  --layout-counts-bg-color: #FFFFFF1A;
+  --layout-counts-color: #F9FAF8;
+  --layout-share-bg-color: #FFFFFF1A;
+  --layout-share-color: #EEF0ED;
+  --layout-content-weight-color: #EEF0ED;
+  --layout-content-weight-btn-bg-color: #323232;
+  --layout-content-weight-btn-color: #A9ADA5;
+  --layout-content-time-bg-color: #FFFFFF1A;
+  --layout-content-time-i-color: #F64545;
+  --layout-content-block-title-color: #F64545;
+  --layout-content-block-text-color: #8B8C8B;
+  --layout-content-block-text-color: #8B8C8B;
+  --layout-block-desc-color: #888A87;
+  --layout-block-list-color: #888A87;
+  --layout-block-time-bg-color: #373737;
+  --layout-block-time-color: #EEF0ED;
+  --layout-block-time-span-color: #F64545;
+  --layout-block-text-a-color: #F64545;
+  --layout-block-item-bg-color: #353332;
+  --layout-block-item-border-color: #353332;
+  --layout-block-item-active-border-color: #F64545;
+  --layout-block-item-status-color: #8B8C8B;
+  --layout-block-item-i-bg-color: rgba(255, 255, 255, 0.1);
+  --layout-block-item-i-color: #8B8C8B;
+  --layout-block-item-icon-i-bg-color: #494747;
+  --layout-block-item-icon-i-color: #ffffff;
+  --layout-block-value-bg-color: #FFFFFF1A;
+  --layout-block-value-i-color: #A9ADA5;
+  --layout-block-value-color: #888A87;
+  --layout-block-address-color: #8B8C8B;
+  --layout-block-address-link-color: #EEF0ED;
+  --layout-block-ps-color: #F64545;
+  --layout-block-social-bg-color: #2F2F2E;
+  --layout-block-social-color: #F64545;
+  --layout-time-bg-color: transparent;
+  --layout-time-border-color: #313330;
+  --layout-time-i-color: #F64545;
+  --layout-head-psevdoelement: #1A1A1A;
+  --layout-head-change-color: #F64545;
+  --layout-card-block-bg-color: #F64545;
+  --layout-card-guess-bg-color: #323232;
+  --layout-card-guess-color: #FFFFFF;
+  --layout-head-content-link-color: #888A87;
+  --layout-foot-inner-bg-color: #FFFFFFE5;
+  --layout-nav-item-bg-color: #292929;
+  --layout-nav-item-color: #FFFFFF;
+  --layout-nav-item-active-bg-color: #F64545;
+  --layout-cashback-bg-color: #292929;
+  --layout-cashback-progress-bg-color: #F6454580;
+  --layout-cashback-progress-value-bg-color: #F64545;
+  --layout-cashback-i-color: #EEF0ED;
+  --layout-cashback-i-bg-color: #323232;
+  --layout-banner-link-i-bg-color: #F64545;
+  --layout-banner-link-i-color: #EEF0ED;
+  --layout-banner-link-hover-i-bg-color: #EEF0ED;
+  --layout-banner-link-hover-i-color: #F64545;
+  --layout-price-icon-bg-color: #373737;
+  --layout-price-icon-color: #F64545;
+  --layout-type-icon-bg-color: #373737;
+  --layout-type-icon-color: #F64545;
+  --layout-search-icon-color: #888A87;
+  --layout-stars-icon-color: #A9ADA5;
+  --layout-notice-bg-color: #EEF0ED1A;
+  --layout-notice-border-color: #EEF0ED1A;
+  --layout-notice-text-color: #888A87;
+  --layout-notice-text-link-color: #F64545;
+  --layout-history-item-border-color: #FFFFFF80;
+  --layout-history-date-color: rgba(136, 138, 135, 0.5);
+  --layout-history-title-color: #F64545;
+  --layout-history-body-color: #888A87;
+  --layout-null-text-color: #888A87;
+  --layout-null-link-color: #F64545;
+  --layout-first-btn-bg-color: #292929;
+  --layout-first-btn-i-bg-color: #1A1A1A;
+  --layout-first-btn-i-color: #F64545;
+  --layout-first-btn-text-span-color: #F64545;
+  --layout-platform-block-text-color: rgba(238, 240, 237, 0.5);
+  --layout-platform-block-text-accent-color: #F64545;
+  --layout-platform-block-text-a-color: rgba(238, 240, 237, 0.5);
+
+  // stories
+  --stories-overlay-bg-color: #1A1A1A;
+  --stories-progress-item-bg-color: #ffffff80;
+  --stories-progress-fill-bg-color: #ffffff;
+  --stories-share-color: #ffffff;
+  --stories-share-hover-color: rgba(255, 255, 255, 0.15);
+  --stories-close-color: #ffffff;
+  --stories-close-hover-color: rgba(255, 255, 255, 0.15);
+  --stories-date-bg-color: rgba(0, 0, 0, 0.45);
+  --stories-date-color: #ffffff;
+  --stories-btn-bg-color: #F64545;
+
+  // afisha
+  --afisha-item-border-color: #F64545;
+  --afisha-i-bg-color: #F64545;
+  --afisha-i-color: #FFFFFF;
+  --afisha-hover-i-bg-color: #FFFFFF;
+  --afisha-hover-i-color: #F64545;
+
+  // banners
+  --banners-link-title-color: #ffffff;
+
+  @include domd {
+    --container-padding: 40rem;
+    --container-width: 112rem;
+    --header-height: 11rem;
+    --wrapper-padding: 13rem;
+  }
+}

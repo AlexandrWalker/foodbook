@@ -1,0 +1,18 @@
+@use './../mixins' as *;
+
+.burger {
+  --burger-btn-color: #000000;
+
+  &-btn {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+
+    font-family: var(--third-family);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 120%;
+    color: var(--burger-btn-color);
+  }
+}

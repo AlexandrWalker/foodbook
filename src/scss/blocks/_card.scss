@@ -1,0 +1,228 @@
+@use './../mixins' as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  min-height: 25.3rem;
+  height: auto;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  background-color: var(--card-bg-color);
+  border: 0.1rem solid var(--card-border-color);
+
+  position: relative;
+
+  #hookahs & {}
+
+  * {
+    transition: all 0.3s ease;
+  }
+
+  &__head {
+    padding: 0.3rem 0.3rem 0 0.3rem;
+  }
+
+  &__tags {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    position: absolute;
+    top: 0.6rem;
+    left: 0.6rem;
+    z-index: 1;
+
+    &-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.2rem;
+      border-radius: 1.6rem;
+      padding: 0.4rem 0.55rem;
+      background-color: var(--tags-top);
+      width: fit-content;
+
+      font-weight: 700;
+      font-size: 0.8rem;
+      line-height: 100%;
+      color: var(--tags-color);
+
+      i {
+        font-size: 1.2rem;
+      }
+    }
+
+    &-top {
+      background-color: var(--tags-top);
+    }
+
+    &-hot {
+      background-color: var(--tags-hot);
+    }
+
+    &-vega {
+      background-color: var(--tags-vega);
+    }
+
+    &-chef {
+      background-color: var(--tags-chef);
+    }
+
+    &-business {
+      background-color: var(--tags-business);
+    }
+  }
+
+  &__img {
+    border-radius: 1.2rem;
+    overflow: hidden;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+    height: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  &__rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    width: fit-content;
+    padding: 0.3rem 0.55rem;
+    border-radius: 1.6rem;
+    background-color: var(--rating-bg-color);
+
+    color: var(--rating-color);
+
+    &-text {
+      font-weight: 700;
+      font-size: 0.8rem;
+      line-height: 100%;
+    }
+
+    i {
+      font-size: 0.8rem;
+      width: 0.8rem;
+      height: 0.8rem;
+    }
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 120%;
+
+    @include domd {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__weight {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 120%;
+    color: var(--card-weight-color);
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1rem;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.4rem;
+
+    i {
+      background-color: var(--card-item-i-bg-color);
+
+      font-size: 1.6rem;
+      color: var(--card-item-i-color);
+    }
+
+    &-text {
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 120%;
+      white-space: nowrap;
+      color: var(--card-item-color);
+    }
+  }
+
+  &__desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 120%;
+    color: var(--card-desc-color);
+  }
+
+  &__foot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.7rem 1.25rem;
+    border-radius: 1.6rem;
+    background-color: var(--card-price-bg-color);
+
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 100%;
+    color: var(--card-price-color);
+
+    &:hover {
+      // background-color: var(--card-price-bg-color-hover);
+    }
+  }
+
+  &__like {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--card-like-bg-color);
+
+    color: var(--card-like-color);
+
+    &.like-is-active {
+      background-color: var(--card-like-bg-color-hover);
+
+      color: var(--card-like-color-hover);
+    }
+
+    i {
+      font-size: 1.8rem;
+    }
+  }
+}

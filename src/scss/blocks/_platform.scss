@@ -1,0 +1,62 @@
+@use './../mixins' as *;
+
+.platform {
+
+  .layout {
+
+    &__head {
+
+      &-cover {
+        width: 100%;
+        height: auto;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    &__block {
+
+      &-wrap {
+
+        p {
+          font-size: 1.2rem;
+        }
+      }
+
+      &-text {
+        color: var(--layout-platform-block-text-color);
+
+        &--accent {
+          color: var(--layout-platform-block-text-accent-color);
+
+          * {
+            font-weight: 700;
+          }
+        }
+
+        &--italic {
+          font-style: italic;
+        }
+
+        a {
+          font-weight: 700;
+          color: var(--layout-platform-block-text-a-color);
+
+          &:hover {
+            color: var(--layout-platform-block-text-accent-color);
+          }
+        }
+      }
+    }
+
+    &__list {
+
+      li {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
