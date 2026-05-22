@@ -2868,19 +2868,19 @@ document.addEventListener('DOMContentLoaded', () => {
     window.PRELOADER_MODE = window.PRELOADER_MODE || {
       // 'overlay'     -> как сейчас (белое лого + красная заливка)
       // 'singleLogo' -> без наслоения (просто одно лого)
-      mode: 'singleLogo',
+      mode: 'overlay',
 
       // Пути к изображениям
       assets: {
         // можно поменять на разные файлы, если у вас реально разные варианты
-        logoWhiteSrc: './images/logo/preloader-logo.svg',
+        logoWhiteSrc: './images/logo/preloader-logo-black.svg',
         // для совместимости с вашим overlay-режимом
         logoCyanSrc: './images/logo/preloader-logo.svg'
       },
 
       // Размеры (можно под вашу верстку)
-      logoWidth: 185,
-      logoHeight: 179,
+      logoWidth: 300,
+      logoHeight: 101,
 
       // safety timeout
       safetyTimeoutMs: 8000,
@@ -2980,7 +2980,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.drawImage(logoWhite, 0, 0, logoWidth, logoHeight);
 
         ctx.globalCompositeOperation = 'source-atop';
-        ctx.fillStyle = '#D71920';
+        ctx.fillStyle = '#ffffff';
 
         var rectY = logoHeight - fillHeight;
         ctx.fillRect(0, rectY, logoWidth, fillHeight);
@@ -3091,6 +3091,21 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       startOverlayPreloader();
     }
+  })();
+
+  (function () {
+    const light = document.querySelector('[data-theme="light"]');
+    const dark = document.querySelector('[data-theme="dark"]');
+
+    if (!light && !dark) return;
+
+    dark.addEventListener('click', () => {
+      document.documentElement.setAttribute('dark', '');
+    })
+
+    light.addEventListener('click', () => {
+      document.documentElement.removeAttribute('dark');
+    })
   })();
 
   /**
