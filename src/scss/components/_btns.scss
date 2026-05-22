@@ -1,9 +1,8 @@
 @use './../mixins' as *;
 
 .btn {
-  --btn-color: #888A87;
-  --btn-background: #383838;
-  --btn-disabled-bg-color: #F6454580;
+  --btn-color: #FFFFFF;
+  --btn-background: #000211;
 
   display: flex;
   justify-content: center;
@@ -14,7 +13,7 @@
   background-color: var(--btn-background);
   border-radius: 3rem;
 
-  font-weight: 500;
+  font-weight: 700;
   font-size: 1.4rem;
   line-height: 120%;
   text-align: center;
@@ -32,6 +31,11 @@
   }
 
   &--accent {
+    --btn-color: #000211;
+    --btn-background: #A1BB8C;
+  }
+
+  &--accent-2 {
     --btn-color: #FFFFFF;
     --btn-background: #F64545;
   }
@@ -42,9 +46,14 @@
     border: 0.1rem solid var(--black-2);
   }
 
+  &--white {
+    --btn-color: #000211;
+    --btn-background: #FFFFFF;
+  }
+
   &--gray {
-    --btn-color: #000000;
-    --btn-background: #3838381A;
+    --btn-color: #FFFFFF;
+    --btn-background: #FFFFFF1A;
   }
 
   &--icon {
@@ -69,7 +78,7 @@
   }
 
   &:disabled {
-    --btn-background: var(--btn-disabled-bg-color);
+    opacity: 0.5;
 
     pointer-events: none;
   }

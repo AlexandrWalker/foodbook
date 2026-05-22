@@ -40,6 +40,10 @@
       color: var(--menu-item-icon-color);
 
       position: relative;
+
+      .login & {
+        color: var(--menu-item-icon-color-login);
+      }
     }
 
     &-title {

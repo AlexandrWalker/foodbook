@@ -1,7 +1,7 @@
 @use './../mixins' as *;
 
 .contacts {
-  
+
   .layout {
 
     &__inner {
@@ -9,7 +9,7 @@
     }
 
     &__body {
-      gap: 3rem;
+      gap: 2.4rem;
 
       &.checked {
 
@@ -20,9 +20,8 @@
     }
 
     &__block {
-      gap: 2rem;
+      gap: 1.6rem;
 
-      font-weight: 700;
       font-size: 1.4rem;
       line-height: 150%;
 
@@ -31,6 +30,8 @@
       }
 
       &-title {
+        font-weight: 700;
+        font-size: 1.8rem;
         color: var(--contacts-layout-block-title-color);
       }
 
@@ -44,6 +45,7 @@
       }
 
       &-link {
+        width: fit-content;
         margin: 0;
 
         color: var(--contacts-layout-block-link-color);
@@ -55,10 +57,18 @@
         font-size: 1.2rem;
         color: var(--contacts-layout-block-mode-color);
       }
+
+      &-social {
+        display: none;
+      }
     }
   }
 
   .dropdown {
+
+    &__label {
+      // --dropdown-label-color: #F64545;
+    }
 
     &__selected,
     &__content {

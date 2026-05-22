@@ -29,6 +29,7 @@
 
       .dropdown.is-active & {
         transform: rotate(-90deg);
+        background-color: var(--dropdown-selected-active-i-bg-color);
         color: var(--dropdown-selected-active-i-color);
       }
     }
@@ -64,6 +65,7 @@
   }
 
   &__container {
+    max-height: 30rem;
     overflow: hidden;
     pointer-events: none;
 
@@ -75,6 +77,8 @@
 
     .dropdown.is-active & {
       pointer-events: all;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
   }
 
@@ -86,7 +90,7 @@
     background-color: var(--dropdown-content-bg-color);
     border-radius: 0.4rem;
     border: 0.1rem solid var(--dropdown-content-border-color);
-    transform: translateY(-100%);
+    transform: translateY(-101%);
     will-change: transform;
     transition: transform 0.3s ease;
 

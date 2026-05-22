@@ -34,9 +34,10 @@
   }
 
   &--success {
+    --popup-area-color: #FFFFFF80;
 
     .popup__wrap {
-      background-color: var(--accent);
+      background-color: var(--blue);
     }
 
     .layout {
@@ -48,6 +49,8 @@
         &-title {
           max-width: 32rem;
           margin: 0 auto;
+
+          color: var(--white);
         }
       }
 
@@ -77,11 +80,10 @@
         }
 
         &-btn {
-          --btn-background: #262324;
-          --btn-color: #EEF0ED;
-          
           max-width: 21.2rem;
           width: 100%;
+
+          font-weight: 700;
         }
       }
     }

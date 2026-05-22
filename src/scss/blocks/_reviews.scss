@@ -15,11 +15,8 @@
       }
 
       &-title {
-        font-family: var(--third-family);
-        text-transform: uppercase;
 
         * {
-          font-size: 3rem;
         }
       }
     }
@@ -27,13 +24,9 @@
     &__content {
 
       &-name {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        width: 92.5%;
       }
-    }
-
-    &__btn {
-      --btn-color: #EEF0ED;
-      --btn-background: #F64545;
     }
   }
 

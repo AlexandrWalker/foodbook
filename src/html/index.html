@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="">
+<html lang="ru" class="logout">
 @@include('blocks/head.html', {"title": "Фудбук"})
 
 <body>
@@ -113,6 +113,8 @@
     @@include('./popups/reservation.html')
     <!-- О платформе -->
     @@include('./popups/platform.html')
+    <!-- Демо -->
+    @@include('./popups/demo.html')
 
     <!-- Куки -->
     @@include('./popups/cookie.html')
@@ -289,17 +291,14 @@
           {"img":"./images/temp/stories-cover-1.jpg"}
         ]'>
                 <div class="banners__link-img">
-                  <video autoplay muted playsinline loop disablepictureinpicture>
-                    <source src="./video/akcii-1.mp4">
-                  </video>
+                  <img src="./../images/temp/hero-banner-1.png" alt="">
                 </div>
                 <div class="banners__link-content">
                   <div class="banners__link-title">
-                    Дополнение от&nbsp;Горыныча
+                    <span>33%</span> Скидка
+                    на&nbsp;бургеры!
                   </div>
-                  <div class="banners__link-text">
-                    Три блюда с огня - одно&nbsp;дополняет кухня
-                  </div>
+                  <i class="icon-chevron-right"></i>
                 </div>
               </div>
               <div class="banners__link stories-item banner" data-story-index="1" data-banners='[
@@ -310,11 +309,10 @@
                 </div>
                 <div class="banners__link-content">
                   <div class="banners__link-title">
-                    Пир собирается
+                    Акция <br>
+                    для&nbsp;примера
                   </div>
-                  <div class="banners__link-text">
-                    Чем больше заказ — тем больше бонусов
-                  </div>
+                  <i class="icon-chevron-right"></i>
                 </div>
               </div>
               <div class="banners__link stories-item banner" data-story-index="2" data-banners='[
@@ -325,11 +323,10 @@
                 </div>
                 <div class="banners__link-content">
                   <div class="banners__link-title">
-                    Теплый стол
+                    Акция <br>
+                    для&nbsp;примера
                   </div>
-                  <div class="banners__link-text">
-                    К горячему блюду BELUGA в подарок
-                  </div>
+                  <i class="icon-chevron-right"></i>
                 </div>
               </div>
               <div class="trigger-line"></div>

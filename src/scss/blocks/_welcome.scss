@@ -5,7 +5,7 @@
   width: 100dvw;
   height: 100vh;
   height: 100dvh;
-  background-color: var(--welcome-bg-color);
+  background: var(--welcome-bg-color);
   transition: opacity 0.6s ease, visibility 0.6s ease, top 0.4s ease;
 
   color: var(--welcome-text-color);
@@ -58,7 +58,7 @@
 
   &__logo {
     width: auto;
-    height: 17.7rem;
+    height: 10.1rem;
 
     img {
       width: auto;
@@ -69,6 +69,11 @@
 
   &__text {
     text-align: center;
+
+    p {
+      font-size: 1.4rem;
+      color: var(--white);
+    }
   }
 
   &__btns {

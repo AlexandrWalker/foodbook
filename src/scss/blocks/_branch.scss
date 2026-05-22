@@ -32,10 +32,16 @@
       padding-bottom: 8rem;
     }
 
+    &__body {
+      gap: 3rem;
+    }
+
     &__content {
+      gap: 1rem;
 
       .layout__block-title {
         font-weight: 700;
+        font-size: 2rem;
         color: var(--layout-content-block-title-color);
       }
 
@@ -50,6 +56,8 @@
 
     &__block {
 
+      &-title {}
+
       &-text {
 
         * {
@@ -60,8 +68,35 @@
 
       &-btns {
 
-        .btn:not(.btn--remove) {
+        .btn {
+          --btn-background: var(--branchselect-layout-block-btn-bg-color);
           --btn-color: var(--branchselect-layout-block-btn-color);
+
+          &:first-child {
+            --btn-color: var(--branchselect-layout-block-second-btn-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+#branch {
+
+  .layout {
+
+    &__block {
+
+      &-title {
+        font-weight: 700;
+        font-size: 1.8rem;
+      }
+
+      &-text {
+        gap: 0.5rem;
+
+        span {
+          --branch-layout-block-text-span-color: #00021180;
         }
       }
     }

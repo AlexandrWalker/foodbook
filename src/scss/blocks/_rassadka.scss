@@ -12,10 +12,13 @@
       gap: 3rem;
 
       &-title {
+        font-weight: 700;
+        font-size: 1.8rem;
         color: var(--rassadka-layout-block-title-color);
       }
 
       &-text {
+        gap: 0.5rem;
 
         span {
           color: var(--rassadka-layout-block-text-span-color);
