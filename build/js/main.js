@@ -2865,8 +2865,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.PRELOADER_MODE = window.PRELOADER_MODE || {
       mode: 'overlay',
       assets: {
-        logoWhiteSrc: './../../images/logo/preloader-logo-black.svg',
-        logoCyanSrc: './../../images/logo/preloader-logo.svg'
+        logoWhiteSrc: './images/logo/preloader-logo-black.svg',
+        logoCyanSrc: './images/logo/preloader-logo.svg'
       },
       logoWidth: 185,
       logoHeight: 179,
