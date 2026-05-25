@@ -32,38 +32,28 @@
 
 <body>
   <!-- Прелоадер -->
-  <div class="preloader">
-  <canvas id="logo-canvas" width="185" height="179"></canvas>
-  <div class="foodbook">
-    <img class="foodbook__img" src="./images/temp/foodbook.svg" alt="">
-  </div>
-</div>
-  <!-- Welcome-screen -->
-  <div id="welcome" class="welcome">
-  <div class="container">
-    <div class="welcome__inner">
-
-      <div class="welcome__content">
-        <div class="welcome__logo">
-          <img src="./images/logo/logo-big.svg" alt="Горыныч">
-        </div>
-        <div class="welcome__text">
+  <div id="preloader" class="preloader">
+  <div class="preloader__body">
+    <canvas id="logo-canvas" class="preloader__logo" width="185" height="179"></canvas>
+    <div class="preloader__wrap">
+      <div class="preloader__content">
+        <div class="preloader__text">
           <p>
             Зарегистрируйтесь или войдите в приложение что бы получать бонусы и скидки!
           </p>
         </div>
-        <div class="welcome__btns">
-          <button class="welcome__btn btn btn--white layout__btn--login" data-log="login" type="button">
+        <div class="preloader__btns">
+          <button class="preloader__btn btn btn--white layout__btn--login" data-log="login" type="button">
             Войти
           </button>
-          <button class="welcome__btn btn btn--gray" type="button" data-popup-target="reg">
+          <button class="preloader__btn btn btn--gray" type="button" data-popup-target="reg">
             Регистрация
           </button>
-          <button class="welcome__btn welcome__lang btn btn--gray" type="button" data-popup-target="language">
-            <div class="welcome__lang-img">
+          <button class="preloader__btn preloader__lang btn btn--gray" type="button" data-popup-target="language">
+            <div class="preloader__lang-img">
               <img src="./images/temp/language-icon-ru.svg" alt="">
             </div>
-            <div class="welcome__lang-text">
+            <div class="preloader__lang-text">
               <p>
                 Русский
               </p>
@@ -72,12 +62,10 @@
           </button>
         </div>
       </div>
-
-      <div class="foodbook">
-        <img class="foodbook__img" src="./images/temp/foodbook.svg" alt="">
-      </div>
-
     </div>
+  </div>
+  <div class="preloader__foot foodbook">
+    <img class="foodbook__img" src="./images/temp/foodbook.svg" alt="">
   </div>
 </div>
   <!-- orientation warning -->
@@ -264,14 +252,14 @@
                     О платформе
                   </div>
                 </div>
-                <!-- <div class="menu__item" data-popup-target="demo">
+                <div class="menu__item" data-popup-target="demo">
                   <div class="menu__item-icon">
-                    <i class="icon-menu-platform"></i>
+                    D
                   </div>
                   <div class="menu__item-title">
                     Демо
                   </div>
-                </div> -->
+                </div>
               </div>
             </div>
             <div class="layout__logo">
@@ -6160,7 +6148,7 @@
   </div>
 </div>
     <!-- Демо -->
-    <div id="demo" class="menu popup" data-lenis-prevent>
+    <div id="demo" class="demo popup" data-lenis-prevent>
   <div class="popup__wrap">
     <div class="popup__area" data-popup-head>
       <div class="popup__close">
@@ -6176,7 +6164,7 @@
             <div class="layout__head">
               <div class="layout__head-title">
                 <h2>
-                  Демо
+                  Смена темы
                 </h2>
               </div>
             </div>
@@ -6190,6 +6178,33 @@
                 <div class="menu__item" data-theme="dark">
                   <div class="menu__item-title">
                     Темная
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="layout__head">
+              <div class="layout__head-title">
+                <h2>
+                  Смена акцентного цвета
+                </h2>
+              </div>
+            </div>
+            <div class="layout__body">
+              <div class="menu__items">
+                <div class="menu__item" data-accent="red">
+                  <div class="menu__item-title">
+                    Красный
+                  </div>
+                </div>
+                <div class="menu__item" data-accent="orange">
+                  <div class="menu__item-title">
+                    Оранжевый
+                  </div>
+                </div>
+                <div class="menu__item" data-accent="green">
+                  <div class="menu__item-title">
+                    Зеленый
                   </div>
                 </div>
               </div>
