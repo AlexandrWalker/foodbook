@@ -6,12 +6,119 @@
   justify-content: space-between;
   align-items: center;
   background: var(--preloader-bg-color);
-  padding: 4rem 0;
+  padding: 4rem 3.6rem;
   transform-origin: top center;
+  transition: opacity 0.6s ease, visibility 0.6s ease, all 0.5s ease;
 
   position: fixed;
   inset: 0;
   z-index: 9999;
+
+  &--active {
+
+    body {
+      overflow: hidden !important;
+      overscroll-behavior-y: none;
+      max-height: 100vh;
+    }
+  }
+
+  &.is-hidden {
+    opacity: 0;
+    transform: scaleY(0);
+    pointer-events: none;
+    transform: translateY(-100%);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    height: 100%;
+  }
+
+  &__wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: all 0.5s ease;
+    overflow: hidden;
+
+    .preloader--active & {
+      grid-template-rows: 1fr;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    overflow: hidden;
+  }
+
+  &__text {
+    text-align: center;
+
+    p {
+      font-size: 1.4rem;
+      color: var(--white);
+    }
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-width: 21.2rem;
+    width: 100%;
+  }
+
+  &__btn {
+    width: 100%;
+  }
+
+  &__lang {
+    flex-direction: row;
+    gap: 1rem;
+
+    &-img {
+      width: auto;
+      height: 1.9rem;
+      border-radius: 0.2rem;
+      overflow: hidden;
+
+      img {
+        width: auto;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0;
+
+      p {
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 100%;
+      }
+
+      i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1.2rem;
+        height: 1rem;
+
+        font-size: 2rem;
+      }
+    }
+  }
 }
 
 canvas {
@@ -20,5 +127,4 @@ canvas {
   height: 10.1rem;
   flex-shrink: 0;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  margin: auto 0;
 }

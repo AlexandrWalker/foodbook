@@ -70,12 +70,15 @@
       }
 
       &__search {
-        --form-label-span-color: #00021180;
-        --form-input-bg-color: var(--white);
 
         .form-input {
           height: 5.6rem;
           border: 0;
+          background-color: var(--layout-search-form-input-bg-color);
+
+          span {
+            color: var(--layout-search-form-label-span-color);
+          }
         }
       }
     }
@@ -256,7 +259,7 @@
       font-weight: 700;
       font-size: 1rem;
       line-height: 100%;
-      color: var(--white);
+      color: var(--layout-head-tag);
 
       i {
         font-size: 2rem;

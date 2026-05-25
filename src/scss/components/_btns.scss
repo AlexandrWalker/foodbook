@@ -33,11 +33,42 @@
   &--accent {
     --btn-color: #000211;
     --btn-background: #A1BB8C;
+
+    [dark] & {
+      --btn-color: #ffffff;
+      --btn-background: var(--accent);
+    }
+
+    [red] & {
+      --btn-background: #A1BB8C;
+    }
+
+    [orange] & {
+      --btn-color: var(--white);
+      --btn-background: var(--accent);
+    }
+
+    [green] & {
+      --btn-color: var(--white);
+      --btn-background: var(--accent);
+    }
   }
 
   &--accent-2 {
     --btn-color: #FFFFFF;
     --btn-background: #F64545;
+
+    [red] & {
+      --btn-background: #F64545;
+    }
+
+    [orange] & {
+      --btn-background: var(--accent);
+    }
+
+    [green] & {
+      --btn-background: var(--accent);
+    }
   }
 
   &--black-2 {
@@ -93,7 +124,7 @@
     font-weight: 700;
     font-size: 1rem;
     line-height: 100%;
-    color: var(--white);
+    color: #ffffff;
     text-align: center;
 
     position: absolute;

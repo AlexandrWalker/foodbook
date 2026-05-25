@@ -1,0 +1,37 @@
+@use './../mixins' as *;
+
+.demo {
+
+  .menu__item {
+
+    [light] & .menu__item[data-theme="light"],
+    &[data-theme="light"] {
+      --menu-item-title-color: #292929;
+      --menu-item-title-bg-color: #ffffff;
+    }
+
+    [dark] & .menu__item[data-theme="dark"],
+    &[data-theme="dark"] {
+      --menu-item-title-color: #ffffff;
+      --menu-item-title-bg-color: #292929;
+    }
+
+    [dark] & .menu__item[data-theme="dark"],
+    &[data-accent="red"] {
+      --menu-item-title-color: #ffffff;
+      --menu-item-title-bg-color: #F64545;
+    }
+
+    [dark] & .menu__item[data-theme="dark"],
+    &[data-accent="orange"] {
+      --menu-item-title-color: #ffffff;
+      --menu-item-title-bg-color: #E95322;
+    }
+
+    [dark] & .menu__item[data-theme="dark"],
+    &[data-accent="green"] {
+      --menu-item-title-color: #ffffff;
+      --menu-item-title-bg-color: #54A312;
+    }
+  }
+}

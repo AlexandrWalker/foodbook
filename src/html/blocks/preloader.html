@@ -1,6 +1,36 @@
-<div class="preloader">
-  <canvas id="logo-canvas" width="185" height="179"></canvas>
-  <div class="foodbook">
+<div id="preloader" class="preloader">
+  <div class="preloader__body">
+    <canvas id="logo-canvas" class="preloader__logo" width="185" height="179"></canvas>
+    <div class="preloader__wrap">
+      <div class="preloader__content">
+        <div class="preloader__text">
+          <p>
+            Зарегистрируйтесь или войдите в приложение что бы получать бонусы и скидки!
+          </p>
+        </div>
+        <div class="preloader__btns">
+          <button class="preloader__btn btn btn--white layout__btn--login" data-log="login" type="button">
+            Войти
+          </button>
+          <button class="preloader__btn btn btn--gray" type="button" data-popup-target="reg">
+            Регистрация
+          </button>
+          <button class="preloader__btn preloader__lang btn btn--gray" type="button" data-popup-target="language">
+            <div class="preloader__lang-img">
+              <img src="./../../images/temp/language-icon-ru.svg" alt="">
+            </div>
+            <div class="preloader__lang-text">
+              <p>
+                Русский
+              </p>
+              <i class="icon-chevron-right"></i>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preloader__foot foodbook">
     <img class="foodbook__img" src="./../../images/temp/foodbook.svg" alt="">
   </div>
 </div>
