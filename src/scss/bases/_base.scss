@@ -61,6 +61,22 @@ body {
   flex: 1 0 auto;
   padding-top: var(--header-height);
   padding-bottom: 18rem;
+
+  &>section {
+    margin-bottom: 2.4rem;
+
+    &.layout--first,
+    &.hero {
+      margin-bottom: 0;
+    }
+  }
+
+  &>.layout {
+
+    .layout__inner {
+      gap: 1.6rem;
+    }
+  }
 }
 
 .footer {
