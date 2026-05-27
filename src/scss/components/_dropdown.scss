@@ -69,6 +69,10 @@
     overflow: hidden;
     pointer-events: none;
 
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    scrollbar-gutter: stable;
+
     position: absolute;
     top: calc(100% + 0.2rem);
     left: 0;

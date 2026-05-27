@@ -34,10 +34,9 @@
   }
 
   &--success {
-    --popup-area-color: #FFFFFF80;
 
     .popup__wrap {
-      background-color: var(--blue);
+      background-color: var(--black);
     }
 
     .layout {

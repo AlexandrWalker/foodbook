@@ -84,7 +84,7 @@
     height: 100%;
     pointer-events: all;
     overflow: hidden;
-    background-color: var(--popup-bg-color);
+    background-color: var(--popup-wrap-bg);
     border-radius: 1.6rem 1.6rem 0 0;
 
     .is-under & {
@@ -115,7 +115,7 @@
       width: 5.6rem;
       height: 0.6rem;
       border-radius: 0.5rem;
-      background-color: var(--popup-area-color);
+      background-color: var(--popup-area-before-color);
       position: absolute;
       top: 1rem;
       left: 50%;
@@ -129,7 +129,7 @@
       width: 2.4rem;
       height: 2.4rem;
       border-radius: 50%;
-      background-color: var(--popup-area-close-color);
+      background-color: var(--black-20);
 
       font-size: 2.4rem;
       color: var(--white);
@@ -165,7 +165,7 @@
   width: 100%;
   height: 100vh;
   height: 100dvh;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--black-60);
   // backdrop-filter: blur(10.2px);
   pointer-events: none;
   opacity: 0;
