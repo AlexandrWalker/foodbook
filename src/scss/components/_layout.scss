@@ -471,7 +471,7 @@
     left: 0;
     z-index: 10;
 
-    height: 17rem;
+    height: calc(17rem + env(safe-area-inset-bottom, 20px));
     transform: translateY(100%);
     transition: transform 0.3s ease;
 
