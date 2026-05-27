@@ -53,14 +53,26 @@
       --btn-color: var(--white);
     }
 
+    [orange][dark] & {
+      --btn-color: var(--black);
+    }
+
     [green] & {
       --btn-color: var(--white);
+    }
+
+    [green][dark] & {
+      --btn-color: var(--black);
     }
   }
 
   &--accent-2 {
     --btn-color: var(--white);
     --btn-background: var(--accent-2);
+
+    [dark] & {
+      color: var(--black);
+    }
 
     // [red] & {
     //   --btn-background: #F64545;
@@ -132,6 +144,20 @@
 
     [dark] & {
       color: var(--black);
+    }
+
+    .login[red] .profile &,
+    .login[orange] .profile &,
+    .login[green] .profile & {
+      background-color: var(--white);
+      color: var(--black);
+    }
+
+    .login[red][dark] .profile &,
+    .login[orange][dark] .profile &,
+    .login[green][dark] .profile & {
+      background-color: var(--black);
+      color: var(--white);
     }
   }
 

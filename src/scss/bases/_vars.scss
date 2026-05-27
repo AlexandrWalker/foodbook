@@ -119,7 +119,7 @@
 
   // header
   --header-bg-color: var(--black);
-  --header-search-i-color: var(--black-50);
+  --header-search-i-color: var(--white);
   --header-points-bg-color: var(--black-10);
   --header-points-color: var(--white);
   --header-points-i-color: var(--accent);
@@ -385,14 +385,19 @@
   // layout
   --layout-card-content-color: var(--black);
   --layout-nav-item-color: var(--black);
+  --layout-nav-item-bg-color: var(--black-10);
   --layout-banner-link-i-color: var(--black);
   --layout-head-psevdoelement: rgb(26, 26, 26);
+  --layout-search-form-input-bg-color: var(--black-10);
+  --layout-first-btn-bg-color: var(--black-10);
+  --layout-first-btn-i-bg-color: var(--black-10);
 
   // header
   --header-search-i-color: var(--white);
 
   // nav
   --nav-item-active-icon-color: var(--black);
+  --nav-item-bg-color: var(--black-10);
 
   // scrollup
   --scrollup-btn-color: var(--black);
@@ -411,6 +416,7 @@
   // card
   --card-like-color-hover: var(--black);
   --card-bg-color: var(--base);
+  --card-border-color: var(--black-10);
   --card-item-i-bg-color: var(--base);
 
   // dish
@@ -441,6 +447,14 @@
   --accent-50: #F6454580;
 
   --accent-2: #A1BB8C;
+
+  --menu-item-icon-color: var(--white);
+  --menu-item-icon-bg-color: var(--accent);
+  --menu-item-icon-color-login: var(--white);
+
+  &[dark] {
+    --menu-item-icon-color-login: var(--black);
+  }
 }
 
 [orange] {
@@ -448,6 +462,14 @@
   --accent-50: #E9532280;
 
   --accent-2: #A1BB8C;
+
+  --menu-item-icon-color: var(--white);
+  --menu-item-icon-bg-color: var(--accent);
+  --menu-item-icon-color-login: var(--white);
+
+  &[dark] {
+    --menu-item-icon-color-login: var(--black);
+  }
 }
 
 [green] {
@@ -455,4 +477,12 @@
   --accent-50: #54A31280;
 
   --accent-2: #A1BB8C;
+
+  --menu-item-icon-color: var(--white);
+  --menu-item-icon-bg-color: var(--accent);
+  --menu-item-icon-color-login: var(--white);
+
+  &[dark] {
+    --menu-item-icon-color-login: var(--black);
+  }
 }

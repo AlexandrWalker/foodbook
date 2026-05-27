@@ -54,8 +54,7 @@ body {
   -webkit-box-flex: 1;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-  padding-top: var(--header-height);
-  padding-bottom: 18rem;
+  padding-bottom: calc(18rem - var(--panel-height));
 }
 
 .main > section {
@@ -152,16 +151,16 @@ li:last-child {
 @font-face {
   font-family: Inter;
   font-display: swap;
-  src: url("../fonts/Inter-ExtraBold.woff2") format("woff2"), url("../fonts/Inter-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/Inter-ExtraLight.woff2") format("woff2"), url("../fonts/Inter-ExtraLight.woff") format("woff");
+  font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
   font-family: Inter;
   font-display: swap;
-  src: url("../fonts/Inter-ExtraLight.woff2") format("woff2"), url("../fonts/Inter-ExtraLight.woff") format("woff");
-  font-weight: 200;
+  src: url("../fonts/Inter-ExtraBold.woff2") format("woff2"), url("../fonts/Inter-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -198,18 +197,18 @@ li:last-child {
 }
 
 @font-face {
-  font-family: Inter;
-  font-display: swap;
-  src: url("../fonts/Inter-Thin.woff2") format("woff2"), url("../fonts/Inter-Thin.woff") format("woff");
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
   font-family: Lobster;
   font-display: swap;
   src: url("../fonts/Lobster-Regular.woff2") format("woff2"), url("../fonts/Lobster-Regular.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  src: url("../fonts/Inter-Thin.woff2") format("woff2"), url("../fonts/Inter-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -749,7 +748,7 @@ body {
   --filter-item-text-color: var(--black-50);
   --filter-item-text-checked-color: var(--black);
   --header-bg-color: var(--black);
-  --header-search-i-color: var(--black-50);
+  --header-search-i-color: var(--white);
   --header-points-bg-color: var(--black-10);
   --header-points-color: var(--white);
   --header-points-i-color: var(--accent);
@@ -960,10 +959,15 @@ body {
   --popup-area-before-color: var(--black-50);
   --layout-card-content-color: var(--black);
   --layout-nav-item-color: var(--black);
+  --layout-nav-item-bg-color: var(--black-10);
   --layout-banner-link-i-color: var(--black);
   --layout-head-psevdoelement: rgb(26, 26, 26);
+  --layout-search-form-input-bg-color: var(--black-10);
+  --layout-first-btn-bg-color: var(--black-10);
+  --layout-first-btn-i-bg-color: var(--black-10);
   --header-search-i-color: var(--white);
   --nav-item-active-icon-color: var(--black);
+  --nav-item-bg-color: var(--black-10);
   --scrollup-btn-color: var(--black);
   --banners-link-title-color: var(--white);
   --afisha-i-color: var(--black);
@@ -972,6 +976,7 @@ body {
   --panel-inner-color: var(--white);
   --card-like-color-hover: var(--black);
   --card-bg-color: var(--base);
+  --card-border-color: var(--black-10);
   --card-item-i-bg-color: var(--base);
   --dish-layout-banner-link-i-bg-color: var(--black);
   --stories-overlay-bg-color: var(--white-60);
@@ -993,18 +998,39 @@ body {
   --accent: #F64545;
   --accent-50: #F6454580;
   --accent-2: #A1BB8C;
+  --menu-item-icon-color: var(--white);
+  --menu-item-icon-bg-color: var(--accent);
+  --menu-item-icon-color-login: var(--white);
+}
+
+[red][dark] {
+  --menu-item-icon-color-login: var(--black);
 }
 
 [orange] {
   --accent: #E95322;
   --accent-50: #E9532280;
   --accent-2: #A1BB8C;
+  --menu-item-icon-color: var(--white);
+  --menu-item-icon-bg-color: var(--accent);
+  --menu-item-icon-color-login: var(--white);
+}
+
+[orange][dark] {
+  --menu-item-icon-color-login: var(--black);
 }
 
 [green] {
   --accent: #54A312;
   --accent-50: #54A31280;
   --accent-2: #A1BB8C;
+  --menu-item-icon-color: var(--white);
+  --menu-item-icon-bg-color: var(--accent);
+  --menu-item-icon-color-login: var(--white);
+}
+
+[green][dark] {
+  --menu-item-icon-color-login: var(--black);
 }
 
 /* Components */
@@ -1057,13 +1083,25 @@ body {
   --btn-color: var(--white);
 }
 
+[orange][dark] .btn--accent {
+  --btn-color: var(--black);
+}
+
 [green] .btn--accent {
   --btn-color: var(--white);
+}
+
+[green][dark] .btn--accent {
+  --btn-color: var(--black);
 }
 
 .btn--accent-2 {
   --btn-color: var(--white);
   --btn-background: var(--accent-2);
+}
+
+[dark] .btn--accent-2 {
+  color: var(--black);
 }
 
 .btn--black {
@@ -1121,6 +1159,20 @@ body {
 
 [dark] .btn--count {
   color: var(--black);
+}
+
+.login[red] .profile .btn--count,
+.login[orange] .profile .btn--count,
+.login[green] .profile .btn--count {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.login[red][dark] .profile .btn--count,
+.login[orange][dark] .profile .btn--count,
+.login[green][dark] .profile .btn--count {
+  background-color: var(--black);
+  color: var(--white);
 }
 
 .btn__text {
@@ -4995,7 +5047,9 @@ p {
   -o-transition: top 0.5s ease;
   transition: top 0.5s ease;
   will-change: top;
-  position: fixed;
+  padding-top: env(safe-area-inset-top, 20px);
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
   right: 0;
   left: 0;
@@ -5506,11 +5560,12 @@ p {
   width: 100vw;
   width: 100dvw;
   pointer-events: none;
-  position: fixed;
-  top: 0;
+  padding-bottom: env(safe-area-inset-bottom, 20px);
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
   right: 0;
   left: 0;
-  bottom: 0;
   z-index: 500;
   z-index: 998;
 }

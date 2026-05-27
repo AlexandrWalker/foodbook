@@ -59,8 +59,9 @@ body {
 
 .main {
   flex: 1 0 auto;
-  padding-top: var(--header-height);
-  padding-bottom: 18rem;
+  // padding-top: var(--header-height);
+  // padding-bottom: 18rem;
+  padding-bottom: calc(18rem - var(--panel-height));
 
   &>section {
     margin-bottom: 2.4rem;

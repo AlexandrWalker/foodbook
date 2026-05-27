@@ -1040,8 +1040,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   })();
 
-  //
-
   /**
    * НАВИГАЦИОННЫЙ СЛАЙДЕР (nav__slider)
    * 
@@ -1153,8 +1151,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateActiveSlide(); // Выполняем при инициализации
   })();
 
-  //
-
   /**
    * СЛАЙДЕР БЛЮДА (layout__head-slider)
    * 
@@ -1208,8 +1204,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
-  //
-
   /**
    * LOGIN / LOGOUT
    * 
@@ -1238,8 +1232,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   })();
-
-  //
 
   /**
    * РЕГИСТРАЦИОННЫЙ КОД - ПОШАГОВЫЙ ВВОД
@@ -3094,6 +3086,9 @@ document.addEventListener('DOMContentLoaded', () => {
     else startOverlayPreloader();
   })();
 
+  /**
+   * Смена темы
+   */
   (function () {
     const light = document.querySelector('[data-theme="light"]');
     const dark = document.querySelector('[data-theme="dark"]');
@@ -3109,6 +3104,9 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })();
 
+  /**
+   * Смена акцентного цвета
+   */
   (function () {
     const first = document.querySelector('[data-accent="red"]');
     const second = document.querySelector('[data-accent="orange"]');

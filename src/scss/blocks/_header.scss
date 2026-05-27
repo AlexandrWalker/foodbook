@@ -7,8 +7,10 @@
   background-color: var(--header-bg-color);
   transition: top 0.5s ease;
   will-change: top;
+  padding-top: env(safe-area-inset-top, 20px);
 
-  position: fixed;
+  // position: fixed;
+  position: sticky;
   top: 0;
   right: 0;
   left: 0;
