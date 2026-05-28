@@ -34,4 +34,38 @@
       --menu-item-title-bg-color: #54A312;
     }
   }
+
+  .menu__item-title {
+    height: 5rem;
+  }
+
+  [red] & {
+
+    [data-accent="red"] {
+      
+      .menu__item-title {
+        border: 0.1rem solid var(--black);
+      }
+    }
+  }
+
+  [orange] & {
+
+    [data-accent="orange"] {
+
+      .menu__item-title {
+        border: 0.1rem solid var(--black);
+      }
+    }
+  }
+
+  [green] & {
+
+    [data-accent="green"] {
+
+      .menu__item-title {
+        border: 0.1rem solid var(--black);
+      }
+    }
+  }
 }
