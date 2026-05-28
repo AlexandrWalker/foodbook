@@ -27,6 +27,7 @@ html {
 body {
   min-width: 320px;
   background: var(--black);
+  background-color: var(--black);
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
 
