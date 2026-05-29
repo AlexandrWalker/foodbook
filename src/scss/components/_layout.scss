@@ -943,6 +943,8 @@
 
       &.active {
         background-color: var(--layout-nav-item-active-bg-color);
+
+        color: var(--layout-nav-item-active-color);
       }
     }
   }
