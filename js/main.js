@@ -763,6 +763,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const scrollParent = e.target.closest('[data-popup-scroll]');
       if (scrollParent && scrollParent.scrollTop > 0) return;
 
+      // Если касание началось внутри выпадашки с внутренним скроллом,
+      // свайп закрытия попапа игнорируем.
+      // Это позволяет свободно скроллить список, не закрывая окно.
+      const isInsideDropdownContainer = !!e.target.closest('.dropdown__container');
+      if (isInsideDropdownContainer) return;
+
       const startX = e.touches[0].clientX;
       const startY = e.touches[0].clientY;
       let lastY = startY;
