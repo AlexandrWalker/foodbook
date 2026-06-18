@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // На iOS scrollY иногда возвращает дробные пиксели.
       // window.pageYOffset - запасной вариант для IE11.
       const startY = Math.round(window.scrollY || window.pageYOffset || 0);
-      const safeTargetY = Math.round(targetY);
+      const safeTargetY = Math.max(0, Math.round(targetY));
       const delta = safeTargetY - startY;
 
       // Если уже на нужной позиции - сразу завершаем без запуска rAF.
@@ -132,11 +132,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         window.scrollTo(0, startY + delta * easeInOutCubic(progress));
 
-        if (progress < 1) {
+        const currentScrollY = window.scrollY || window.pageYOffset || 0;
+        const hitTop = delta < 0 && currentScrollY <= 0;
+
+        if (progress < 1 && !hitTop) {
           activeScrollRAF = requestAnimationFrame(step);
         } else {
+          if (hitTop) {
+            window.scrollTo(0, 0);
+          }
           activeScrollRAF = null;
-          removeScrollActive(); // Удаляем класс по окончании анимации
+          removeScrollActive();
           if (callback) callback();
         }
       }
