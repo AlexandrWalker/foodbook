@@ -2,13 +2,52 @@
 
 .platform {
 
+  .popup {
+
+    &__area {
+      --popup-area-before-color: var(--white-50);
+
+      transition: background-color 0.3s ease;
+
+      &::before {
+        transition: background-color 0.3s ease;
+      }
+
+      [dark] & {
+        --popup-area-before-color: var(--black-20);
+      }
+
+      z-index: 2;
+
+      &.popup__area--active {
+        --popup-area-before-color: var(--black-20);
+
+        background-color: var(--base);
+      }
+    }
+
+    &__inner {
+      margin-top: -3.6rem;
+
+      z-index: 1;
+    }
+  }
+
   .layout {
+
+    &__inner {
+      gap: 2rem;
+    }
 
     &__head {
 
       &-cover {
-        width: 100%;
+        // width: 100%;
         height: auto;
+
+        width: calc(100% + var(--container-padding) * 2);
+        margin-left: calc(var(--container-padding) * -1);
+        border-radius: 0;
 
         img {
           width: 100%;
@@ -18,6 +57,7 @@
     }
 
     &__block {
+      gap: 2rem;
 
       &-wrap {
 
@@ -27,6 +67,8 @@
       }
 
       &-text {
+        max-width: 100%;
+
         color: var(--layout-platform-block-text-color);
 
         &--accent {
@@ -41,12 +83,57 @@
           font-style: italic;
         }
 
-        a {
-          font-weight: 700;
-          color: var(--layout-platform-block-text-a-color);
+        &--contacts {
 
-          &:hover {
-            color: var(--layout-platform-block-text-accent-color);
+          & p:nth-child(1) {
+
+            a {
+              font-weight: 700;
+            }
+          }
+
+          a {
+            width: fit-content;
+            margin-left: 0;
+
+            font-weight: 400;
+            font-size: 1.2rem;
+            text-decoration: underline;
+
+            color: var(--layout-platform-block-text-a-color);
+
+            &:hover {
+              color: var(--layout-platform-block-text-accent-color);
+            }
+          }
+        }
+
+        p {
+
+          a {
+            margin-left: 0;
+
+            font-weight: 400;
+            font-size: 1.2rem;
+            text-decoration: none;
+            // font-weight: 700;
+            color: var(--layout-platform-block-text-a-color);
+
+            &:hover {
+              color: var(--layout-platform-block-text-accent-color);
+            }
+          }
+        }
+      }
+
+      &-social {
+        margin-top: 0;
+        gap: 1rem;
+
+        a:last-child {
+
+          i {
+            font-size: 3rem;
           }
         }
       }

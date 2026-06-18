@@ -13,6 +13,10 @@
 
   .layout {
 
+    &[data-popup-scroll] {
+      padding-bottom: calc(11rem + var(--panel-height));
+    }
+
     &__block {
 
       &-img {

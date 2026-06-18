@@ -152,8 +152,24 @@ li:last-child {
 @font-face {
   font-family: Inter;
   font-display: swap;
+  src: url("../fonts/Inter-Bold.woff2") format("woff2"), url("../fonts/Inter-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Inter;
+  font-display: swap;
   src: url("../fonts/Inter-ExtraLight.woff2") format("woff2"), url("../fonts/Inter-ExtraLight.woff") format("woff");
   font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  src: url("../fonts/Inter-Light.woff2") format("woff2"), url("../fonts/Inter-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -182,18 +198,18 @@ li:last-child {
 }
 
 @font-face {
-  font-family: Lobster;
-  font-display: swap;
-  src: url("../fonts/Lobster-Regular.woff2") format("woff2"), url("../fonts/Lobster-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
   font-family: Inter;
   font-display: swap;
   src: url("../fonts/Inter-Thin.woff2") format("woff2"), url("../fonts/Inter-Thin.woff") format("woff");
   font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Lobster;
+  font-display: swap;
+  src: url("../fonts/Lobster-Regular.woff2") format("woff2"), url("../fonts/Lobster-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -224,22 +240,6 @@ li:last-child {
 @font-face {
   font-family: PlayfairDisplay;
   font-display: swap;
-  src: url("../fonts/PlayfairDisplay-Regular.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Inter;
-  font-display: swap;
-  src: url("../fonts/Inter-Light.woff2") format("woff2"), url("../fonts/Inter-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: PlayfairDisplay;
-  font-display: swap;
   src: url("../fonts/PlayfairDisplay-Medium.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
@@ -248,8 +248,24 @@ li:last-child {
 @font-face {
   font-family: PlayfairDisplay;
   font-display: swap;
+  src: url("../fonts/PlayfairDisplay-Regular.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: PlayfairDisplay;
+  font-display: swap;
   src: url("../fonts/PlayfairDisplay-SemiBold.woff2") format("woff2"), url("../fonts/PlayfairDisplay-SemiBold.woff") format("woff");
   font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Poppins;
+  font-display: swap;
+  src: url("../fonts/Poppins-Black.woff2") format("woff2"), url("../fonts/Poppins-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -344,16 +360,16 @@ li:last-child {
 @font-face {
   font-family: SFPro;
   font-display: swap;
-  src: url("../fonts/SFPro-Medium.woff2") format("woff2"), url("../fonts/SFPro-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/SFPro-Light.woff2") format("woff2"), url("../fonts/SFPro-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Poppins;
+  font-family: SFPro;
   font-display: swap;
-  src: url("../fonts/Poppins-Black.woff2") format("woff2"), url("../fonts/Poppins-Black.woff") format("woff");
-  font-weight: 900;
+  src: url("../fonts/SFPro-Medium.woff2") format("woff2"), url("../fonts/SFPro-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -362,14 +378,6 @@ li:last-child {
   font-display: swap;
   src: url("../fonts/SFPro-Regular.woff2") format("woff2"), url("../fonts/SFPro-Regular.woff") format("woff");
   font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: SFPro;
-  font-display: swap;
-  src: url("../fonts/SFPro-Light.woff2") format("woff2"), url("../fonts/SFPro-Light.woff") format("woff");
-  font-weight: 300;
   font-style: normal;
 }
 
@@ -440,24 +448,8 @@ li:last-child {
 @font-face {
   font-family: TTTrailersTrial;
   font-display: swap;
-  src: url("../fonts/TTTrailersTrial-Regular.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: TTTrailersTrial;
-  font-display: swap;
-  src: url("../fonts/TTTrailersTrial-Thin.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Thin.woff") format("woff");
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Inter;
-  font-display: swap;
-  src: url("../fonts/Inter-Bold.woff2") format("woff2"), url("../fonts/Inter-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/TTTrailersTrial-Light.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -472,8 +464,16 @@ li:last-child {
 @font-face {
   font-family: TTTrailersTrial;
   font-display: swap;
-  src: url("../fonts/TTTrailersTrial-Light.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/TTTrailersTrial-Regular.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TTTrailersTrial;
+  font-display: swap;
+  src: url("../fonts/TTTrailersTrial-Thin.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -862,7 +862,7 @@ body {
   --layout-block-address-color: var(--black);
   --layout-block-address-link-color: var(--black);
   --layout-block-ps-color: var(--accent);
-  --layout-block-social-bg-color: var(--black);
+  --layout-block-social-bg-color: var(--white);
   --layout-block-social-color: var(--accent);
   --layout-time-bg-color: var(--white);
   --layout-time-border-color: var(--white);
@@ -1270,15 +1270,16 @@ body {
 .dropdown__label {
   display: block;
   width: 100%;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1.4rem;
   line-height: 120%;
   color: var(--dropdown-label-color);
   white-space: nowrap;
   cursor: pointer;
-  overflow: hidden;
-  -o-text-overflow: ellipsis;
-     text-overflow: ellipsis;
+}
+
+.filled .dropdown__label {
+  font-weight: 700;
 }
 
 .dropdown__container {
@@ -1362,29 +1363,34 @@ body {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 1.4rem;
   line-height: 120%;
   color: var(--form-input-color);
 }
 
 .form-input::-webkit-input-placeholder {
+  font-weight: 400;
   color: var(--form-input-ph-color);
 }
 
 .form-input::-moz-placeholder {
+  font-weight: 400;
   color: var(--form-input-ph-color);
 }
 
 .form-input:-ms-input-placeholder {
+  font-weight: 400;
   color: var(--form-input-ph-color);
 }
 
 .form-input::-ms-input-placeholder {
+  font-weight: 400;
   color: var(--form-input-ph-color);
 }
 
 .form-input::placeholder {
+  font-weight: 400;
   color: var(--form-input-ph-color);
 }
 
@@ -1873,7 +1879,8 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
   -ms-scroll-snap-type: x mandatory;
-  scroll-snap-type: x mandatory;
+  -webkit-scroll-snap-type: x mandatory;
+          scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -1961,7 +1968,8 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
   -ms-scroll-snap-type: x mandatory;
-  scroll-snap-type: x mandatory;
+  -webkit-scroll-snap-type: x mandatory;
+          scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding: 0 var(--container-padding);
   margin-left: calc(var(--container-padding) * -1);
@@ -2964,7 +2972,8 @@ html[lang=en] .layout__block-item[data-lang=en] {
   scrollbar-width: none;
   -ms-overflow-style: none;
   -ms-scroll-snap-type: x mandatory;
-  scroll-snap-type: x mandatory;
+  -webkit-scroll-snap-type: x mandatory;
+          scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   background-color: var(--base);
   padding: 0.5rem var(--container-padding);
@@ -4270,6 +4279,10 @@ p {
 
 .call .form-body {
   gap: 1.5rem;
+}
+
+.call .layout[data-popup-scroll] {
+  padding-bottom: calc(11rem + var(--panel-height));
 }
 
 .call .layout__block-img {
@@ -5604,12 +5617,14 @@ p {
   background: -o-linear-gradient(270.91deg, #000000 45.48%, rgba(0, 0, 0, 0) 86.33%);
   background: linear-gradient(179.09deg, #000000 45.48%, rgba(0, 0, 0, 0) 86.33%);
   pointer-events: none;
-  -webkit-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
   -webkit-transform: matrix(1, 0, 0, -1, 0, 0);
   -ms-transform: matrix(1, 0, 0, -1, 0, 0);
   transform: matrix(1, 0, 0, -1, 0, 0);
+  -webkit-transition: height 0.5s ease, opacity 0.5s ease, visibility 0.5s ease, -webkit-transform 0.5s ease;
+  transition: height 0.5s ease, opacity 0.5s ease, visibility 0.5s ease, -webkit-transform 0.5s ease;
+  -o-transition: height 0.5s ease, transform 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
+  transition: height 0.5s ease, transform 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
+  transition: height 0.5s ease, transform 0.5s ease, opacity 0.5s ease, visibility 0.5s ease, -webkit-transform 0.5s ease;
   position: absolute;
   top: auto;
   right: 0;
@@ -5621,6 +5636,14 @@ p {
   height: 8.5rem;
 }
 
+.scroll-active .panel::before {
+  -webkit-transform: translateY(150%);
+  -ms-transform: translateY(150%);
+  transform: translateY(150%);
+  opacity: 0;
+  visibility: hidden;
+}
+
 .panel__inner {
   width: 100%;
   background-repeat: no-repeat;
@@ -5630,6 +5653,19 @@ p {
   height: var(--panel-height);
   pointer-events: all;
   border-radius: 2.4rem 2.4rem 0 0;
+  -webkit-transition: opacity 0.5s ease, visibility 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, visibility 0.5s ease, -webkit-transform 0.5s ease;
+  -o-transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.scroll-active .panel__inner {
+  -webkit-transform: translateY(150%);
+  -ms-transform: translateY(150%);
+  transform: translateY(150%);
+  opacity: 0;
+  visibility: hidden;
 }
 
 .panel__btns {
@@ -5834,9 +5870,46 @@ p {
   color: var(--plate-content-btn-color);
 }
 
+.platform .popup__area {
+  --popup-area-before-color: var(--white-50);
+  -webkit-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+.platform .popup__area::before {
+  -webkit-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+[dark] .platform .popup__area {
+  --popup-area-before-color: var(--black-20);
+}
+
+.platform .popup__area {
+  z-index: 2;
+}
+
+.platform .popup__area.popup__area--active {
+  --popup-area-before-color: var(--black-20);
+  background-color: var(--base);
+}
+
+.platform .popup__inner {
+  margin-top: -3.6rem;
+  z-index: 1;
+}
+
+.platform .layout__inner {
+  gap: 2rem;
+}
+
 .platform .layout__head-cover {
-  width: 100%;
   height: auto;
+  width: calc(100% + var(--container-padding) * 2);
+  margin-left: calc(var(--container-padding) * -1);
+  border-radius: 0;
 }
 
 .platform .layout__head-cover img {
@@ -5844,11 +5917,16 @@ p {
   height: auto;
 }
 
+.platform .layout__block {
+  gap: 2rem;
+}
+
 .platform .layout__block-wrap p {
   font-size: 1.2rem;
 }
 
 .platform .layout__block-text {
+  max-width: 100%;
   color: var(--layout-platform-block-text-color);
 }
 
@@ -5864,13 +5942,44 @@ p {
   font-style: italic;
 }
 
-.platform .layout__block-text a {
+.platform .layout__block-text--contacts p:nth-child(1) a {
   font-weight: 700;
+}
+
+.platform .layout__block-text--contacts a {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: 0;
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-decoration: underline;
   color: var(--layout-platform-block-text-a-color);
 }
 
-.platform .layout__block-text a:hover {
+.platform .layout__block-text--contacts a:hover {
   color: var(--layout-platform-block-text-accent-color);
+}
+
+.platform .layout__block-text p a {
+  margin-left: 0;
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: var(--layout-platform-block-text-a-color);
+}
+
+.platform .layout__block-text p a:hover {
+  color: var(--layout-platform-block-text-accent-color);
+}
+
+.platform .layout__block-social {
+  margin-top: 0;
+  gap: 1rem;
+}
+
+.platform .layout__block-social a:last-child i {
+  font-size: 3rem;
 }
 
 .platform .layout__list li {
@@ -6708,7 +6817,8 @@ canvas {
   scrollbar-width: none;
   -ms-overflow-style: none;
   -ms-scroll-snap-type: x mandatory;
-  scroll-snap-type: x mandatory;
+  -webkit-scroll-snap-type: x mandatory;
+          scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scroll-padding-left: var(--container-padding);
   padding: 0.3rem var(--container-padding);
@@ -6831,7 +6941,8 @@ canvas {
   scrollbar-width: none;
   -ms-overflow-style: none;
   -ms-scroll-snap-type: x mandatory;
-  scroll-snap-type: x mandatory;
+  -webkit-scroll-snap-type: x mandatory;
+          scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding: 0.3rem var(--container-padding);
   margin-left: calc(var(--container-padding) * -1);
@@ -6960,7 +7071,8 @@ canvas {
   -ms-overflow-style: none;
   scroll-behavior: smooth;
   -ms-scroll-snap-type: x mandatory;
-  scroll-snap-type: x mandatory;
+  -webkit-scroll-snap-type: x mandatory;
+          scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding: 0 var(--container-padding);
   margin-left: calc(var(--container-padding) * -1);
