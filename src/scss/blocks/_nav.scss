@@ -46,8 +46,9 @@
       height: 8.7rem;
       border-radius: 3rem;
       background-color: var(--nav-item-bg-color);
-      transition: all 0.5s ease;
+      transition: background-color 0.5s ease, color 0.5s ease;
       flex-shrink: 0;
+      will-change: background-color, color;
 
       font-size: 5rem;
       color: var(--nav-item-icon-color);
@@ -62,6 +63,11 @@
         width: auto;
         height: 100%;
         object-fit: contain;
+      }
+
+      i {
+        transition: color 0.5s ease;
+        will-change: color;
       }
     }
 

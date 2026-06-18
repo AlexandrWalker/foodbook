@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Глобальные константы
   // Длительность плавного скролла страницы (мс) - используется в smoothScrollTo
-  const SCROLL_DURATION = 1500;
+  const SCROLL_DURATION = 1000;
   // const NAV_HEIGHT_REM = 16.5;
   const NAV_HEIGHT_REM = 20;
 
