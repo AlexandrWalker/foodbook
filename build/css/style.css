@@ -160,14 +160,6 @@ li:last-child {
 @font-face {
   font-family: Inter;
   font-display: swap;
-  src: url("../fonts/Inter-ExtraLight.woff2") format("woff2"), url("../fonts/Inter-ExtraLight.woff") format("woff");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Inter;
-  font-display: swap;
   src: url("../fonts/Inter-Light.woff2") format("woff2"), url("../fonts/Inter-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
@@ -176,8 +168,8 @@ li:last-child {
 @font-face {
   font-family: Inter;
   font-display: swap;
-  src: url("../fonts/Inter-Medium.woff2") format("woff2"), url("../fonts/Inter-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/Inter-ExtraLight.woff2") format("woff2"), url("../fonts/Inter-ExtraLight.woff") format("woff");
+  font-weight: 200;
   font-style: normal;
 }
 
@@ -194,14 +186,6 @@ li:last-child {
   font-display: swap;
   src: url("../fonts/Inter-SemiBold.woff2") format("woff2"), url("../fonts/Inter-SemiBold.woff") format("woff");
   font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Inter;
-  font-display: swap;
-  src: url("../fonts/Inter-Thin.woff2") format("woff2"), url("../fonts/Inter-Thin.woff") format("woff");
-  font-weight: 100;
   font-style: normal;
 }
 
@@ -406,6 +390,14 @@ li:last-child {
 }
 
 @font-face {
+  font-family: Inter;
+  font-display: swap;
+  src: url("../fonts/Inter-Medium.woff2") format("woff2"), url("../fonts/Inter-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
   font-family: TTTrailersTrial;
   font-display: swap;
   src: url("../fonts/TTTrailersTrial-Black.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Black.woff") format("woff");
@@ -430,10 +422,10 @@ li:last-child {
 }
 
 @font-face {
-  font-family: TTTrailersTrial;
+  font-family: Inter;
   font-display: swap;
-  src: url("../fonts/TTTrailersTrial-ExtraBold.woff2") format("woff2"), url("../fonts/TTTrailersTrial-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/Inter-Thin.woff2") format("woff2"), url("../fonts/Inter-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -442,22 +434,6 @@ li:last-child {
   font-display: swap;
   src: url("../fonts/TTTrailersTrial-ExtraLight.woff2") format("woff2"), url("../fonts/TTTrailersTrial-ExtraLight.woff") format("woff");
   font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: TTTrailersTrial;
-  font-display: swap;
-  src: url("../fonts/TTTrailersTrial-Light.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: TTTrailersTrial;
-  font-display: swap;
-  src: url("../fonts/TTTrailersTrial-Medium.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Medium.woff") format("woff");
-  font-weight: 500;
   font-style: normal;
 }
 
@@ -474,6 +450,30 @@ li:last-child {
   font-display: swap;
   src: url("../fonts/TTTrailersTrial-Thin.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Thin.woff") format("woff");
   font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TTTrailersTrial;
+  font-display: swap;
+  src: url("../fonts/TTTrailersTrial-ExtraBold.woff2") format("woff2"), url("../fonts/TTTrailersTrial-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TTTrailersTrial;
+  font-display: swap;
+  src: url("../fonts/TTTrailersTrial-Light.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TTTrailersTrial;
+  font-display: swap;
+  src: url("../fonts/TTTrailersTrial-Medium.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -1001,7 +1001,7 @@ body {
 [red] {
   --accent: #F64545;
   --accent-50: #F6454580;
-  --accent-2: #A1BB8C;
+  --accent-2: #F64545;
   --menu-item-icon-color: var(--white);
   --menu-item-icon-bg-color: var(--accent);
   --menu-item-icon-color-login: var(--white);
@@ -1014,7 +1014,7 @@ body {
 [orange] {
   --accent: #E95322;
   --accent-50: #E9532280;
-  --accent-2: #A1BB8C;
+  --accent-2: #E95322;
   --menu-item-icon-color: var(--white);
   --menu-item-icon-bg-color: var(--accent);
   --menu-item-icon-color-login: var(--white);
@@ -4688,7 +4688,7 @@ p {
 
 .client-service .menu__item-title {
   font-family: var(--font-family);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.6rem;
   line-height: 100%;
 }
@@ -4946,7 +4946,7 @@ p {
 }
 
 .favorite .card__like i::before {
-  content: "\e93e";
+  content: "\e941";
 }
 
 .filter .layout__inner {
@@ -5601,10 +5601,8 @@ p {
   align-items: flex-end;
   width: 100%;
   pointer-events: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
+  position: -webkit-sticky;
+  position: sticky;
   bottom: 0;
   z-index: 500;
   z-index: 998;
