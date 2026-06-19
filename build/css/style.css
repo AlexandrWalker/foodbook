@@ -144,16 +144,24 @@ li:last-child {
 @font-face {
   font-family: Inter;
   font-display: swap;
-  src: url("../fonts/Inter-Bold.woff2") format("woff2"), url("../fonts/Inter-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Inter-ExtraBold.woff2") format("woff2"), url("../fonts/Inter-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
   font-family: Inter;
   font-display: swap;
-  src: url("../fonts/Inter-ExtraBold.woff2") format("woff2"), url("../fonts/Inter-ExtraBold.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/Inter-ExtraLight.woff2") format("woff2"), url("../fonts/Inter-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  src: url("../fonts/Inter-Bold.woff2") format("woff2"), url("../fonts/Inter-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -168,8 +176,8 @@ li:last-child {
 @font-face {
   font-family: Inter;
   font-display: swap;
-  src: url("../fonts/Inter-ExtraLight.woff2") format("woff2"), url("../fonts/Inter-ExtraLight.woff") format("woff");
-  font-weight: 200;
+  src: url("../fonts/Inter-Medium.woff2") format("woff2"), url("../fonts/Inter-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -190,10 +198,10 @@ li:last-child {
 }
 
 @font-face {
-  font-family: Lobster;
+  font-family: Inter;
   font-display: swap;
-  src: url("../fonts/Lobster-Regular.woff2") format("woff2"), url("../fonts/Lobster-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/Inter-Thin.woff2") format("woff2"), url("../fonts/Inter-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -202,6 +210,14 @@ li:last-child {
   font-display: swap;
   src: url("../fonts/PlayfairDisplay-Black.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Black.woff") format("woff");
   font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Lobster;
+  font-display: swap;
+  src: url("../fonts/Lobster-Regular.woff2") format("woff2"), url("../fonts/Lobster-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -390,14 +406,6 @@ li:last-child {
 }
 
 @font-face {
-  font-family: Inter;
-  font-display: swap;
-  src: url("../fonts/Inter-Medium.woff2") format("woff2"), url("../fonts/Inter-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
   font-family: TTTrailersTrial;
   font-display: swap;
   src: url("../fonts/TTTrailersTrial-Black.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Black.woff") format("woff");
@@ -422,10 +430,10 @@ li:last-child {
 }
 
 @font-face {
-  font-family: Inter;
+  font-family: TTTrailersTrial;
   font-display: swap;
-  src: url("../fonts/Inter-Thin.woff2") format("woff2"), url("../fonts/Inter-Thin.woff") format("woff");
-  font-weight: 100;
+  src: url("../fonts/TTTrailersTrial-ExtraBold.woff2") format("woff2"), url("../fonts/TTTrailersTrial-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -434,30 +442,6 @@ li:last-child {
   font-display: swap;
   src: url("../fonts/TTTrailersTrial-ExtraLight.woff2") format("woff2"), url("../fonts/TTTrailersTrial-ExtraLight.woff") format("woff");
   font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: TTTrailersTrial;
-  font-display: swap;
-  src: url("../fonts/TTTrailersTrial-Regular.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: TTTrailersTrial;
-  font-display: swap;
-  src: url("../fonts/TTTrailersTrial-Thin.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Thin.woff") format("woff");
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: TTTrailersTrial;
-  font-display: swap;
-  src: url("../fonts/TTTrailersTrial-ExtraBold.woff2") format("woff2"), url("../fonts/TTTrailersTrial-ExtraBold.woff") format("woff");
-  font-weight: 800;
   font-style: normal;
 }
 
@@ -474,6 +458,22 @@ li:last-child {
   font-display: swap;
   src: url("../fonts/TTTrailersTrial-Medium.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Medium.woff") format("woff");
   font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TTTrailersTrial;
+  font-display: swap;
+  src: url("../fonts/TTTrailersTrial-Regular.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TTTrailersTrial;
+  font-display: swap;
+  src: url("../fonts/TTTrailersTrial-Thin.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -5601,11 +5601,21 @@ p {
   align-items: flex-end;
   width: 100%;
   pointer-events: none;
+  -webkit-transition: bottom 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
+  -o-transition: bottom 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
+  transition: bottom 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
+  height: 0;
   z-index: 500;
   z-index: 998;
+}
+
+.scroll-active .panel {
+  bottom: calc(var(--panel-height) * 2 * -1);
+  opacity: 0;
+  visibility: hidden;
 }
 
 .panel * {
@@ -5640,14 +5650,6 @@ p {
   height: 8.5rem;
 }
 
-.scroll-active .panel::before {
-  -webkit-transform: translateY(150%);
-  -ms-transform: translateY(150%);
-  transform: translateY(150%);
-  opacity: 0;
-  visibility: hidden;
-}
-
 .panel__inner {
   width: 100%;
   background-repeat: no-repeat;
@@ -5663,14 +5665,6 @@ p {
   -o-transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
   transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
   transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s ease, -webkit-transform 0.5s ease;
-}
-
-.scroll-active .panel__inner {
-  -webkit-transform: translateY(150%);
-  -ms-transform: translateY(150%);
-  transform: translateY(150%);
-  opacity: 0;
-  visibility: hidden;
 }
 
 .panel__btns {

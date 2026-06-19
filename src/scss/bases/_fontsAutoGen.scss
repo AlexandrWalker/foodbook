@@ -8,15 +8,22 @@
 @font-face {
 	font-family: Inter;
 	font-display: swap;
-	src: url("../fonts/Inter-Bold.woff2") format("woff2"), url("../fonts/Inter-Bold.woff") format("woff");
-	font-weight: 700;
+	src: url("../fonts/Inter-ExtraBold.woff2") format("woff2"), url("../fonts/Inter-ExtraBold.woff") format("woff");
+	font-weight: 800;
 	font-style: normal;
 }
 @font-face {
 	font-family: Inter;
 	font-display: swap;
-	src: url("../fonts/Inter-ExtraBold.woff2") format("woff2"), url("../fonts/Inter-ExtraBold.woff") format("woff");
-	font-weight: 800;
+	src: url("../fonts/Inter-ExtraLight.woff2") format("woff2"), url("../fonts/Inter-ExtraLight.woff") format("woff");
+	font-weight: 200;
+	font-style: normal;
+}
+@font-face {
+	font-family: Inter;
+	font-display: swap;
+	src: url("../fonts/Inter-Bold.woff2") format("woff2"), url("../fonts/Inter-Bold.woff") format("woff");
+	font-weight: 700;
 	font-style: normal;
 }
 @font-face {
@@ -29,8 +36,8 @@
 @font-face {
 	font-family: Inter;
 	font-display: swap;
-	src: url("../fonts/Inter-ExtraLight.woff2") format("woff2"), url("../fonts/Inter-ExtraLight.woff") format("woff");
-	font-weight: 200;
+	src: url("../fonts/Inter-Medium.woff2") format("woff2"), url("../fonts/Inter-Medium.woff") format("woff");
+	font-weight: 500;
 	font-style: normal;
 }
 @font-face {
@@ -48,10 +55,10 @@
 	font-style: normal;
 }
 @font-face {
-	font-family: Lobster;
+	font-family: Inter;
 	font-display: swap;
-	src: url("../fonts/Lobster-Regular.woff2") format("woff2"), url("../fonts/Lobster-Regular.woff") format("woff");
-	font-weight: 400;
+	src: url("../fonts/Inter-Thin.woff2") format("woff2"), url("../fonts/Inter-Thin.woff") format("woff");
+	font-weight: 100;
 	font-style: normal;
 }
 @font-face {
@@ -59,6 +66,13 @@
 	font-display: swap;
 	src: url("../fonts/PlayfairDisplay-Black.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Black.woff") format("woff");
 	font-weight: 900;
+	font-style: normal;
+}
+@font-face {
+	font-family: Lobster;
+	font-display: swap;
+	src: url("../fonts/Lobster-Regular.woff2") format("woff2"), url("../fonts/Lobster-Regular.woff") format("woff");
+	font-weight: 400;
 	font-style: normal;
 }
 @font-face {
@@ -223,13 +237,6 @@
 	font-style: normal;
 }
 @font-face {
-	font-family: Inter;
-	font-display: swap;
-	src: url("../fonts/Inter-Medium.woff2") format("woff2"), url("../fonts/Inter-Medium.woff") format("woff");
-	font-weight: 500;
-	font-style: normal;
-}
-@font-face {
 	font-family: TTTrailersTrial;
 	font-display: swap;
 	src: url("../fonts/TTTrailersTrial-Black.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Black.woff") format("woff");
@@ -251,10 +258,10 @@
 	font-style: normal;
 }
 @font-face {
-	font-family: Inter;
+	font-family: TTTrailersTrial;
 	font-display: swap;
-	src: url("../fonts/Inter-Thin.woff2") format("woff2"), url("../fonts/Inter-Thin.woff") format("woff");
-	font-weight: 100;
+	src: url("../fonts/TTTrailersTrial-ExtraBold.woff2") format("woff2"), url("../fonts/TTTrailersTrial-ExtraBold.woff") format("woff");
+	font-weight: 800;
 	font-style: normal;
 }
 @font-face {
@@ -262,27 +269,6 @@
 	font-display: swap;
 	src: url("../fonts/TTTrailersTrial-ExtraLight.woff2") format("woff2"), url("../fonts/TTTrailersTrial-ExtraLight.woff") format("woff");
 	font-weight: 200;
-	font-style: normal;
-}
-@font-face {
-	font-family: TTTrailersTrial;
-	font-display: swap;
-	src: url("../fonts/TTTrailersTrial-Regular.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Regular.woff") format("woff");
-	font-weight: 400;
-	font-style: normal;
-}
-@font-face {
-	font-family: TTTrailersTrial;
-	font-display: swap;
-	src: url("../fonts/TTTrailersTrial-Thin.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Thin.woff") format("woff");
-	font-weight: 100;
-	font-style: normal;
-}
-@font-face {
-	font-family: TTTrailersTrial;
-	font-display: swap;
-	src: url("../fonts/TTTrailersTrial-ExtraBold.woff2") format("woff2"), url("../fonts/TTTrailersTrial-ExtraBold.woff") format("woff");
-	font-weight: 800;
 	font-style: normal;
 }
 @font-face {
@@ -297,5 +283,19 @@
 	font-display: swap;
 	src: url("../fonts/TTTrailersTrial-Medium.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Medium.woff") format("woff");
 	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: TTTrailersTrial;
+	font-display: swap;
+	src: url("../fonts/TTTrailersTrial-Regular.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: TTTrailersTrial;
+	font-display: swap;
+	src: url("../fonts/TTTrailersTrial-Thin.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Thin.woff") format("woff");
+	font-weight: 100;
 	font-style: normal;
 }

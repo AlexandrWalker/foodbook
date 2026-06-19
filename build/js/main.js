@@ -31,183 +31,183 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   })();
 
-/**
- * Плавный программный скролл страницы.
- *
- * Запускает анимацию через requestAnimationFrame.
- * Каждый кадр двигает страницу чуть ближе к цели по S-кривой easeInOutCubic.
- * Когда прогресс достигает 1 - анимация завершена, вызывается callback.
- *
- * Используем свою анимацию вместо behavior: smooth потому что:
- * - нативный не поддерживает кастомную длительность
- * - нативный нельзя прервать при повторном клике
- * - нативный не поддерживает callback по завершении
- *
- * @param {number}   targetY - целевая позиция скролла в px от верха
- * @param {Function} [callback] - вызывается когда анимация завершена
- */
-(function () {
-  let activeScrollRAF = null;
-  let userScrollTimeout = null; // Таймер для отслеживания остановки ручного скролла
-  const htmlEl = document.documentElement; // Ссылка на тег <html>
-  let passiveSupported = false;
-  try {
-    const testOptions = Object.defineProperty({}, 'passive', {
-      get: function () {
-        passiveSupported = true;
-      }
-    });
-    window.addEventListener('test', null, testOptions);
-    window.removeEventListener('test', null, testOptions);
-  } catch (e) {
-    passiveSupported = false;
-  }
-
-  const passiveOption = passiveSupported ? { passive: true } : false;
-
-  // Включаем класс scroll-active
-  function setScrollActive() {
-    htmlEl.classList.add('scroll-active');
-  }
-
-  // Выключаем класс scroll-active
-  function removeScrollActive() {
-    htmlEl.classList.remove('scroll-active');
-  }
-
-  // S-образная кривая: медленный старт, быстрая середина, мягкое торможение.
-  // Вынесена за пределы smoothScrollTo чтобы не пересоздавалась при каждом вызове.
-  // t - прогресс от 0 до 1.
-  function easeInOutCubic(t) {
-    return t < 0.5
-      ? 4 * t * t * t
-      : 1 - Math.pow(-2 * t + 2, 3) / 2;
-  }
-
-  // Плавный программный скролл страницы.
-  // Запускает анимацию через requestAnimationFrame.
-  // Каждый кадр двигает страницу чуть ближе к цели по кривой easeInOutCubic.
-  // Когда прогресс достигает 1 - анимация завершена, вызывается callback.
-  //
-  // @param {number}   targetY     - целевая позиция в px от верха страницы
-  // @param {number}   [duration]  - длительность анимации в мс
-  // @param {Function} [callback]  - вызывается когда анимация завершена
-  function smoothScrollTo(targetY, duration, callback) {
-    duration = typeof duration === 'number' ? duration : SCROLL_DURATION;
-
-    // Отменяем предыдущую анимацию если она ещё идёт.
-    // Без этого при двойном клике запустятся две петли rAF одновременно
-    // и скролл будет дёргаться.
-    if (activeScrollRAF !== null) {
-      cancelAnimationFrame(activeScrollRAF);
-      activeScrollRAF = null;
-    }
-
-    // Оба значения округляем чтобы delta была целочисленной.
-    // На iOS scrollY иногда возвращает дробные пиксели.
-    // window.pageYOffset - запасной вариант для IE11.
-    const startY = Math.round(window.scrollY || window.pageYOffset || 0);
-    const safeTargetY = Math.max(0, Math.round(targetY));
-    const delta = safeTargetY - startY;
-
-    // Если уже на нужной позиции - сразу завершаем без запуска rAF.
-    if (Math.abs(delta) < 1) {
-      if (callback) callback();
-      return;
-    }
-
-    // Включаем класс перед стартом анимации
-    setScrollActive();
-
-    // performance.now() точнее чем Date.now() и не зависит от системного времени.
-    const startTime = performance.now();
-
-    // Один кадр анимации.
-    // Браузер передаёт текущее время now (DOMHighResTimeStamp).
-    function step(now) {
-      const elapsed = now - startTime;
-
-      // Math.min защищает от перелёта если кадр запоздал.
-      const progress = Math.min(elapsed / duration, 1);
-
-      window.scrollTo(0, startY + delta * easeInOutCubic(progress));
-
-      const currentScrollY = window.scrollY || window.pageYOffset || 0;
-      const hitTop = delta < 0 && currentScrollY <= 0;
-
-      if (progress < 1 && !hitTop) {
-        activeScrollRAF = requestAnimationFrame(step);
-      } else {
-        if (hitTop) {
-          window.scrollTo(0, 0);
+  /**
+   * Плавный программный скролл страницы.
+   *
+   * Запускает анимацию через requestAnimationFrame.
+   * Каждый кадр двигает страницу чуть ближе к цели по S-кривой easeInOutCubic.
+   * Когда прогресс достигает 1 - анимация завершена, вызывается callback.
+   *
+   * Используем свою анимацию вместо behavior: smooth потому что:
+   * - нативный не поддерживает кастомную длительность
+   * - нативный нельзя прервать при повторном клике
+   * - нативный не поддерживает callback по завершении
+   *
+   * @param {number}   targetY - целевая позиция скролла в px от верха
+   * @param {Function} [callback] - вызывается когда анимация завершена
+   */
+  (function () {
+    let activeScrollRAF = null;
+    let userScrollTimeout = null; // Таймер для отслеживания остановки ручного скролла
+    const htmlEl = document.documentElement; // Ссылка на тег <html>
+    let passiveSupported = false;
+    try {
+      const testOptions = Object.defineProperty({}, 'passive', {
+        get: function () {
+          passiveSupported = true;
         }
+      });
+      window.addEventListener('test', null, testOptions);
+      window.removeEventListener('test', null, testOptions);
+    } catch (e) {
+      passiveSupported = false;
+    }
+
+    const passiveOption = passiveSupported ? { passive: true } : false;
+
+    // Включаем класс scroll-active
+    function setScrollActive() {
+      htmlEl.classList.add('scroll-active');
+    }
+
+    // Выключаем класс scroll-active
+    function removeScrollActive() {
+      htmlEl.classList.remove('scroll-active');
+    }
+
+    // S-образная кривая: медленный старт, быстрая середина, мягкое торможение.
+    // Вынесена за пределы smoothScrollTo чтобы не пересоздавалась при каждом вызове.
+    // t - прогресс от 0 до 1.
+    function easeInOutCubic(t) {
+      return t < 0.5
+        ? 4 * t * t * t
+        : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+
+    // Плавный программный скролл страницы.
+    // Запускает анимацию через requestAnimationFrame.
+    // Каждый кадр двигает страницу чуть ближе к цели по кривой easeInOutCubic.
+    // Когда прогресс достигает 1 - анимация завершена, вызывается callback.
+    //
+    // @param {number}   targetY     - целевая позиция в px от верха страницы
+    // @param {number}   [duration]  - длительность анимации в мс
+    // @param {Function} [callback]  - вызывается когда анимация завершена
+    function smoothScrollTo(targetY, duration, callback) {
+      duration = typeof duration === 'number' ? duration : SCROLL_DURATION;
+
+      // Отменяем предыдущую анимацию если она ещё идёт.
+      // Без этого при двойном клике запустятся две петли rAF одновременно
+      // и скролл будет дёргаться.
+      if (activeScrollRAF !== null) {
+        cancelAnimationFrame(activeScrollRAF);
         activeScrollRAF = null;
-        removeScrollActive();
+      }
+
+      // Оба значения округляем чтобы delta была целочисленной.
+      // На iOS scrollY иногда возвращает дробные пиксели.
+      // window.pageYOffset - запасной вариант для IE11.
+      const startY = Math.round(window.scrollY || window.pageYOffset || 0);
+      const safeTargetY = Math.max(0, Math.round(targetY));
+      const delta = safeTargetY - startY;
+
+      // Если уже на нужной позиции - сразу завершаем без запуска rAF.
+      if (Math.abs(delta) < 1) {
         if (callback) callback();
+        return;
+      }
+
+      // Включаем класс перед стартом анимации
+      setScrollActive();
+
+      // performance.now() точнее чем Date.now() и не зависит от системного времени.
+      const startTime = performance.now();
+
+      // Один кадр анимации.
+      // Браузер передаёт текущее время now (DOMHighResTimeStamp).
+      function step(now) {
+        const elapsed = now - startTime;
+
+        // Math.min защищает от перелёта если кадр запоздал.
+        const progress = Math.min(elapsed / duration, 1);
+
+        window.scrollTo(0, startY + delta * easeInOutCubic(progress));
+
+        const currentScrollY = window.scrollY || window.pageYOffset || 0;
+        const hitTop = delta < 0 && currentScrollY <= 0;
+
+        if (progress < 1 && !hitTop) {
+          activeScrollRAF = requestAnimationFrame(step);
+        } else {
+          if (hitTop) {
+            window.scrollTo(0, 0);
+          }
+          activeScrollRAF = null;
+          removeScrollActive();
+          if (callback) callback();
+        }
+      }
+
+      activeScrollRAF = requestAnimationFrame(step);
+    }
+
+    // Прерываем программный скролл если пользователь сам начал скроллить.
+    // Иначе анимация конфликтует с пальцем на сенсоре или колесом мыши.
+    function cancelActiveScroll() {
+      if (activeScrollRAF !== null) {
+        cancelAnimationFrame(activeScrollRAF);
+        activeScrollRAF = null;
       }
     }
 
-    activeScrollRAF = requestAnimationFrame(step);
-  }
+    // Обработчик для ручного скролла пользователя (скролл мышью, тачпадом, swipe)
+    function handleUserScroll() {
+      setScrollActive();
 
-  // Прерываем программный скролл если пользователь сам начал скроллить.
-  // Иначе анимация конфликтует с пальцем на сенсоре или колесом мыши.
-  function cancelActiveScroll() {
-    if (activeScrollRAF !== null) {
-      cancelAnimationFrame(activeScrollRAF);
-      activeScrollRAF = null;
-    }
-  }
-
-  // Обработчик для ручного скролла пользователя (скролл мышью, тачпадом, swipe)
-  function handleUserScroll() {
-    setScrollActive();
-
-    // Сбрасываем предыдущий таймер остановки
-    if (userScrollTimeout) {
-      clearTimeout(userScrollTimeout);
-    }
-
-    // Если в течение 100мс событий скролла нет — считаем, что скролл остановлен
-    userScrollTimeout = setTimeout(function () {
-      // Проверяем, не запущена ли в этот момент программная анимация
-      if (activeScrollRAF === null) {
-        removeScrollActive();
+      // Сбрасываем предыдущий таймер остановки
+      if (userScrollTimeout) {
+        clearTimeout(userScrollTimeout);
       }
-    }, 100);
-  }
 
-  // Слушатель прерывание анимации
-  window.addEventListener('wheel', cancelActiveScroll, passiveOption);
-  window.addEventListener('touchstart', cancelActiveScroll, passiveOption);
+      // Если в течение 100мс событий скролла нет — считаем, что скролл остановлен
+      userScrollTimeout = setTimeout(function () {
+        // Проверяем, не запущена ли в этот момент программная анимация
+        if (activeScrollRAF === null) {
+          removeScrollActive();
+        }
+      }, 100);
+    }
 
-  // Слушатель процесса скролла для отслеживания ручных движений пользователя
-  window.addEventListener('scroll', handleUserScroll, passiveOption);
+    // Слушатель прерывание анимации
+    window.addEventListener('wheel', cancelActiveScroll, passiveOption);
+    window.addEventListener('touchstart', cancelActiveScroll, passiveOption);
 
-  // Перехватываем клики по якорным ссылкам и заменяем нативный скролл на плавный.
-  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
+    // Слушатель процесса скролла для отслеживания ручных движений пользователя
+    window.addEventListener('scroll', handleUserScroll, passiveOption);
 
-      const href = link.getAttribute('href');
+    // Перехватываем клики по якорным ссылкам и заменяем нативный скролл на плавный.
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
 
-      // Защита от пустого href="#"
-      if (!href || href === '#') return;
+        const href = link.getAttribute('href');
 
-      const targetEl = document.getElementById(href.slice(1));
-      if (!targetEl) return;
+        // Защита от пустого href="#"
+        if (!href || href === '#') return;
 
-      // getBoundingClientRect().top - позиция относительно вьюпорта.
-      // Прибавляем scrollY чтобы получить абсолютную позицию на странице.
-      // Вычитаем высоту навбара чтобы якорь не перекрывался.
-      const targetY = targetEl.getBoundingClientRect().top
-        + (window.scrollY || window.pageYOffset || 0)
-        - NAV_HEIGHT_REM * getRootFontSize();
+        const targetEl = document.getElementById(href.slice(1));
+        if (!targetEl) return;
 
-      smoothScrollTo(targetY, SCROLL_DURATION);
+        // getBoundingClientRect().top - позиция относительно вьюпорта.
+        // Прибавляем scrollY чтобы получить абсолютную позицию на странице.
+        // Вычитаем высоту навбара чтобы якорь не перекрывался.
+        const targetY = targetEl.getBoundingClientRect().top
+          + (window.scrollY || window.pageYOffset || 0)
+          - NAV_HEIGHT_REM * getRootFontSize();
+
+        smoothScrollTo(targetY, SCROLL_DURATION);
+      });
     });
-  });
-})();
+  })();
 
   //
 
@@ -362,6 +362,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Устанавливаем начальное состояние класса сразу при загрузке скрипта
     updateTouchClass();
 
+    function resetOverlayIfNeeded() {
+      const html = document.documentElement;
+
+      // Если на html нет popup-open, значит по логике стек пуст.
+      // Делаем оверлей максимально скрытым и убираем клики.
+      if (!html.classList.contains('popup-open')) {
+        if (overlayBase) {
+          overlayBase.style.transition = '';
+          overlayBase.style.opacity = '0';
+          overlayBase.style.pointerEvents = 'none';
+        }
+
+        if (overlay) {
+          overlay.style.transition = '';
+          overlay.style.opacity = '0';
+          overlay.style.pointerEvents = 'none';
+        }
+      }
+    }
+
     // Вспомогательные функции
 
     /**
@@ -371,6 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     function updateHtmlClasses() {
       document.documentElement.classList.toggle('popup-open', stack.length > 0);
+      resetOverlayIfNeeded();
     }
 
     const overlayBase = document.getElementById('popup-overlay-base');
@@ -623,6 +644,7 @@ document.addEventListener('DOMContentLoaded', () => {
       updatePointerEvents();
       unlockBodyScroll();
       updateHtmlClasses();
+      resetOverlayIfNeeded();
     }
 
     /**
@@ -666,6 +688,7 @@ document.addEventListener('DOMContentLoaded', () => {
       updatePointerEvents();
       unlockBodyScroll();
       updateHtmlClasses();
+      resetOverlayIfNeeded();
     }
 
     // Закрытие всех попапов
@@ -711,6 +734,7 @@ document.addEventListener('DOMContentLoaded', () => {
       updatePointerEvents();
       unlockBodyScroll();
       updateHtmlClasses();
+      resetOverlayIfNeeded();
     }
 
     // Обработчики кликов
