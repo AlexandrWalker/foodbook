@@ -9,7 +9,7 @@
 
   position: absolute;
   left: 1rem;
-  bottom: calc(11.1rem + env(safe-area-inset-bottom, 20px));
+  bottom: 11.1rem;
 
   @include domd {
     display: none;
