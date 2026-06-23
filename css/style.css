@@ -144,6 +144,14 @@ li:last-child {
 @font-face {
   font-family: Inter;
   font-display: swap;
+  src: url("../fonts/Inter-Bold.woff2") format("woff2"), url("../fonts/Inter-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Inter;
+  font-display: swap;
   src: url("../fonts/Inter-ExtraBold.woff2") format("woff2"), url("../fonts/Inter-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
@@ -154,6 +162,14 @@ li:last-child {
   font-display: swap;
   src: url("../fonts/Inter-ExtraLight.woff2") format("woff2"), url("../fonts/Inter-ExtraLight.woff") format("woff");
   font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  src: url("../fonts/Inter-Light.woff2") format("woff2"), url("../fonts/Inter-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -184,8 +200,8 @@ li:last-child {
 @font-face {
   font-family: Inter;
   font-display: swap;
-  src: url("../fonts/Inter-Light.woff2") format("woff2"), url("../fonts/Inter-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Inter-Thin.woff2") format("woff2"), url("../fonts/Inter-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -222,10 +238,10 @@ li:last-child {
 }
 
 @font-face {
-  font-family: Inter;
+  font-family: PlayfairDisplay;
   font-display: swap;
-  src: url("../fonts/Inter-Thin.woff2") format("woff2"), url("../fonts/Inter-Thin.woff") format("woff");
-  font-weight: 100;
+  src: url("../fonts/PlayfairDisplay-Medium.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -246,10 +262,10 @@ li:last-child {
 }
 
 @font-face {
-  font-family: Inter;
+  font-family: Poppins;
   font-display: swap;
-  src: url("../fonts/Inter-Bold.woff2") format("woff2"), url("../fonts/Inter-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Poppins-Black.woff2") format("woff2"), url("../fonts/Poppins-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -264,24 +280,8 @@ li:last-child {
 @font-face {
   font-family: Poppins;
   font-display: swap;
-  src: url("../fonts/Poppins-Black.woff2") format("woff2"), url("../fonts/Poppins-Black.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Poppins;
-  font-display: swap;
   src: url("../fonts/Poppins-ExtraBold.woff2") format("woff2"), url("../fonts/Poppins-ExtraBold.woff") format("woff");
   font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: PlayfairDisplay;
-  font-display: swap;
-  src: url("../fonts/PlayfairDisplay-Medium.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Medium.woff") format("woff");
-  font-weight: 500;
   font-style: normal;
 }
 
@@ -290,6 +290,14 @@ li:last-child {
   font-display: swap;
   src: url("../fonts/Poppins-ExtraLight.woff2") format("woff2"), url("../fonts/Poppins-ExtraLight.woff") format("woff");
   font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Poppins;
+  font-display: swap;
+  src: url("../fonts/Poppins-Light.woff2") format("woff2"), url("../fonts/Poppins-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -320,16 +328,8 @@ li:last-child {
 @font-face {
   font-family: Poppins;
   font-display: swap;
-  src: url("../fonts/Poppins-Light.woff2") format("woff2"), url("../fonts/Poppins-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: SFPro;
-  font-display: swap;
-  src: url("../fonts/SFPro-Bold.woff2") format("woff2"), url("../fonts/SFPro-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/Poppins-Thin.woff2") format("woff2"), url("../fonts/Poppins-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -338,6 +338,14 @@ li:last-child {
   font-display: swap;
   src: url("../fonts/SFPro-Black.woff2") format("woff2"), url("../fonts/SFPro-Black.woff") format("woff");
   font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: SFPro;
+  font-display: swap;
+  src: url("../fonts/SFPro-Bold.woff2") format("woff2"), url("../fonts/SFPro-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -360,16 +368,16 @@ li:last-child {
 @font-face {
   font-family: SFPro;
   font-display: swap;
-  src: url("../fonts/SFPro-Medium.woff2") format("woff2"), url("../fonts/SFPro-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/SFPro-Regular.woff2") format("woff2"), url("../fonts/SFPro-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: SFPro;
   font-display: swap;
-  src: url("../fonts/SFPro-Regular.woff2") format("woff2"), url("../fonts/SFPro-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/SFPro-Medium.woff2") format("woff2"), url("../fonts/SFPro-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -432,6 +440,14 @@ li:last-child {
 @font-face {
   font-family: TTTrailersTrial;
   font-display: swap;
+  src: url("../fonts/TTTrailersTrial-Light.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TTTrailersTrial;
+  font-display: swap;
   src: url("../fonts/TTTrailersTrial-ExtraLight.woff2") format("woff2"), url("../fonts/TTTrailersTrial-ExtraLight.woff") format("woff");
   font-weight: 200;
   font-style: normal;
@@ -440,8 +456,8 @@ li:last-child {
 @font-face {
   font-family: TTTrailersTrial;
   font-display: swap;
-  src: url("../fonts/TTTrailersTrial-Light.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/TTTrailersTrial-Medium.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -458,22 +474,6 @@ li:last-child {
   font-display: swap;
   src: url("../fonts/TTTrailersTrial-Thin.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Thin.woff") format("woff");
   font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Poppins;
-  font-display: swap;
-  src: url("../fonts/Poppins-Thin.woff2") format("woff2"), url("../fonts/Poppins-Thin.woff") format("woff");
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: TTTrailersTrial;
-  font-display: swap;
-  src: url("../fonts/TTTrailersTrial-Medium.woff2") format("woff2"), url("../fonts/TTTrailersTrial-Medium.woff") format("woff");
-  font-weight: 500;
   font-style: normal;
 }
 
@@ -718,6 +718,8 @@ body {
   --swiper-pagination-bg-color: transparent;
   --swiper-pagination-color: var(--white-50);
   --swiper-pagination-active-color: var(--white);
+  --scrollup-btn-bg-color: var(--white);
+  --scrollup-call-bg-color: var(--accent);
   --scrollup-btn-color: var(--white);
   --branch-layout-block-title-color: var(--accent);
   --branch-layout-block-text-span-color: var(--black-50);
@@ -915,13 +917,14 @@ body {
   --layout-platform-block-text-color: var(--black);
   --layout-platform-block-text-accent-color: var(--accent);
   --layout-platform-block-text-a-color: var(--black);
-  --stories-overlay-bg-color: var(--black-60);
-  --stories-progress-item-bg-color: var(--white-50);
-  --stories-progress-fill-bg-color: var(--white);
-  --stories-share-color: var(--white);
-  --stories-share-hover-color: var(--white-15);
-  --stories-close-color: var(--white);
-  --stories-close-hover-color: var(--white-15);
+  --stories-overlay-bg-color: var(--black-50);
+  --stories-container-bg: var(--white);
+  --stories-progress-item-bg-color: var(--black-50);
+  --stories-progress-fill-bg-color: var(--black);
+  --stories-share-color: var(--black-50);
+  --stories-share-hover-color: var(--black);
+  --stories-close-color: var(--black-50);
+  --stories-close-hover-color: var(--black);
   --stories-date-bg-color: var(--black-45);
   --stories-date-color: var(--white);
   --stories-btn-bg-color: var(--accent);
@@ -972,6 +975,7 @@ body {
   --header-search-i-color: var(--white);
   --nav-item-active-icon-color: var(--black);
   --nav-item-bg-color: var(--black-10);
+  --scrollup-btn-bg-color: var(--black);
   --scrollup-btn-color: var(--black);
   --banners-link-title-color: var(--white);
   --afisha-i-color: var(--black);
@@ -984,6 +988,7 @@ body {
   --card-item-i-bg-color: var(--base);
   --dish-layout-banner-link-i-bg-color: var(--black);
   --stories-overlay-bg-color: var(--white-60);
+  --stories-container-bg: #000211f2;
   --stories-progress-item-bg-color: var(--black-50);
   --stories-progress-fill-bg-color: var(--black);
   --stories-share-color: var(--black);
@@ -1081,6 +1086,10 @@ body {
 .btn--accent {
   --btn-color: var(--white);
   --btn-background: var(--accent);
+}
+
+[dark] .btn--accent {
+  color: var(--black);
 }
 
 [orange] .btn--accent {
@@ -3728,22 +3737,22 @@ html[lang=en] .layout__block-item[data-lang=en] {
 }
 
 .scrollup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0.8rem;
   pointer-events: all;
-  -webkit-transition: opacity 0.4s ease, visibility 0.4s ease !important;
-  -o-transition: opacity 0.4s ease, visibility 0.4s ease !important;
-  transition: opacity 0.4s ease, visibility 0.4s ease !important;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  position: absolute;
+  -webkit-transition: opacity 0.4s ease, visibility 0.4s ease;
+  -o-transition: opacity 0.4s ease, visibility 0.4s ease;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  position: fixed;
   left: 1rem;
   bottom: 11.1rem;
-}
-
-.scrollup-visible {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: all;
+  z-index: 997;
 }
 
 .popup-open .scrollup {
@@ -3765,7 +3774,7 @@ html[lang=en] .layout__block-item[data-lang=en] {
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
-  background-color: var(--scrollup-btn-color);
+  background-color: var(--scrollup-btn-bg-color);
   position: relative;
 }
 
@@ -3774,48 +3783,29 @@ html[lang=en] .layout__block-item[data-lang=en] {
   color: var(--accent);
 }
 
-.scrollup__btn > .scrollup__btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
-  inset: 0;
-  -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
-  transition: -webkit-transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
-  -o-transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
-  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
-  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
-  position: absolute;
+.scrollup__btn--call {
+  background-color: var(--scrollup-call-bg-color);
+  -webkit-box-shadow: 0px 0px 8.3px 3px rgba(215, 25, 32, 0.5);
+  box-shadow: 0px 0px 8.3px 3px rgba(215, 25, 32, 0.5);
 }
 
-.scrollup__btn--visible {
-  -webkit-transform: rotateY(0deg);
-  transform: rotateY(0deg);
-  z-index: 2;
+.scrollup__btn--call i {
+  color: var(--scrollup-btn-color);
 }
 
-html.popup-open .scrollup__btn--visible {
-  -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
+.scrollup__btn--up {
+  -webkit-transition: opacity 0.4s ease, visibility 0.4s ease;
+  -o-transition: opacity 0.4s ease, visibility 0.4s ease;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
-.scrollup__btn--hidden {
-  -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-}
-
-html.popup-open .scrollup__btn--hidden {
-  -webkit-transform: rotateY(0deg);
-  transform: rotateY(0deg);
+.scrollup__btn--up.scrollup-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
 }
 
 .stories-container {
@@ -3825,7 +3815,7 @@ html.popup-open .scrollup__btn--hidden {
   height: calc(100vh - var(--wrapper-padding));
   height: calc(100dvh - var(--wrapper-padding));
   overflow: hidden;
-  background: #000;
+  background-color: var(--stories-container-bg);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3842,6 +3832,7 @@ html.popup-open .scrollup__btn--hidden {
   width: 100%;
   height: 100%;
   position: relative;
+  z-index: 5;
 }
 
 .stories-item video {
@@ -3947,13 +3938,13 @@ html.popup-open .scrollup__btn--hidden {
   color: var(--stories-share-color);
   font-size: 3.6rem;
   cursor: pointer;
-  -webkit-transition: background-color 0.2s;
-  -o-transition: background-color 0.2s;
-  transition: background-color 0.2s;
+  -webkit-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
 }
 
 .stories-share:hover {
-  background-color: var(--stories-share-hover-color);
+  color: var(--stories-share-hover-color);
 }
 
 .stories-close {
@@ -3980,18 +3971,18 @@ html.popup-open .scrollup__btn--hidden {
   width: 3.6rem;
   height: 3.6rem;
   border-radius: 50%;
-  -webkit-transition: background-color 0.2s;
-  -o-transition: background-color 0.2s;
-  transition: background-color 0.2s;
+  -webkit-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
 }
 
 .stories-close:hover {
-  background-color: var(--stories-close-hover-color);
+  color: var(--stories-close-hover-color);
 }
 
 .stories-img {
   width: 100%;
-  height: 100%;
+  height: auto;
   -o-object-fit: contain;
   object-fit: contain;
   display: block;
@@ -4000,7 +3991,9 @@ html.popup-open .scrollup__btn--hidden {
   -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
   position: absolute;
-  inset: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .stories-img.is-visible {
@@ -4013,8 +4006,11 @@ html.popup-open .scrollup__btn--hidden {
 
 .stories-img-wrap {
   width: 100%;
-  height: 100%;
-  position: relative;
+  height: auto;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .stories-date {
@@ -4136,6 +4132,23 @@ html.popup-open .scrollup__btn--hidden {
   background: transparent;
   pointer-events: none;
   z-index: 999;
+}
+
+.work__block-wrap p {
+  font-style: italic;
+}
+
+.reasons__item-wrap--block {
+  font-size: 5rem;
+}
+
+.feat__item {
+  border-color: transparent;
+  background-color: var(--white);
+}
+
+.section__head h2 {
+  font-weight: 700;
 }
 
 h1,
@@ -4946,7 +4959,7 @@ p {
 }
 
 .favorite .card__like i::before {
-  content: "\e941";
+  content: "\e942";
 }
 
 .filter .layout__inner {
@@ -5600,6 +5613,7 @@ p {
   -ms-flex-align: end;
   align-items: flex-end;
   width: 100%;
+  height: 0;
   pointer-events: none;
   -webkit-transition: bottom 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
   -o-transition: bottom 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
@@ -5607,7 +5621,8 @@ p {
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
-  height: 0;
+  opacity: 1;
+  visibility: visible;
   z-index: 500;
   z-index: 998;
 }
@@ -6261,9 +6276,9 @@ p {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -6275,6 +6290,8 @@ p {
   -webkit-transition: opacity 0.6s ease, visibility 0.6s ease, all 0.5s ease;
   -o-transition: opacity 0.6s ease, visibility 0.6s ease, all 0.5s ease;
   transition: opacity 0.6s ease, visibility 0.6s ease, all 0.5s ease;
+  overflow-x: hidden;
+  overflow-y: auto;
   position: fixed;
   inset: 0;
   z-index: 9999;
@@ -6312,7 +6329,9 @@ p {
   -ms-flex-align: center;
   align-items: center;
   gap: 4rem;
-  height: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .preloader__wrap {
@@ -6370,6 +6389,40 @@ p {
 
 .preloader__btn {
   width: 100%;
+  -webkit-transform: translateX(-5rem);
+  -ms-transform: translateX(-5rem);
+  transform: translateX(-5rem);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.preloader--active .preloader__btn {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.preloader__btn:nth-child(1) {
+  -webkit-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+     transition-delay: 0.2s;
+}
+
+.preloader__btn:nth-child(2) {
+  -webkit-transition-delay: 0.4s;
+  -o-transition-delay: 0.4s;
+     transition-delay: 0.4s;
+}
+
+.preloader__btn:nth-child(3) {
+  -webkit-transition-delay: 0.6s;
+  -o-transition-delay: 0.6s;
+     transition-delay: 0.6s;
 }
 
 .preloader__lang {
@@ -6427,6 +6480,15 @@ p {
   width: 1.2rem;
   height: 1rem;
   font-size: 2rem;
+}
+
+.preloader__link {
+  margin-top: -0.5rem;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 140%;
+  text-align: center;
+  color: var(--white);
 }
 
 canvas {
@@ -6958,8 +7020,8 @@ canvas {
 }
 
 .banners__link {
-  width: 22rem;
-  height: 18rem;
+  width: 18.2rem;
+  height: 17.8rem;
   border-radius: 1.6rem;
   -ms-flex-negative: 0;
   flex-shrink: 0;
