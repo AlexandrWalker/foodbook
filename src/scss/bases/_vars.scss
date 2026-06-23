@@ -74,6 +74,8 @@
   --swiper-pagination-active-color: var(--white);
 
   // scrollup
+  --scrollup-btn-bg-color: var(--white);
+  --scrollup-call-bg-color: var(--accent);
   --scrollup-btn-color: var(--white);
 
   // branch
@@ -316,13 +318,14 @@
   --layout-platform-block-text-a-color: var(--black);
 
   // stories
-  --stories-overlay-bg-color: var(--black-60);
-  --stories-progress-item-bg-color: var(--white-50);
-  --stories-progress-fill-bg-color: var(--white);
-  --stories-share-color: var(--white);
-  --stories-share-hover-color: var(--white-15);
-  --stories-close-color: var(--white);
-  --stories-close-hover-color: var(--white-15);
+  --stories-overlay-bg-color: var(--black-50);
+  --stories-container-bg: var(--white);
+  --stories-progress-item-bg-color: var(--black-50);
+  --stories-progress-fill-bg-color: var(--black);
+  --stories-share-color: var(--black-50);
+  --stories-share-hover-color: var(--black);
+  --stories-close-color: var(--black-50);
+  --stories-close-hover-color: var(--black);
   --stories-date-bg-color: var(--black-45);
   --stories-date-color: var(--white);
   --stories-btn-bg-color: var(--accent);
@@ -404,6 +407,7 @@
   --nav-item-bg-color: var(--black-10);
 
   // scrollup
+  --scrollup-btn-bg-color: var(--black);
   --scrollup-btn-color: var(--black);
 
   // banners
@@ -428,6 +432,7 @@
 
   // stories
   --stories-overlay-bg-color: var(--white-60);
+  --stories-container-bg: #000211f2;
   --stories-progress-item-bg-color: var(--black-50);
   --stories-progress-fill-bg-color: var(--black);
   --stories-share-color: var(--black);

@@ -282,46 +282,55 @@
           <div class="banners__inner">
             <div class="banners__links stories-items">
               <div class="banners__link stories-item banner" data-story-index="0" data-banners='[
-          {"img":"./images/temp/stories-cover-1.jpg"}
+          {"imgLight":"./images/temp/stories-cover-1-light.jpg",
+          "imgDark":"./images/temp/stories-cover-1-dark.jpg"}
         ]'>
                 <div class="banners__link-img">
-                  <img src="./../images/temp/hero-banner-1.png" alt="">
+                  <img src="./../images/temp/stories-banner-1-light.jpg"
+                    data-src-light="./../images/temp/stories-banner-1-light.jpg"
+                    data-src-dark="./../images/temp/stories-banner-1-dark.jpg" alt="">
                 </div>
-                <div class="banners__link-content">
-                  <div class="banners__link-title">
-                    <span>33%</span> Скидка
-                    на&nbsp;бургеры!
-                  </div>
-                  <i class="icon-chevron-right"></i>
-                </div>
+                <!-- <div class="banners__link-content">
+          <div class="banners__link-title">
+            <span>33%</span> Скидка
+            на&nbsp;бургеры!
+          </div>
+          <i class="icon-chevron-right"></i>
+        </div> -->
               </div>
               <div class="banners__link stories-item banner" data-story-index="1" data-banners='[
-          {"img":"./images/temp/stories-cover-2.jpg"}
+          {"imgLight": "./images/temp/stories-cover-2-light.jpg",
+          "imgDark": "./images/temp/stories-cover-2-dark.jpg"}
         ]'>
                 <div class="banners__link-img">
-                  <img src="./../images/temp/hero-banner-2.png" alt="">
+                  <img src="./../images/temp/stories-banner-2-light.jpg"
+                    data-src-light="./../images/temp/stories-banner-2-light.jpg"
+                    data-src-dark="./../images/temp/stories-banner-2-dark.jpg" alt="">
                 </div>
-                <div class="banners__link-content">
-                  <div class="banners__link-title">
-                    Акция <br>
-                    для&nbsp;примера
-                  </div>
-                  <i class="icon-chevron-right"></i>
-                </div>
+                <!-- <div class="banners__link-content">
+      <div class="banners__link-title">
+        Акция <br>
+        для&nbsp;примера
+      </div>
+      <i class="icon-chevron-right"></i>
+    </div> -->
               </div>
               <div class="banners__link stories-item banner" data-story-index="2" data-banners='[
-          {"img":"./images/temp/stories-cover-3.jpg"}
+          {"imgLight":"./images/temp/stories-cover-3-light.jpg",
+          "imgDark":"./images/temp/stories-cover-3-dark.jpg"}
         ]'>
                 <div class="banners__link-img">
-                  <img src="./../images/temp/hero-banner-3.png" alt="">
+                  <img src="./../images/temp/stories-banner-3-light.jpg"
+                    data-src-light="./../images/temp/stories-banner-3-light.jpg"
+                    data-src-dark="./../images/temp/stories-banner-3-dark.jpg" alt="">
                 </div>
-                <div class="banners__link-content">
-                  <div class="banners__link-title">
-                    Акция <br>
-                    для&nbsp;примера
-                  </div>
-                  <i class="icon-chevron-right"></i>
-                </div>
+                <!-- <div class="banners__link-content">
+      <div class="banners__link-title">
+        Акция <br>
+        для&nbsp;примера
+      </div>
+      <i class="icon-chevron-right"></i>
+    </div> -->
               </div>
               <div class="trigger-line"></div>
             </div>
@@ -669,6 +678,8 @@
     </main>
     <!-- Плашка кукис -->
     @@include('blocks/plate.html')
+    <!-- Фиксируемые кнопки -->
+    @@include('blocks/fixed.html')
     <!-- Панель -->
     @@include('blocks/panel.html')
     <!-- Подвал -->

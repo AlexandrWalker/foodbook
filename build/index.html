@@ -62,6 +62,9 @@
             </div>
           </button>
         </div>
+        <div class="preloader__link" data-preloader-close>
+          Пропустить
+        </div>
       </div>
     </div>
   </div>
@@ -488,9 +491,11 @@
               </div>
             </div>
             <div class="layout__body">
-              <div class="layout__banner-link" data-popup-target="offersInner">
-                <img src="./images/temp/banner-1.png" alt="">
-                <i class="icon-chevron-right"></i>
+              <div class="layout__banner-link" data-stories-open="0">
+                <img src="./images/temp/banner-1-light.jpg"
+                  data-src-light="./../../images/temp/banner-1-light.jpg"
+                  data-src-dark="./../../images/temp/banner-1-dark.jpg" alt="">
+                <!-- <i class="icon-chevron-right"></i> -->
               </div>
             </div>
           </div>
@@ -927,8 +932,10 @@
             </div>
             <div class="layout__body">
               <div class="layout__banner-link" data-popup-target="offersInner">
-                <img src="./images/temp/banner-1.png" alt="">
-                <i class="icon-chevron-right"></i>
+                <img src="./images/temp/banner-1-light.jpg"
+                  data-src-light="./../../images/temp/banner-1-light.jpg"
+                  data-src-dark="./../../images/temp/banner-1-dark.jpg" alt="">
+                <!-- <i class="icon-chevron-right"></i> -->
               </div>
             </div>
           </div>
@@ -1357,8 +1364,10 @@
             </div>
             <div class="layout__body">
               <div class="layout__banner-link" data-popup-target="offersInner">
-                <img src="./images/temp/banner-1.png" alt="">
-                <i class="icon-chevron-right"></i>
+                <img src="./images/temp/banner-1-light.jpg"
+                  data-src-light="./../../images/temp/banner-1-light.jpg"
+                  data-src-dark="./../../images/temp/banner-1-dark.jpg" alt="">
+                <!-- <i class="icon-chevron-right"></i> -->
               </div>
             </div>
           </div>
@@ -8347,46 +8356,55 @@
           <div class="banners__inner">
             <div class="banners__links stories-items">
               <div class="banners__link stories-item banner" data-story-index="0" data-banners='[
-          {"img":"./images/temp/stories-cover-1.jpg"}
+          {"imgLight":"./images/temp/stories-cover-1-light.jpg",
+          "imgDark":"./images/temp/stories-cover-1-dark.jpg"}
         ]'>
                 <div class="banners__link-img">
-                  <img src="./images/temp/hero-banner-1.png" alt="">
+                  <img src="./images/temp/stories-banner-1-light.jpg"
+                    data-src-light="./../images/temp/stories-banner-1-light.jpg"
+                    data-src-dark="./../images/temp/stories-banner-1-dark.jpg" alt="">
                 </div>
-                <div class="banners__link-content">
-                  <div class="banners__link-title">
-                    <span>33%</span> Скидка
-                    на&nbsp;бургеры!
-                  </div>
-                  <i class="icon-chevron-right"></i>
-                </div>
+                <!-- <div class="banners__link-content">
+          <div class="banners__link-title">
+            <span>33%</span> Скидка
+            на&nbsp;бургеры!
+          </div>
+          <i class="icon-chevron-right"></i>
+        </div> -->
               </div>
               <div class="banners__link stories-item banner" data-story-index="1" data-banners='[
-          {"img":"./images/temp/stories-cover-2.jpg"}
+          {"imgLight": "./images/temp/stories-cover-2-light.jpg",
+          "imgDark": "./images/temp/stories-cover-2-dark.jpg"}
         ]'>
                 <div class="banners__link-img">
-                  <img src="./images/temp/hero-banner-2.png" alt="">
+                  <img src="./images/temp/stories-banner-2-light.jpg"
+                    data-src-light="./../images/temp/stories-banner-2-light.jpg"
+                    data-src-dark="./../images/temp/stories-banner-2-dark.jpg" alt="">
                 </div>
-                <div class="banners__link-content">
-                  <div class="banners__link-title">
-                    Акция <br>
-                    для&nbsp;примера
-                  </div>
-                  <i class="icon-chevron-right"></i>
-                </div>
+                <!-- <div class="banners__link-content">
+      <div class="banners__link-title">
+        Акция <br>
+        для&nbsp;примера
+      </div>
+      <i class="icon-chevron-right"></i>
+    </div> -->
               </div>
               <div class="banners__link stories-item banner" data-story-index="2" data-banners='[
-          {"img":"./images/temp/stories-cover-3.jpg"}
+          {"imgLight":"./images/temp/stories-cover-3-light.jpg",
+          "imgDark":"./images/temp/stories-cover-3-dark.jpg"}
         ]'>
                 <div class="banners__link-img">
-                  <img src="./images/temp/hero-banner-3.png" alt="">
+                  <img src="./images/temp/stories-banner-3-light.jpg"
+                    data-src-light="./../images/temp/stories-banner-3-light.jpg"
+                    data-src-dark="./../images/temp/stories-banner-3-dark.jpg" alt="">
                 </div>
-                <div class="banners__link-content">
-                  <div class="banners__link-title">
-                    Акция <br>
-                    для&nbsp;примера
-                  </div>
-                  <i class="icon-chevron-right"></i>
-                </div>
+                <!-- <div class="banners__link-content">
+      <div class="banners__link-title">
+        Акция <br>
+        для&nbsp;примера
+      </div>
+      <i class="icon-chevron-right"></i>
+    </div> -->
               </div>
               <div class="trigger-line"></div>
             </div>
@@ -11843,6 +11861,15 @@
     </div>
   </div>
 </div>
+    <!-- Фиксируемые кнопки -->
+    <div class="scrollup">
+  <div class="scrollup__btn scrollup__btn--call" data-popup-target="call" data-popup-toggle>
+    <i class="icon-call"></i>
+  </div>
+  <a class="scrollup__btn scrollup__btn--up" href="#main">
+    <i class="icon-up"></i>
+  </a>
+</div>
     <!-- Панель -->
     <div class="panel">
   <div class="panel__inner">
@@ -11866,12 +11893,14 @@
           13
         </div>
       </button>
-      <button class="panel__btn panel__btn--mid" data-popup-target="call" data-popup-toggle>
+      <!-- <button class="panel__btn panel__btn--mid" data-popup-target="call" data-popup-toggle> -->
+      <button class="panel__btn panel__btn--mid" data-popup-target="reservation" data-popup-toggle>
         <div class="panel__btn-icon">
-          <i class="icon-call"></i>
+          <i class="icon-bron"></i>
         </div>
         <span>
-          Вызов официанта
+          <!-- Вызов официанта -->
+          Бронь стола
         </span>
       </button>
       <button class="panel__btn" data-popup-target="profile" data-popup-toggle>
@@ -11890,17 +11919,6 @@
           Ещё
         </span>
       </button>
-    </div>
-  </div>
-
-  <div class="scrollup">
-    <div class="scrollup__btn">
-      <a class="scrollup__btn scrollup__btn--visible" href="#main">
-        <i class="icon-up"></i>
-      </a>
-      <!-- <div class="scrollup__btn scrollup__btn--hidden" data-close-all-popups>
-        <i class="icon-home"></i>
-      </div> -->
     </div>
   </div>
 </div>

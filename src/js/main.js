@@ -1805,36 +1805,23 @@ document.addEventListener('DOMContentLoaded', () => {
    * когда изменяется наличие popup-open у <html>.                  
    */
   (function () {
-    const html = document.documentElement;
     const scrollup = document.querySelector('.scrollup');
-    const button = document.querySelector('.scrollup__btn');
-    if (!button) return; // Кнопка отсутствует - выходим
 
-    const shouldShow = () => {
-      // Показываем при popup-open всегда
-      if (html.classList.contains('popup-open')) return true;
-      // Иначе показываем только если прокрутили вниз
-      return window.scrollY > 0 || document.documentElement.scrollTop > 0;
-    };
+    if (!scrollup) return;
+
+    const upButton = scrollup.querySelector('.scrollup__btn--up');
 
     const render = () => {
-      scrollup.classList.toggle('scrollup-visible', shouldShow());
+      // Проверяем, ушел ли скролл с самого верха страницы
+      const isScrolled = window.scrollY > 0 || document.documentElement.scrollTop > 0;
+      upButton.classList.toggle('scrollup-visible', isScrolled);
     };
 
+    // Оптимальный слушатель скролла
     window.addEventListener('scroll', render, { passive: true });
-    render();
 
-    /**
-     * MutationObserver слушает изменения атрибута class у <html>.
-     * Это надёжнее чем подписываться на произвольные события -
-     * отражает реальное состояние DOM независимо от источника изменения.
-     */
-    new MutationObserver(() => {
-      button.classList.toggle('is-flipped', html.classList.contains('popup-open'));
-    }).observe(html, {
-      attributes: true,
-      attributeFilter: ['class']
-    });
+    // Запускаем проверку при первой загрузке страницы
+    render();
   })();
 
   /**
@@ -1892,6 +1879,51 @@ document.addEventListener('DOMContentLoaded', () => {
     const SWIPE_DOWN_THRESHOLD = 80;
     const SLIDE_DURATION = 420;
 
+    // Проверка темы оформления на теге html
+    function isDarkMode() {
+      return document.documentElement.hasAttribute('dark') || document.documentElement.classList.contains('dark');
+    }
+
+    // Извлечение правильного пути (cover) в зависимости от темы
+    // Строгое извлечение пути: только imgDark для темной, только imgLight для светлой
+    function getThemeImg(bannerObj) {
+      if (!bannerObj) return '';
+      if (isDarkMode()) {
+        return bannerObj.imgDark || bannerObj.imgLight || '';
+      } else {
+        return bannerObj.imgLight || '';
+      }
+    }
+
+    // Наблюдатель за сменой темы на лету
+    // Наблюдатель за изменением темы оформления на лету
+    const themeObserver = new MutationObserver(function () {
+      if (typeof overlay !== 'undefined' && overlay.classList.contains('is-active') && !isSliding) {
+        const story = currentBanners()[bannerIndex];
+        if (story) {
+          const activeImg = getActiveImg();
+          const currentThemeSrc = getThemeImg(story);
+          if (activeImg.getAttribute('src') !== currentThemeSrc) {
+            activeImg.src = currentThemeSrc;
+          }
+        }
+      }
+      // Обновляем обложки на главной странице
+      items.forEach(function (el) {
+        const imgEl = el.querySelector('.banners__link-img img');
+        if (imgEl) {
+          const targetSrc = isDarkMode() ? imgEl.dataset.srcDark : imgEl.dataset.srcLight;
+          if (targetSrc && imgEl.src !== targetSrc) imgEl.src = targetSrc;
+        }
+      });
+      // НОВОЕ: Обновляем сторонние баннеры вызова сторис на сайте
+      document.querySelectorAll('[data-stories-open] img').forEach(function (imgEl) {
+        const targetSrc = isDarkMode() ? imgEl.dataset.srcDark : imgEl.dataset.srcLight;
+        if (targetSrc && imgEl.src !== targetSrc) imgEl.src = targetSrc;
+      });
+    });
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['dark', 'class'] });
+
     const items = Array.from(document.querySelectorAll('.stories-item'));
     if (!items.length) return;
 
@@ -1899,20 +1931,14 @@ document.addEventListener('DOMContentLoaded', () => {
       let banners = [];
       try { banners = JSON.parse(el.dataset.banners || '[]'); } catch (e) { }
       if (!banners.length) {
-        const img = el.dataset.storyImg || el.querySelector('img')?.src || '';
+        const imgEl = el.querySelector('img');
+        const imgLight = el.dataset.storyImg || (imgEl ? (imgEl.dataset.srcLight || imgEl.src) : '');
+        const imgDark = el.dataset.storyImgDark || (imgEl ? imgEl.dataset.srcDark : '');
         const date = el.querySelector('.afisha__item-date')?.textContent.trim() || '';
-        if (img) banners = [{ img, date }];
+        if (imgLight || imgDark) banners = [{ imgLight, imgDark, date }];
       }
 
-      // Ищем .stories-btn внутри stories-item.
-      // Если кнопка есть - берём её href и текст.
-      // Эти данные будут использованы для отображения кнопки внутри оверлея.
-      const btn = el.querySelector('.stories-btn');
-      const actionHref = btn ? btn.getAttribute('href') : null;
-      const actionText = btn ? btn.textContent.trim() : null;
-
-      return { banners, el, actionHref, actionText };
-      // return { banners, el };
+      return { banners, el };
     }).filter(g => g.banners.length);
 
     if (!groups.length) return;
@@ -1953,6 +1979,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Helpers
 
     function currentBanners() { return groups[groupIndex].banners; }
+
     function getActiveImg() { return activeBuffer === 'A' ? imgA : imgB; }
     function getInactiveImg() { return activeBuffer === 'A' ? imgB : imgA; }
 
@@ -1977,7 +2004,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function preloadGroup(gIndex) {
       if (gIndex < 0 || gIndex >= groups.length) return;
       groups[gIndex].banners.forEach(function (banner) {
-        preloadImg(banner.img);
+        preloadImg(banner.imgLight);
+        preloadImg(banner.imgDark);
       });
     }
 
@@ -2089,7 +2117,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // opacity/is-visible не достаточно - браузер всё равно резервирует место
       // под изменяющиеся натуральные размеры img тега.
       nextImg.style.visibility = 'hidden';
-      nextImg.src = story.img;
+      nextImg.src = getThemeImg(story);
 
       function onLoaded() {
         nextImg.removeEventListener('load', onLoaded);
@@ -2142,7 +2170,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'position:absolute',
         'inset:0',
         'z-index:' + zIndex,
-        'background:#000',
+        // 'background:#000',
+        'background:transparent',
         'overflow:hidden',
         '-webkit-transform:translateX(0)',
         'transform:translateX(0)',
@@ -2158,9 +2187,11 @@ document.addEventListener('DOMContentLoaded', () => {
       img.src = src;
       img.style.cssText = [
         'position:absolute',
-        'inset:0',
+        'right:0',
+        'bottom:0',
+        'left:0',
         'width:100%',
-        'height:100%',
+        'height:auto',
         'object-fit:contain',
         'display:block'
       ].join(';');
@@ -2188,7 +2219,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Следующий слайд — начинает за экраном
       const nextSlide = makeSlide(59);
       setTranslateX(nextSlide, fromX);
-      nextSlide.appendChild(makeSnapImg(groups[nextGroupIndex].banners[0].img));
+      nextSlide.appendChild(makeSnapImg(getThemeImg(groups[nextGroupIndex].banners[0])));
 
       // Скрываем реальные img
       imgA.style.visibility = 'hidden';
@@ -2536,6 +2567,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         items.forEach(function (el, i) {
           el.classList.toggle('is-viewed', viewedSet.has(i));
+
+          // Синхронизация превью на главной: если для тёмной темы картинки нет, берём светлую
+          const imgEl = el.querySelector('.banners__link-img img');
+          if (imgEl) {
+            let targetSrc = isDarkMode() ? imgEl.dataset.srcDark : imgEl.dataset.srcLight;
+            if (isDarkMode() && !targetSrc) {
+              targetSrc = imgEl.dataset.srcLight; // Фолбэк для превью
+            }
+            if (targetSrc && imgEl.src !== targetSrc) {
+              imgEl.src = targetSrc;
+            }
+          }
         });
 
         const firstUnviewed = items.find(function (_, i) { return !viewedSet.has(i); });
@@ -2548,6 +2591,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     updateItemsVisualState();
+
+    // НОВОЕ: Принудительный запуск обновления сторонних баннеров при загрузке
+    document.querySelectorAll('[data-stories-open] img').forEach(function (imgEl) {
+      const targetSrc = isDarkMode() ? imgEl.dataset.srcDark : imgEl.dataset.srcLight;
+      if (targetSrc && imgEl.src !== targetSrc) imgEl.src = targetSrc;
+    });
 
     // Предзагружаем первые три группы сразу при загрузке страницы.
     // Это самые вероятные для просмотра сторисы - пользователь видит их первыми.
@@ -3002,12 +3051,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function initPreloaderButtons() {
-      const buttons = preloaderEl.querySelectorAll('button');
-      if (!buttons.length) return;
+      // Находим все стандартные кнопки в прелоадере И любые элементы с атрибутом data-preloader-close
+      const closeElements = document.querySelectorAll('.preloader button, [data-preloader-close]');
 
-      buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          // Скрываем прелоадер по transition, как вы делали раньше
+      if (!closeElements.length) return;
+
+      closeElements.forEach(el => {
+        el.addEventListener('click', () => {
+          // Скрываем прелоадер по transition, как в вашей старой логике
           preloaderEl.classList.add('is-hidden');
 
           // Снимаем активное состояние
@@ -3016,7 +3067,7 @@ document.addEventListener('DOMContentLoaded', () => {
           preloaderEl.addEventListener(
             'transitionend',
             () => {
-              // Удаляем DOM узел, как в старой логике
+              // Удаляем DOM узел
               if (preloaderEl && preloaderEl.parentNode) {
                 preloaderEl.remove();
               }

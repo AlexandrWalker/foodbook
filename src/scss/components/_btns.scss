@@ -49,6 +49,10 @@
     //   --btn-background: var(--accent-2);
     // }
 
+    [dark] & {
+      color: var(--black);
+    }
+
     [orange] & {
       --btn-color: var(--white);
     }

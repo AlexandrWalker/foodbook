@@ -1,24 +1,19 @@
 @use './../mixins' as *;
 
 .scrollup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
   pointer-events: all;
-  transition: opacity 0.4s ease, visibility 0.4s ease !important;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
 
-  position: absolute;
+  position: fixed;
   left: 1rem;
   bottom: 11.1rem;
+  z-index: 997;
 
   @include domd {
     display: none;
-  }
-
-  &-visible {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
   }
 
   .popup-open & {
@@ -34,7 +29,7 @@
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
-    background-color: var(--scrollup-btn-color);
+    background-color: var(--scrollup-btn-bg-color);
 
     position: relative;
 
@@ -43,34 +38,25 @@
       color: var(--accent);
     }
 
-    &>.scrollup__btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-      transform-style: preserve-3d;
-      -webkit-transform-style: preserve-3d;
-      inset: 0;
-      transition: transform 0.6s cubic-bezier(.4, .2, .2, 1);
+    &--call {
+      background-color: var(--scrollup-call-bg-color);
+      box-shadow: 0px 0px 8.3px 3px rgba(215, 25, 32, 0.5);
 
-      position: absolute;
-    }
-
-    &--visible {
-      transform: rotateY(0deg);
-      z-index: 2;
-
-      html.popup-open & {
-        transform: rotateY(180deg);
+      i {
+        color: var(--scrollup-btn-color);
       }
     }
 
-    &--hidden {
-      transform: rotateY(180deg);
+    &--up {
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
 
-      html.popup-open & {
-        transform: rotateY(0deg);
+      &.scrollup-visible {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
       }
     }
   }
