@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Переменные для отслеживания истинного скролла пальцем
     let touchStartY = 0;
     let isRealScrollActive = false;
-    const SCROLL_THRESHOLD = 5; // Порог в пикселях: игнорируем движения меньше этого значения
+    const SCROLL_THRESHOLD = 1; // Порог в пикселях: игнорируем движения меньше этого значения
 
     try {
       const testOptions = Object.defineProperty({}, 'passive', {
