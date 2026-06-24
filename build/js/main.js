@@ -1874,7 +1874,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (function () {
     const DEV_MODE = true;
 
-    const STORY_DURATION = 5000;
+    const STORY_DURATION = 500000;
     const SWIPE_THRESHOLD = 50;
     const SWIPE_DOWN_THRESHOLD = 80;
     const SLIDE_DURATION = 420;
@@ -2187,9 +2187,10 @@ document.addEventListener('DOMContentLoaded', () => {
       img.src = src;
       img.style.cssText = [
         'position:absolute',
-        'right:0',
-        'bottom:0',
-        'left:0',
+        'inset:0',
+        // 'right:0',
+        // 'bottom:0',
+        // 'left:0',
         'width:100%',
         'height:auto',
         'object-fit:contain',

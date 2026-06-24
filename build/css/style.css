@@ -3813,7 +3813,6 @@ html[lang=en] .layout__block-item[data-lang=en] {
 }
 
 .stories-container {
-  position: relative;
   width: 100%;
   max-width: 100%;
   height: calc(100vh - var(--wrapper-padding));
@@ -3824,6 +3823,7 @@ html[lang=en] .layout__block-item[data-lang=en] {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  position: relative;
 }
 
 .stories-content {
@@ -3913,10 +3913,6 @@ html[lang=en] .layout__block-item[data-lang=en] {
 }
 
 .stories-actions {
-  position: absolute;
-  top: 2.8rem;
-  right: 1.4rem;
-  z-index: 70;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3924,6 +3920,10 @@ html[lang=en] .layout__block-item[data-lang=en] {
   -ms-flex-align: center;
   align-items: center;
   gap: 0.4rem;
+  position: absolute;
+  top: 2.8rem;
+  right: 1.4rem;
+  z-index: 70;
 }
 
 .stories-share {
@@ -3985,16 +3985,17 @@ html[lang=en] .layout__block-item[data-lang=en] {
 }
 
 .stories-img {
+  display: block;
   width: 100%;
   height: auto;
   -o-object-fit: contain;
   object-fit: contain;
-  display: block;
   opacity: 0;
   -webkit-transition: opacity 0.3s ease;
   -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
   position: absolute;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
@@ -4010,8 +4011,9 @@ html[lang=en] .layout__block-item[data-lang=en] {
 
 .stories-img-wrap {
   width: 100%;
-  height: auto;
+  height: 100%;
   position: absolute;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
