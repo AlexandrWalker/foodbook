@@ -1884,6 +1884,30 @@ document.addEventListener('DOMContentLoaded', () => {
       return document.documentElement.hasAttribute('dark') || document.documentElement.classList.contains('dark');
     }
 
+    // Универсальное обновление элемента (картинка или видео-источник) под текущую тему
+    function updateMediaElement(parentContainer) {
+      if (!parentContainer) return;
+      const isDark = isDarkMode();
+
+      // Проверяем наличие картинок
+      const imgEl = parentContainer.querySelector('img');
+      if (imgEl) {
+        const targetSrc = isDark ? imgEl.dataset.srcDark : imgEl.dataset.srcLight;
+        if (targetSrc && imgEl.src !== targetSrc) imgEl.src = targetSrc;
+      }
+
+      // Проверяем наличие видео-источников
+      const videoEl = parentContainer.querySelector('video');
+      const sourceEl = videoEl ? videoEl.querySelector('source') : null;
+      if (sourceEl) {
+        const targetSrc = isDark ? sourceEl.dataset.srcDark : sourceEl.dataset.srcLight;
+        if (targetSrc && sourceEl.getAttribute('src') !== targetSrc) {
+          sourceEl.src = targetSrc;
+          videoEl.load(); // Важно: заставляем браузер перезагрузить видеопоток
+        }
+      }
+    }
+
     // Извлечение правильного пути (cover) в зависимости от темы
     // Строгое извлечение пути: только imgDark для темной, только imgLight для светлой
     function getThemeImg(bannerObj) {
@@ -1897,6 +1921,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Наблюдатель за сменой темы на лету
     // Наблюдатель за изменением темы оформления на лету
+    // Наблюдатель за изменением темы оформления на лету
     const themeObserver = new MutationObserver(function () {
       if (typeof overlay !== 'undefined' && overlay.classList.contains('is-active') && !isSliding) {
         const story = currentBanners()[bannerIndex];
@@ -1908,18 +1933,15 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
       }
-      // Обновляем обложки на главной странице
+
+      // Обновляем обложки (картинки или видео) на главной странице
       items.forEach(function (el) {
-        const imgEl = el.querySelector('.banners__link-img img');
-        if (imgEl) {
-          const targetSrc = isDarkMode() ? imgEl.dataset.srcDark : imgEl.dataset.srcLight;
-          if (targetSrc && imgEl.src !== targetSrc) imgEl.src = targetSrc;
-        }
+        updateMediaElement(el);
       });
-      // НОВОЕ: Обновляем сторонние баннеры вызова сторис на сайте
-      document.querySelectorAll('[data-stories-open] img').forEach(function (imgEl) {
-        const targetSrc = isDarkMode() ? imgEl.dataset.srcDark : imgEl.dataset.srcLight;
-        if (targetSrc && imgEl.src !== targetSrc) imgEl.src = targetSrc;
+
+      // Обновляем сторонние баннеры вызова сторис на сайте
+      document.querySelectorAll('[data-stories-open]').forEach(function (el) {
+        updateMediaElement(el);
       });
     });
     themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['dark', 'class'] });
@@ -2187,10 +2209,10 @@ document.addEventListener('DOMContentLoaded', () => {
       img.src = src;
       img.style.cssText = [
         'position:absolute',
-        'inset:0',
-        // 'right:0',
-        // 'bottom:0',
-        // 'left:0',
+        'top:0',
+        'right:0',
+        'bottom:0',
+        'left:0',
         'width:100%',
         'height:auto',
         'object-fit:contain',
@@ -2569,17 +2591,8 @@ document.addEventListener('DOMContentLoaded', () => {
         items.forEach(function (el, i) {
           el.classList.toggle('is-viewed', viewedSet.has(i));
 
-          // Синхронизация превью на главной: если для тёмной темы картинки нет, берём светлую
-          const imgEl = el.querySelector('.banners__link-img img');
-          if (imgEl) {
-            let targetSrc = isDarkMode() ? imgEl.dataset.srcDark : imgEl.dataset.srcLight;
-            if (isDarkMode() && !targetSrc) {
-              targetSrc = imgEl.dataset.srcLight; // Фолбэк для превью
-            }
-            if (targetSrc && imgEl.src !== targetSrc) {
-              imgEl.src = targetSrc;
-            }
-          }
+          // Замена старого кода на безопасный хелпер:
+          updateMediaElement(el);
         });
 
         const firstUnviewed = items.find(function (_, i) { return !viewedSet.has(i); });
@@ -2594,9 +2607,9 @@ document.addEventListener('DOMContentLoaded', () => {
     updateItemsVisualState();
 
     // НОВОЕ: Принудительный запуск обновления сторонних баннеров при загрузке
-    document.querySelectorAll('[data-stories-open] img').forEach(function (imgEl) {
-      const targetSrc = isDarkMode() ? imgEl.dataset.srcDark : imgEl.dataset.srcLight;
-      if (targetSrc && imgEl.src !== targetSrc) imgEl.src = targetSrc;
+    // Принудительный запуск обновления сторонних баннеров при загрузке
+    document.querySelectorAll('[data-stories-open]').forEach(function (el) {
+      updateMediaElement(el);
     });
 
     // Предзагружаем первые три группы сразу при загрузке страницы.
