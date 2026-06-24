@@ -144,14 +144,6 @@ li:last-child {
 @font-face {
   font-family: Inter;
   font-display: swap;
-  src: url("../fonts/Inter-Bold.woff2") format("woff2"), url("../fonts/Inter-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Inter;
-  font-display: swap;
   src: url("../fonts/Inter-ExtraBold.woff2") format("woff2"), url("../fonts/Inter-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
@@ -162,6 +154,14 @@ li:last-child {
   font-display: swap;
   src: url("../fonts/Inter-ExtraLight.woff2") format("woff2"), url("../fonts/Inter-ExtraLight.woff") format("woff");
   font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  src: url("../fonts/Inter-Bold.woff2") format("woff2"), url("../fonts/Inter-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -2807,6 +2807,10 @@ html[lang=en] .layout__block-item[data-lang=en] {
 
 .layout__block-item--icon i.icon-menu-telephone {
   font-size: 5rem;
+}
+
+.layout__block-item--icon i.icon--online {
+  font-size: 6rem;
 }
 
 .layout__block-item--img {
