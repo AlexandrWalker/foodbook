@@ -21,6 +21,12 @@
   z-index: 500;
   z-index: 998;
 
+  .keyboard-is-open & {
+    bottom: calc((var(--panel-height) * 2) * -1);
+    opacity: 0;
+    visibility: hidden;
+  }
+
   .scroll-active & {
     bottom: calc((var(--panel-height) * 2) * -1);
     opacity: 0;

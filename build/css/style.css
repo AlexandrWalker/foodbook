@@ -264,14 +264,6 @@ li:last-child {
 @font-face {
   font-family: Poppins;
   font-display: swap;
-  src: url("../fonts/Poppins-Black.woff2") format("woff2"), url("../fonts/Poppins-Black.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Poppins;
-  font-display: swap;
   src: url("../fonts/Poppins-Bold.woff2") format("woff2"), url("../fonts/Poppins-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -288,6 +280,14 @@ li:last-child {
 @font-face {
   font-family: Poppins;
   font-display: swap;
+  src: url("../fonts/Poppins-Light.woff2") format("woff2"), url("../fonts/Poppins-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Poppins;
+  font-display: swap;
   src: url("../fonts/Poppins-ExtraLight.woff2") format("woff2"), url("../fonts/Poppins-ExtraLight.woff") format("woff");
   font-weight: 200;
   font-style: normal;
@@ -296,8 +296,8 @@ li:last-child {
 @font-face {
   font-family: Poppins;
   font-display: swap;
-  src: url("../fonts/Poppins-Light.woff2") format("woff2"), url("../fonts/Poppins-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/Poppins-Black.woff2") format("woff2"), url("../fonts/Poppins-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -344,14 +344,6 @@ li:last-child {
 @font-face {
   font-family: SFPro;
   font-display: swap;
-  src: url("../fonts/SFPro-Heavy.woff2") format("woff2"), url("../fonts/SFPro-Heavy.woff") format("woff");
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: SFPro;
-  font-display: swap;
   src: url("../fonts/SFPro-Bold.woff2") format("woff2"), url("../fonts/SFPro-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -360,8 +352,8 @@ li:last-child {
 @font-face {
   font-family: SFPro;
   font-display: swap;
-  src: url("../fonts/SFPro-Light.woff2") format("woff2"), url("../fonts/SFPro-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/SFPro-Heavy.woff2") format("woff2"), url("../fonts/SFPro-Heavy.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -376,8 +368,8 @@ li:last-child {
 @font-face {
   font-family: SFPro;
   font-display: swap;
-  src: url("../fonts/SFPro-Regular.woff2") format("woff2"), url("../fonts/SFPro-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/SFPro-Light.woff2") format("woff2"), url("../fonts/SFPro-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -392,8 +384,8 @@ li:last-child {
 @font-face {
   font-family: SFPro;
   font-display: swap;
-  src: url("../fonts/SFPro-Thin.woff2") format("woff2"), url("../fonts/SFPro-Thin.woff") format("woff");
-  font-weight: 100;
+  src: url("../fonts/SFPro-Regular.woff2") format("woff2"), url("../fonts/SFPro-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -402,6 +394,14 @@ li:last-child {
   font-display: swap;
   src: url("../fonts/SFPro-UltraLight.woff2") format("woff2"), url("../fonts/SFPro-UltraLight.woff") format("woff");
   font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: SFPro;
+  font-display: swap;
+  src: url("../fonts/SFPro-Thin.woff2") format("woff2"), url("../fonts/SFPro-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -729,8 +729,8 @@ body {
   --card-bg-color: var(--white);
   --card-border-color: var(--white);
   --card-weight-color: var(--accent);
-  --card-item-color: var(--black-50);
-  --card-item-i-color: var(--black-50);
+  --card-item-color: var(--black);
+  --card-item-i-color: var(--black);
   --card-item-i-bg-color: var(--white);
   --card-desc-color: var(--black-50);
   --card-price-color: var(--black);
@@ -5631,6 +5631,12 @@ p {
   visibility: visible;
   z-index: 500;
   z-index: 998;
+}
+
+.keyboard-is-open .panel {
+  bottom: calc(var(--panel-height) * 2 * -1);
+  opacity: 0;
+  visibility: hidden;
 }
 
 .scroll-active .panel {

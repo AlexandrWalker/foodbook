@@ -3758,6 +3758,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   })();
 
+  // Сохраняем базовую высоту экрана без клавиатуры
+  const initialHeight = window.innerHeight;
+
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', () => {
+      const currentHeight = window.visualViewport.height;
+
+      // Если текущая высота меньше исходной минимум на 150px — клавиатура открыта
+      if (initialHeight - currentHeight > 150) {
+        document.documentElement.classList.add('keyboard-is-open');
+      } else {
+        document.documentElement.classList.remove('keyboard-is-open');
+      }
+    });
+  }
+
   /**
    * УВЕДОМЛЕНИЕ О COOKIE (.plate-cookie)                           
    *    
