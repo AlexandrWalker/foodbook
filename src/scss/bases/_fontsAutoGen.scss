@@ -113,6 +113,13 @@
 @font-face {
 	font-family: Poppins;
 	font-display: swap;
+	src: url("../fonts/Poppins-Black.woff2") format("woff2"), url("../fonts/Poppins-Black.woff") format("woff");
+	font-weight: 900;
+	font-style: normal;
+}
+@font-face {
+	font-family: Poppins;
+	font-display: swap;
 	src: url("../fonts/Poppins-Bold.woff2") format("woff2"), url("../fonts/Poppins-Bold.woff") format("woff");
 	font-weight: 700;
 	font-style: normal;
@@ -127,13 +134,6 @@
 @font-face {
 	font-family: Poppins;
 	font-display: swap;
-	src: url("../fonts/Poppins-Light.woff2") format("woff2"), url("../fonts/Poppins-Light.woff") format("woff");
-	font-weight: 300;
-	font-style: normal;
-}
-@font-face {
-	font-family: Poppins;
-	font-display: swap;
 	src: url("../fonts/Poppins-ExtraLight.woff2") format("woff2"), url("../fonts/Poppins-ExtraLight.woff") format("woff");
 	font-weight: 200;
 	font-style: normal;
@@ -141,8 +141,8 @@
 @font-face {
 	font-family: Poppins;
 	font-display: swap;
-	src: url("../fonts/Poppins-Black.woff2") format("woff2"), url("../fonts/Poppins-Black.woff") format("woff");
-	font-weight: 900;
+	src: url("../fonts/Poppins-Light.woff2") format("woff2"), url("../fonts/Poppins-Light.woff") format("woff");
+	font-weight: 300;
 	font-style: normal;
 }
 @font-face {
@@ -197,13 +197,6 @@
 @font-face {
 	font-family: SFPro;
 	font-display: swap;
-	src: url("../fonts/SFPro-Medium.woff2") format("woff2"), url("../fonts/SFPro-Medium.woff") format("woff");
-	font-weight: 500;
-	font-style: normal;
-}
-@font-face {
-	font-family: SFPro;
-	font-display: swap;
 	src: url("../fonts/SFPro-Light.woff2") format("woff2"), url("../fonts/SFPro-Light.woff") format("woff");
 	font-weight: 300;
 	font-style: normal;
@@ -211,8 +204,8 @@
 @font-face {
 	font-family: SFPro;
 	font-display: swap;
-	src: url("../fonts/SFPro-SemiBold.woff2") format("woff2"), url("../fonts/SFPro-SemiBold.woff") format("woff");
-	font-weight: 600;
+	src: url("../fonts/SFPro-Medium.woff2") format("woff2"), url("../fonts/SFPro-Medium.woff") format("woff");
+	font-weight: 500;
 	font-style: normal;
 }
 @font-face {
@@ -225,8 +218,8 @@
 @font-face {
 	font-family: SFPro;
 	font-display: swap;
-	src: url("../fonts/SFPro-UltraLight.woff2") format("woff2"), url("../fonts/SFPro-UltraLight.woff") format("woff");
-	font-weight: 200;
+	src: url("../fonts/SFPro-SemiBold.woff2") format("woff2"), url("../fonts/SFPro-SemiBold.woff") format("woff");
+	font-weight: 600;
 	font-style: normal;
 }
 @font-face {
@@ -234,6 +227,13 @@
 	font-display: swap;
 	src: url("../fonts/SFPro-Thin.woff2") format("woff2"), url("../fonts/SFPro-Thin.woff") format("woff");
 	font-weight: 100;
+	font-style: normal;
+}
+@font-face {
+	font-family: SFPro;
+	font-display: swap;
+	src: url("../fonts/SFPro-UltraLight.woff2") format("woff2"), url("../fonts/SFPro-UltraLight.woff") format("woff");
+	font-weight: 200;
 	font-style: normal;
 }
 @font-face {
