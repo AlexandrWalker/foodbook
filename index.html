@@ -198,6 +198,14 @@
                     Мероприятия
                   </div>
                 </div> -->
+                <div class="menu__item" data-popup-target="online">
+                  <div class="menu__item-icon">
+                    <i class="icon-callback icon--online"></i>
+                  </div>
+                  <div class="menu__item-title">
+                    Онлайн бронирование
+                  </div>
+                </div>
                 <div class="menu__item" data-popup-target="rules">
                   <div class="menu__item-icon">
                     <i class="icon-menu-list"></i>
@@ -3064,6 +3072,24 @@
                       бисквитом и орехом пекан
                     </p>
                   </div>
+                  <div class="layout__block-price">
+                    <p>
+                      Стоимость участия за гостя
+                    </p>
+                    <span>
+                      9 000 ₽
+                    </span>
+                  </div>
+                  <div class="layout__block-btn">
+                    <button class="btn btn--accent-2" data-popup-target="reservation">
+                      Забронировать стол
+                    </button>
+                  </div>
+                  <div class="layout__block-ps">
+                    <p>
+                      *Бронь осуществляется столами. Количество мест ограничено.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -3116,6 +3142,24 @@
                     <p>
                       Перед подачей десерт скрыт под стеклянным колпаком с дымом и раскрывается прямо перед гостем в
                       огне
+                    </p>
+                  </div>
+                  <div class="layout__block-price">
+                    <p>
+                      Стоимость участия за гостя
+                    </p>
+                    <span>
+                      9 000 ₽
+                    </span>
+                  </div>
+                  <div class="layout__block-btn">
+                    <button class="btn btn--accent-2" data-popup-target="reservation">
+                      Забронировать стол
+                    </button>
+                  </div>
+                  <div class="layout__block-ps">
+                    <p>
+                      *Бронь осуществляется столами. Количество мест ограничено.
                     </p>
                   </div>
                 </div>
@@ -5633,7 +5677,7 @@
             <div class="layout__head">
               <div class="layout__head-title">
                 <h2>
-                  Ваше сообщение отправлено!
+                  Ваше сообщение <br> отправлено!
                 </h2>
               </div>
             </div>
@@ -5987,20 +6031,6 @@
 
             <div class="layout__body">
               <div class="layout__block">
-                <a class="layout__block-item" href="javascript: void(0)" data-popup-target="online">
-                  <div class="layout__block-item--icon">
-                    <i class="icon-callback-min icon--online"></i>
-                  </div>
-                  <div class="layout__block-item--wrap">
-                    <div class="layout__block-item--text">
-                      Онлайн
-                    </div>
-                    <div class="layout__block-item--status">
-                      бронирование онлайн
-                    </div>
-                  </div>
-                  <i class="icon-chevron-right"></i>
-                </a>
                 <a class="layout__block-item" href="tel:+74959373811">
                   <div class="layout__block-item--icon">
                     <i class="icon-menu-telephone"></i>
@@ -6015,16 +6045,16 @@
                   </div>
                   <i class="icon-chevron-right"></i>
                 </a>
-                <a class="layout__block-item" href="javascript: void(0)">
+                <a class="layout__block-item" href="javascript: void(0)" data-popup-target="online">
                   <div class="layout__block-item--icon">
-                    <i class="icon-max"></i>
+                    <i class="icon-callback-min icon--online"></i>
                   </div>
                   <div class="layout__block-item--wrap">
                     <div class="layout__block-item--text">
-                      Макс
+                      Онлайн
                     </div>
                     <div class="layout__block-item--status">
-                      написать сообщение
+                      бронирование онлайн
                     </div>
                   </div>
                   <i class="icon-chevron-right"></i>
@@ -6036,6 +6066,20 @@
                   <div class="layout__block-item--wrap">
                     <div class="layout__block-item--text">
                       Telegram
+                    </div>
+                    <div class="layout__block-item--status">
+                      написать сообщение
+                    </div>
+                  </div>
+                  <i class="icon-chevron-right"></i>
+                </a>
+                <a class="layout__block-item" href="javascript: void(0)">
+                  <div class="layout__block-item--icon">
+                    <i class="icon-max"></i>
+                  </div>
+                  <div class="layout__block-item--wrap">
+                    <div class="layout__block-item--text">
+                      Макс
                     </div>
                     <div class="layout__block-item--status">
                       написать сообщение
@@ -6068,7 +6112,10 @@
           <div class="layout__inner">
             <div class="layout__head">
               <div class="layout__head-cover">
-                <img src="./images/temp/platform-cover.png" alt="">
+                <!-- <img src="./images/temp/platform-cover.png" alt=""> -->
+                <video autoplay muted playsinline loop disablepictureinpicture>
+                  <source src="./video/platform.mp4">
+                </video>
               </div>
               <div class="layout__head-title">
                 <h2>
@@ -6174,19 +6221,31 @@
                     <p>
                       Почта: <a href="mailto:hello@1and2.ru">hello@1and2.ru</a>
                     </p>
-                    <a href="./docs/презентация.pdf" download="Презентация.pdf">Скачать презентацию</a>
                   </div>
                 </div>
-                <div class="layout__block-social">
-                  <a href="/">
-                    <i class="icon-max"></i>
-                  </a>
-                  <a href="/">
-                    <i class="icon-vk"></i>
-                  </a>
-                  <a href="/">
-                    <i class="icon-tg"></i>
-                  </a>
+                <div class="layout__block-wrap">
+                  <div class="layout__block-text layout__block-text--accent">
+                    <p>
+                      Подробнее о нас
+                    </p>
+                  </div>
+                  <div class="layout__block-text">
+                    <div class="layout__block-social">
+                      <button class="layout__block-presentation btn btn--accent" data-popup-target="presentation">
+                        <i class="icon-docs"></i>
+                        Презентация
+                      </button>
+                      <a href="/">
+                        <i class="icon-max"></i>
+                      </a>
+                      <a href="/">
+                        <i class="icon-vk"></i>
+                      </a>
+                      <a href="/">
+                        <i class="icon-tg"></i>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -6305,7 +6364,12 @@
                   </div>
                   <div class="form-group">
                     <label class="form-label">
-                      <input class="form-input" type="email" name="online_tel" placeholder="Эл. почта" required>
+                      <input class="form-input" type="text" name="online_time" placeholder="Дата и время" required>
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">
+                      <input class="form-input" type="text" name="online_col" placeholder="Количество человек" required>
                     </label>
                   </div>
                   <div class="form-group">
@@ -6319,8 +6383,8 @@
                     Отправить
                   </button>
                   <div class="form-group form-text">
-                    <input id="form-checkbox-9" class="form-checkbox" type="checkbox" required="">
-                    <label for="form-checkbox-9">
+                    <input id="form-checkbox-11" class="form-checkbox" type="checkbox" required="">
+                    <label for="form-checkbox-11">
                       <div class="form-checkbox--item"></div>
                       <p>
                         Я согласен на <a href="javascript:void(0)" data-popup-target="policy">обработку персональных
@@ -6329,8 +6393,8 @@
                     </label>
                   </div>
                   <div class="form-group form-text">
-                    <input id="form-checkbox-10" class="form-checkbox" type="checkbox">
-                    <label for="form-checkbox-10">
+                    <input id="form-checkbox-12" class="form-checkbox" type="checkbox">
+                    <label for="form-checkbox-12">
                       <div class="form-checkbox--item"></div>
                       <p>
                         Я согласен на <a href="javascript:void(0)">рекламные уведомления</a>
@@ -6346,6 +6410,54 @@
                 </div>
               </form>
 
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+    <!-- Онлайн -->
+    <div id="presentation" class="policy popup" data-lenis-prevent>
+  <div class="popup__wrap">
+    <div class="popup__area" data-popup-head>
+      <div class="popup__close">
+        <i class="icon-close"></i>
+      </div>
+    </div>
+    <div class="popup__inner">
+
+      <div class="layout" data-popup-scroll>
+        <div class="container">
+          <div class="layout__inner">
+
+            <!-- <div class="layout__head">
+              <div class="layout__head-title">
+                <h2>
+                  Презентация
+                </h2>
+              </div>
+            </div> -->
+
+            <div class="layout__body">
+              <div class="layout__block">
+                <a class="layout__block-presentation btn btn--accent" href="./docs/Presentation.pdf" download="Presentation.pdf">
+                  <i class="icon-docs"></i>
+                  Скачать презентацию
+                </a>
+                <!-- <iframe src="./docs/презентация.pdf" width="100%" height="400px" style="border: none;">
+                  <p>Ваш браузер не поддерживает просмотр PDF.
+                    <a href="презентация.pdf">Скачать PDF</a>
+                  </p>
+                </iframe> -->
+                <div class="presentation-block">
+                  <div id="pdf-container" class="pdf-vertical-container">
+                    <!-- Сюда JavaScript автоматически вставит все 15 страниц-картинок -->
+                  </div>
+                </div>
+              </div>
             </div>
 
           </div>
@@ -12042,6 +12154,7 @@
 <script src="./libs/gsap/ScrollSmoother.min.js"></script>
 <!-- swiper -->
 <script src="./libs/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <!-- scripts -->
 <script src="./js/main.js?v=3"></script>
 </body>
