@@ -917,6 +917,7 @@ body {
   --layout-platform-block-text-color: var(--black);
   --layout-platform-block-text-accent-color: var(--accent);
   --layout-platform-block-text-a-color: var(--black);
+  --layout-presentation-icon-color: var(--white);
   --stories-overlay-bg-color: var(--black-50);
   --stories-container-bg: var(--white);
   --stories-progress-item-bg-color: var(--black-50);
@@ -971,6 +972,7 @@ body {
   --layout-search-form-input-bg-color: var(--black-10);
   --layout-first-btn-bg-color: var(--black-10);
   --layout-first-btn-i-bg-color: var(--black-10);
+  --layout-presentation-icon-color: var(--black);
   --form-tabs-label-checked-color: var(--black);
   --header-search-i-color: var(--white);
   --nav-item-active-icon-color: var(--black);
@@ -2914,7 +2916,7 @@ html[lang=en] .layout__block-item[data-lang=en] {
 
 .layout__block-presentation i {
   --btn-icon-size: 2.2rem;
-  --btn-icon-color: var(--white);
+  --btn-icon-color: var(--layout-presentation-icon-color);
   --btn-icon-background: transparent;
   --btn-icon-radius: 0;
   font-size: 2.2rem;

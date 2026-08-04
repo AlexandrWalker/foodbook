@@ -3775,7 +3775,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   (function () {
-    const pdfUrl = './../docs/Presentation.pdf';
+    const pdfUrl = '/foodbook/docs/Presentation.pdf';
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
     const container = document.getElementById('pdf-container');
