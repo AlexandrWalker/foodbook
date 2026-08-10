@@ -48,6 +48,12 @@
 
     &[type="date"],
     &[type="time"] {
+      max-width: 100%;
+      width: 100%;
+      flex-shrink: 0;
+      -webkit-appearance: none;
+      appearance: none;
+
       font-weight: 400;
 
       &::placeholder {
