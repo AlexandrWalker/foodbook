@@ -3866,6 +3866,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
   })();
 
+  (function () {
+    const isMobile = () => {
+      if (navigator.userAgentData?.mobile) return true;
+      const ua = navigator.userAgent;
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua)) return true;
+      if (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1) return true;
+      return false;
+    };
+
+    if (!isMobile()) return;
+
+    const processGroup = (group) => {
+      if (group.querySelector('.form-placeholder')) {
+        group.classList.add('no-mask');
+      }
+    };
+
+    const initialGroups = document.querySelectorAll('.form-group');
+    for (let i = 0; i < initialGroups.length; i++) {
+      processGroup(initialGroups[i]);
+    }
+
+    const observer = new MutationObserver((mutations) => {
+      for (let i = 0; i < mutations.length; i++) {
+        const addedNodes = mutations[i].addedNodes;
+
+        for (let j = 0; j < addedNodes.length; j++) {
+          const node = addedNodes[j];
+
+          if (node.nodeType === 1) {
+            if (node.classList.contains('form-group')) {
+              processGroup(node);
+            } else {
+              const nestedGroups = node.querySelectorAll('.form-group');
+              for (let k = 0; k < nestedGroups.length; k++) {
+                processGroup(nestedGroups[k]);
+              }
+            }
+          }
+        }
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  })();
+
   /**
    * УВЕДОМЛЕНИЕ О COOKIE (.plate-cookie)                           
    *    

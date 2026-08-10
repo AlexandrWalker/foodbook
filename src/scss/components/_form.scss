@@ -50,8 +50,16 @@
     &[type="time"] {
       font-weight: 400;
 
+      &::placeholder {
+        opacity: 0;
+      }
+
       &.filled {
         font-weight: 700;
+
+        &+.form-placeholder {
+          display: none;
+        }
       }
     }
 
@@ -71,6 +79,21 @@
       top: 50%;
       right: 1.1rem;
       transform: translateY(-50%);
+    }
+  }
+
+  &-placeholder {
+    display: none;
+    pointer-events: none;
+
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    .no-mask & {
+      display: block;
     }
   }
 
