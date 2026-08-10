@@ -46,22 +46,188 @@ document.addEventListener('DOMContentLoaded', () => {
    * @param {number}   targetY - целевая позиция скролла в px от верха
    * @param {Function} [callback] - вызывается когда анимация завершена
    */
+  // (function () {
+  //   let activeScrollRAF = null;
+  //   let userScrollTimeout = null;
+  //   const htmlEl = document.documentElement;
+  //   let passiveSupported = false;
+
+  //   // Переменные для отслеживания истинного скролла пальцем
+  //   let touchStartY = 0;
+  //   let isRealScrollActive = false;
+  //   const SCROLL_THRESHOLD = 1; // Порог в пикселях: игнорируем движения меньше этого значения
+
+  //   try {
+  //     const testOptions = Object.defineProperty({}, 'passive', {
+  //       get: function () {
+  //         passiveSupported = true;
+  //       }
+  //     });
+  //     window.addEventListener('test', null, testOptions);
+  //     window.removeEventListener('test', null, testOptions);
+  //   } catch (e) {
+  //     passiveSupported = false;
+  //   }
+
+  //   const passiveOption = passiveSupported ? { passive: true } : false;
+
+  //   function setScrollActive() {
+  //     htmlEl.classList.add('scroll-active');
+  //   }
+
+  //   function removeScrollActive() {
+  //     htmlEl.classList.remove('scroll-active');
+  //     isRealScrollActive = false; // Сбрасываем статус при удалении класса
+  //   }
+
+  //   function easeInOutCubic(t) {
+  //     return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  //   }
+
+  //   function smoothScrollTo(targetY, duration, callback) {
+  //     duration = typeof duration === 'number' ? duration : SCROLL_DURATION;
+
+  //     if (activeScrollRAF !== null) {
+  //       cancelAnimationFrame(activeScrollRAF);
+  //       activeScrollRAF = null;
+  //     }
+
+  //     const startY = Math.round(window.scrollY || window.pageYOffset || 0);
+  //     const safeTargetY = Math.max(0, Math.round(targetY));
+  //     const delta = safeTargetY - startY;
+
+  //     if (Math.abs(delta) < 1) {
+  //       if (callback) callback();
+  //       return;
+  //     }
+
+  //     setScrollActive();
+
+  //     const startTime = performance.now();
+
+  //     function step(now) {
+  //       if (activeScrollRAF === null) return;
+
+  //       const elapsed = now - startTime;
+  //       const progress = Math.min(elapsed / duration, 1);
+
+  //       window.scrollTo(0, startY + delta * easeInOutCubic(progress));
+
+  //       const currentScrollY = window.scrollY || window.pageYOffset || 0;
+  //       const hitTop = delta < 0 && currentScrollY <= 0;
+
+  //       if (progress < 1 && !hitTop) {
+  //         activeScrollRAF = requestAnimationFrame(step);
+  //       } else {
+  //         if (hitTop) {
+  //           window.scrollTo(0, 0);
+  //         }
+  //         activeScrollRAF = null;
+  //         removeScrollActive();
+  //         if (callback) callback();
+  //       }
+  //     }
+
+  //     activeScrollRAF = requestAnimationFrame(step);
+  //   }
+
+  //   function cancelActiveScroll() {
+  //     if (activeScrollRAF !== null) {
+  //       cancelAnimationFrame(activeScrollRAF);
+  //       activeScrollRAF = null;
+  //     }
+  //   }
+
+  //   // Запоминаем, где пользователь коснулся экрана
+  //   function handleTouchStart(e) {
+  //     cancelActiveScroll();
+  //     const touch = e.touches ? e.touches[0] : e;
+  //     touchStartY = touch.clientY;
+  //   }
+
+  //   // Проверяем, сдвинулся ли палец достаточно далеко
+  //   function handleTouchMove(e) {
+  //     cancelActiveScroll();
+
+  //     if (isRealScrollActive) return; // Если уже активировали скролл, больше не считаем
+
+  //     const touch = e.touches ? e.touches[0] : e;
+  //     const currentY = touch.clientY;
+  //     const moveDistance = Math.abs(currentY - touchStartY);
+
+  //     // Если палец сместился больше чем на порог — это осознанный скролл
+  //     if (moveDistance > SCROLL_THRESHOLD) {
+  //       isRealScrollActive = true;
+  //     }
+  //   }
+
+  //   // Обработчик события scroll
+  //   function handleUserScroll() {
+  //     // Если скролл вызван микро-дрожанием пальца (не прошел порог), ничего не делаем
+  //     // Проверка activeScrollRAF нужна, чтобы не ломать программный скролл по ссылкам
+  //     if (!isRealScrollActive && activeScrollRAF === null) {
+  //       return;
+  //     }
+
+  //     setScrollActive();
+
+  //     if (userScrollTimeout) {
+  //       clearTimeout(userScrollTimeout);
+  //     }
+
+  //     userScrollTimeout = setTimeout(function () {
+  //       if (activeScrollRAF === null) {
+  //         removeScrollActive();
+  //       }
+  //     }, 100);
+  //   }
+
+  //   // Слушатели для мыши и колесика (они сразу активируют статус скролла)
+  //   window.addEventListener('wheel', function () {
+  //     isRealScrollActive = true;
+  //     cancelActiveScroll();
+  //   }, passiveOption);
+
+  //   // Слушатели тача с фильтрацией микро-движений
+  //   window.addEventListener('touchstart', handleTouchStart, passiveOption);
+  //   window.addEventListener('touchmove', handleTouchMove, passiveOption);
+  //   window.addEventListener('pointerdown', handleTouchStart, passiveOption);
+
+  //   window.addEventListener('scroll', handleUserScroll, passiveOption);
+
+  //   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+  //     link.addEventListener('click', function (e) {
+  //       e.preventDefault();
+
+  //       const href = link.getAttribute('href');
+  //       if (!href || href === '#') return;
+
+  //       const targetEl = document.getElementById(href.slice(1));
+  //       if (!targetEl) return;
+
+  //       const targetY = targetEl.getBoundingClientRect().top
+  //         + (window.scrollY || window.pageYOffset || 0)
+  //         - NAV_HEIGHT_REM * getRootFontSize();
+
+  //       smoothScrollTo(targetY, SCROLL_DURATION);
+  //     });
+  //   });
+  // })();
+
+  //
+
   (function () {
     let activeScrollRAF = null;
     let userScrollTimeout = null;
     const htmlEl = document.documentElement;
     let passiveSupported = false;
 
-    // Переменные для отслеживания истинного скролла пальцем
     let touchStartY = 0;
     let isRealScrollActive = false;
-    const SCROLL_THRESHOLD = 1; // Порог в пикселях: игнорируем движения меньше этого значения
-
+    const SCROLL_THRESHOLD = 3;
     try {
       const testOptions = Object.defineProperty({}, 'passive', {
-        get: function () {
-          passiveSupported = true;
-        }
+        get: function () { passiveSupported = true; }
       });
       window.addEventListener('test', null, testOptions);
       window.removeEventListener('test', null, testOptions);
@@ -77,7 +243,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function removeScrollActive() {
       htmlEl.classList.remove('scroll-active');
-      isRealScrollActive = false; // Сбрасываем статус при удалении класса
     }
 
     function easeInOutCubic(t) {
@@ -102,7 +267,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       setScrollActive();
-
       const startTime = performance.now();
 
       function step(now) {
@@ -119,9 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (progress < 1 && !hitTop) {
           activeScrollRAF = requestAnimationFrame(step);
         } else {
-          if (hitTop) {
-            window.scrollTo(0, 0);
-          }
+          if (hitTop) window.scrollTo(0, 0);
           activeScrollRAF = null;
           removeScrollActive();
           if (callback) callback();
@@ -138,83 +300,73 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Запоминаем, где пользователь коснулся экрана
     function handleTouchStart(e) {
       cancelActiveScroll();
       const touch = e.touches ? e.touches[0] : e;
       touchStartY = touch.clientY;
     }
 
-    // Проверяем, сдвинулся ли палец достаточно далеко
     function handleTouchMove(e) {
+      if (isRealScrollActive) return;
       cancelActiveScroll();
 
-      if (isRealScrollActive) return; // Если уже активировали скролл, больше не считаем
-
       const touch = e.touches ? e.touches[0] : e;
-      const currentY = touch.clientY;
-      const moveDistance = Math.abs(currentY - touchStartY);
+      const moveDistance = Math.abs(touch.clientY - touchStartY);
 
-      // Если палец сместился больше чем на порог — это осознанный скролл
       if (moveDistance > SCROLL_THRESHOLD) {
         isRealScrollActive = true;
       }
     }
 
-    // Обработчик события scroll
     function handleUserScroll() {
-      // Если скролл вызван микро-дрожанием пальца (не прошел порог), ничего не делаем
-      // Проверка activeScrollRAF нужна, чтобы не ломать программный скролл по ссылкам
-      if (!isRealScrollActive && activeScrollRAF === null) {
-        return;
-      }
+      if (!isRealScrollActive && activeScrollRAF === null) return;
 
       setScrollActive();
 
-      if (userScrollTimeout) {
-        clearTimeout(userScrollTimeout);
-      }
+      if (userScrollTimeout) clearTimeout(userScrollTimeout);
 
       userScrollTimeout = setTimeout(function () {
         if (activeScrollRAF === null) {
           removeScrollActive();
+          isRealScrollActive = false;
         }
       }, 100);
     }
 
-    // Слушатели для мыши и колесика (они сразу активируют статус скролла)
     window.addEventListener('wheel', function () {
       isRealScrollActive = true;
       cancelActiveScroll();
     }, passiveOption);
 
-    // Слушатели тача с фильтрацией микро-движений
-    window.addEventListener('touchstart', handleTouchStart, passiveOption);
-    window.addEventListener('touchmove', handleTouchMove, passiveOption);
-    window.addEventListener('pointerdown', handleTouchStart, passiveOption);
+    if (window.PointerEvent) {
+      window.addEventListener('pointerdown', handleTouchStart, passiveOption);
+    } else {
+      window.addEventListener('touchstart', handleTouchStart, passiveOption);
+    }
 
+    window.addEventListener('touchmove', handleTouchMove, passiveOption);
     window.addEventListener('scroll', handleUserScroll, passiveOption);
 
-    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
+    document.addEventListener('click', function (e) {
+      const link = e.target.closest('a[href^="#"]');
+      if (!link) return;
 
-        const href = link.getAttribute('href');
-        if (!href || href === '#') return;
+      const href = link.getAttribute('href');
+      if (!href || href === '#') return;
 
-        const targetEl = document.getElementById(href.slice(1));
-        if (!targetEl) return;
+      const targetEl = document.getElementById(href.slice(1));
+      if (!targetEl) return;
 
-        const targetY = targetEl.getBoundingClientRect().top
-          + (window.scrollY || window.pageYOffset || 0)
-          - NAV_HEIGHT_REM * getRootFontSize();
+      e.preventDefault();
 
-        smoothScrollTo(targetY, SCROLL_DURATION);
-      });
+      const targetY = targetEl.getBoundingClientRect().top
+        + (window.scrollY || window.pageYOffset || 0)
+        - NAV_HEIGHT_REM * getRootFontSize();
+
+      smoothScrollTo(targetY, SCROLL_DURATION);
     });
   })();
 
-  //
 
   /**
    * Безопасно добавляет обработчик события.
@@ -3866,6 +4018,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   })();
 
+  /**
+   * Плейсхолдер для инпута даты и врмемени для мобильных устройств
+   */
   (function () {
     const isMobile = () => {
       if (navigator.userAgentData?.mobile) return true;
