@@ -318,6 +318,14 @@
   --layout-platform-block-text-a-color: var(--black);
   --layout-presentation-icon-color: var(--white);
 
+  // calc
+  --layout-calc-bg: var(--white);
+  --layout-calc-head-bg: #D1D0D380;
+  --layout-calc-btn-color: var(--black);
+  --layout-calc-btn-active-color: var(--white);
+  --layout-calc-btn-mask-bg: var(--accent);
+  --layout-calc-unit-color: var(--black-50);
+
   // stories
   --stories-overlay-bg-color: var(--black-50);
   --stories-container-bg: var(--white);
@@ -398,6 +406,7 @@
   --layout-first-btn-bg-color: var(--black-10);
   --layout-first-btn-i-bg-color: var(--black-10);
   --layout-presentation-icon-color: var(--black);
+  --layout-calc-btn-active-color: var(--black);
 
   --form-tabs-label-checked-color: var(--black);
 
