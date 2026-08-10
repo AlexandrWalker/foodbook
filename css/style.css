@@ -1429,9 +1429,35 @@ body {
   font-weight: 400;
 }
 
+.form-input[type=date]::-webkit-input-placeholder, .form-input[type=time]::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.form-input[type=date]::-moz-placeholder, .form-input[type=time]::-moz-placeholder {
+  opacity: 0;
+}
+
+.form-input[type=date]:-ms-input-placeholder, .form-input[type=time]:-ms-input-placeholder {
+  opacity: 0;
+}
+
+.form-input[type=date]::-ms-input-placeholder, .form-input[type=time]::-ms-input-placeholder {
+  opacity: 0;
+}
+
+.form-input[type=date]::placeholder,
+.form-input[type=time]::placeholder {
+  opacity: 0;
+}
+
 .form-input[type=date].filled,
 .form-input[type=time].filled {
   font-weight: 700;
+}
+
+.form-input[type=date].filled + .form-placeholder,
+.form-input[type=time].filled + .form-placeholder {
+  display: none;
 }
 
 .form-input-btn {
@@ -1455,6 +1481,22 @@ body {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.form-placeholder {
+  display: none;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.no-mask .form-placeholder {
+  display: block;
 }
 
 .form-label {
