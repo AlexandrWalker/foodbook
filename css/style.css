@@ -918,6 +918,12 @@ body {
   --layout-platform-block-text-accent-color: var(--accent);
   --layout-platform-block-text-a-color: var(--black);
   --layout-presentation-icon-color: var(--white);
+  --layout-calc-bg: var(--white);
+  --layout-calc-head-bg: #D1D0D380;
+  --layout-calc-btn-color: var(--black);
+  --layout-calc-btn-active-color: var(--white);
+  --layout-calc-btn-mask-bg: var(--accent);
+  --layout-calc-unit-color: var(--black-50);
   --stories-overlay-bg-color: var(--black-50);
   --stories-container-bg: var(--white);
   --stories-progress-item-bg-color: var(--black-50);
@@ -973,6 +979,7 @@ body {
   --layout-first-btn-bg-color: var(--black-10);
   --layout-first-btn-i-bg-color: var(--black-10);
   --layout-presentation-icon-color: var(--black);
+  --layout-calc-btn-active-color: var(--black);
   --form-tabs-label-checked-color: var(--black);
   --header-search-i-color: var(--white);
   --nav-item-active-icon-color: var(--black);
@@ -2987,6 +2994,154 @@ html[lang=en] .layout__block-item[data-lang=en] {
   font-weight: 500;
   font-size: 1rem;
   line-height: 120%;
+}
+
+.layout__calc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: var(--layout-calc-bg);
+  border-radius: 1.6rem;
+  padding: 1rem;
+  width: 100%;
+  z-index: 1;
+}
+
+.layout__calc[data-calc=portion] .layout__calc-btn--mask {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.layout__calc[data-calc=usually] .layout__calc-btn--mask {
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.layout__calc-head {
+  width: 100%;
+}
+
+.layout__calc-btns {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  background-color: var(--layout-calc-head-bg);
+  border-radius: 1.6rem;
+  position: relative;
+}
+
+.layout__calc-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.9rem;
+  -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 100%;
+  text-align: center;
+  color: var(--layout-calc-btn-color);
+  position: relative;
+  z-index: 2;
+}
+
+.layout__calc-btn--active {
+  color: var(--layout-calc-btn-active-color);
+}
+
+.layout__calc-btn--mask {
+  display: block;
+  width: 50%;
+  height: 100%;
+  border-radius: 1.6rem;
+  background-color: var(--layout-calc-btn-mask-bg);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.layout__calc-body {
+  width: 100%;
+}
+
+.layout__calc-items {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.layout__calc-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.3rem;
+  text-align: center;
+}
+
+.layout__calc-count {
+  display: block;
+  width: 100%;
+  height: 1.9rem;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 120%;
+  position: relative;
+}
+
+.layout__calc-count span {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  vertical-align: middle;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.layout__calc-count span.calc-active {
+  opacity: 1;
+}
+
+.layout__calc-unit {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 120%;
+  text-align: center;
+  color: var(--layout-calc-unit-color);
 }
 
 .layout__nav {

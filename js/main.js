@@ -3774,6 +3774,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /**
+   * Функция для презентации
+   */
   (function () {
     const pdfUrl = '/foodbook/docs/Presentation.pdf';
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
@@ -3819,6 +3822,48 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Ошибка при обработке PDF:', error);
       container.innerHTML = '<p style="color:red; text-align:center;">Не удалось загрузить презентацию.</p>';
     });
+  })();
+
+  /**
+   * Код для активации кбжу
+   */
+  (function () {
+    document.addEventListener('click', (event) => {
+      // Проверяем, что кликнули именно по кнопке переключателя
+      const btn = event.target.closest('.layout__calc-btn');
+      if (!btn) return;
+
+      // Находим главный контейнер именно этого калькулятора
+      const calcContainer = btn.closest('.layout__calc');
+      if (!calcContainer) return;
+
+      const type = btn.getAttribute('data-type');
+
+      // Меняем атрибут у главного контейнера
+      calcContainer.setAttribute('data-calc', type);
+
+      // Переключаем класс активности у кнопок внутри этого калькулятора
+      calcContainer.querySelectorAll('.layout__calc-btn').forEach(b => {
+        b.classList.toggle('layout__calc-btn--active', b === btn);
+      });
+
+      // Переключаем класс calc-active у спанов внутри этого калькулятора
+      calcContainer.querySelectorAll('.layout__calc-count span').forEach(span => {
+        const isCurrentType = span.getAttribute('data-count') === type;
+        span.classList.toggle('calc-active', isCurrentType);
+      });
+    });
+
+    // Проставляем классы для дефолтных значений (делаем это один раз для всей страницы)
+    document.querySelectorAll('.layout__calc').forEach(calcContainer => {
+      const type = calcContainer.getAttribute('data-calc') || 'portion';
+      calcContainer.querySelectorAll('.layout__calc-count span').forEach(span => {
+        if (span.getAttribute('data-count') === type) {
+          span.classList.add('calc-active');
+        }
+      });
+    });
+
   })();
 
   /**
